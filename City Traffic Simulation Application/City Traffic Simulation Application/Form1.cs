@@ -16,5 +16,10 @@ namespace City_Traffic_Simulation_Application
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
