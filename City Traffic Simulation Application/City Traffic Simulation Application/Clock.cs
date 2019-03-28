@@ -10,7 +10,7 @@ namespace City_Traffic_Simulation_Application
     {
         public DateTime StartTime { get; set; }
         public DateTime CurrentTime { get; set; }
-        public long TimeStep { get; set; }
+        public static float dt { get; set; }
 
         public void Start ()
         {

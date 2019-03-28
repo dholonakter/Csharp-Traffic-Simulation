@@ -30,8 +30,8 @@ namespace City_Traffic_Simulation_Application
             }
         }
 
-        public float length { get; set; }
-        public float speedlimit { get; set; }
+        public double length { get; set; }
+        public double speedlimit { get; set; }
 
     }
 }
