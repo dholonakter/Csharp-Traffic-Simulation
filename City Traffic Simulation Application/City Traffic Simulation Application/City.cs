@@ -8,5 +8,6 @@ namespace City_Traffic_Simulation_Application
 {
     class City
     {
+        //a collection of crossings connected by roads
     }
 }

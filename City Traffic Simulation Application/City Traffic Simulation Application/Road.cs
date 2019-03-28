@@ -18,7 +18,7 @@ namespace City_Traffic_Simulation_Application
                 if (value == pointB) { throw new Exception("Road endpoint is equal to starting point."); } 
                 else { pointA = value; }
             }
-        }
+        } //Connection 1 property
 
         public Crossing PointB
         {
@@ -28,7 +28,7 @@ namespace City_Traffic_Simulation_Application
                 if (value == pointA) { throw new Exception("Road endpoint is equal to starting point."); }
                 else { pointB = value; }
             }
-        }
+        }// Connection 2 property
 
         public double length { get; set; }
         public double speedlimit { get; set; }

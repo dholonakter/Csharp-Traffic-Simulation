@@ -24,8 +24,8 @@ namespace City_Traffic_Simulation_Application
         {
             
 
-            double deltaX = nextWayPoint.x - x;
-            double deltaY = nextWayPoint.y - y;
+            double deltaX = w.x - x;
+            double deltaY = w.y - y;
 
             double deltaH = Math.Sqrt(deltaX * deltaX + deltaY * deltaY);
 
@@ -46,7 +46,7 @@ namespace City_Traffic_Simulation_Application
             distanceTillWaypoint -= frameSpeedH;
             if (distanceTillWaypoint <= 0)
             {
-                CalculateNewWaypoint(x, y);
+                CalculateNewWaypoint(x, y, nextWayPoint.nextWaypoint);
             }
             double[] result = new double[2] { x, y };
             return result;

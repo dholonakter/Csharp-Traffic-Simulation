@@ -8,9 +8,10 @@ namespace City_Traffic_Simulation_Application
 {
     class Clock
     {
+        //the clock moves entities every frame and switches traffic light patterns from time to time.
         public DateTime StartTime { get; set; }
-        public DateTime CurrentTime { get; set; }
-        public static float dt { get; set; }
+        public DateTime CurrentTime { get; set; } 
+        public static double dt { get; set; } //the time elapsed since last frame
 
         public void Start ()
         {

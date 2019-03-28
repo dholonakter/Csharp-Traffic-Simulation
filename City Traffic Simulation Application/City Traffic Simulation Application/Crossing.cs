@@ -8,5 +8,6 @@ namespace City_Traffic_Simulation_Application
 {
     class Crossing
     {
+        // a meeting point of roads. has a map. has traffic lights. has entities. 
     }
 }
