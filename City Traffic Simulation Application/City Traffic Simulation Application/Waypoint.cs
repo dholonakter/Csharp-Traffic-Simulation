@@ -14,5 +14,18 @@ namespace City_Traffic_Simulation_Application
         public double x;
         public double y;
 
+
+        public Waypoint (double x, double y)
+        {
+            this.x = x;
+            this.y = y;
+        }
+
+        public Waypoint (double x, double y, Waypoint w)
+        {
+            this.x = x;
+            this.y = y;
+            this.nextWaypoint = w;
+        }
     }
 }

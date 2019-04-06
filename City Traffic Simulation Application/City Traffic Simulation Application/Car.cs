@@ -8,6 +8,6 @@ namespace City_Traffic_Simulation_Application
 {
     class Car : Entity
     {
-
+        //will be inheriting from Entity
     }
 }

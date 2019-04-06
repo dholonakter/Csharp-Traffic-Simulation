@@ -21,5 +21,16 @@ namespace City_Traffic_Simulation_Application
         {
 
         }
+
+        private void TestPointsCar()
+        {
+            Waypoint N = new Waypoint(200, 100);
+            Waypoint E = new Waypoint(300, 200, N);
+            Waypoint S = new Waypoint(200, 300, E);
+            Waypoint W = new Waypoint(100, 200, S);
+            N.nextWaypoint = W;
+
+
+        }
     }
 }
