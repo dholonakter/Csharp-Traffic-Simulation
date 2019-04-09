@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace City_Traffic_Simulation_Application
 {
-    class SaveFile
+  public  class SaveFile
     {
     }
 }

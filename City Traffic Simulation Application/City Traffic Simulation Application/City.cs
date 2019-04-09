@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace City_Traffic_Simulation_Application
 {
-    class City
+   public class City
     {
         //a collection of crossings connected by roads
-
+        private string nameOftheCity; //the city name
         public Crossing[] allCrossings;
         public Car[] allCars;
         public Road[] allRoads;

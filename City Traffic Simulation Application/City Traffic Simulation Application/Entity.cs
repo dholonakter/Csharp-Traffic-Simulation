@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace City_Traffic_Simulation_Application
 {
-    class Entity
+  public  class Entity
     {
         private Waypoint nextWayPoint { get; set; }
 
