@@ -13,9 +13,21 @@ namespace City_Traffic_Simulation_Application
         public DateTime CurrentTime { get; set; } 
         public static double dt { get; set; } //the time elapsed since last frame
 
+        public bool running;
+
+
+        public Clock()
+        {
+            running = false;
+            dt = 30;
+        }
         public void Start ()
         {
-            
+            running = true;
+            while (running == true)
+            {
+
+            }
         }
 
         public void Stop ()

@@ -22,6 +22,12 @@ namespace City_Traffic_Simulation_Application
 
         private double distanceTillWaypoint;
 
+
+        public Entity ()
+        {
+            lastEntityId++;
+            this.id = lastEntityId;
+        }
         public Entity(Waypoint w)
         {
             lastEntityId++;
