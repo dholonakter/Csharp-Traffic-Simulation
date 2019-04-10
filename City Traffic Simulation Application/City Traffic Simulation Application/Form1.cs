@@ -13,6 +13,8 @@ namespace City_Traffic_Simulation_Application
     public partial class Form1 : Form
     {
         Clock clock = new Clock();
+        City city = new City();
+        PictureBox[] Boxes;
         public Form1()
         {
 
@@ -21,7 +23,7 @@ namespace City_Traffic_Simulation_Application
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
+            timer1.Start(); 
         }
 
         private void TestPointsCar()
@@ -37,8 +39,22 @@ namespace City_Traffic_Simulation_Application
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            int x= pictureBox1.Left;
-            pictureBox1.Left = x + 1;
+            city.Frame(); //puts out a list of points for how to move picture boxes
+            
+            foreach(PictureBox i in Boxes)
+            {
+                // change the location of the boxes
+                Point x = i.Location;
+                x.Offset(1, 0);
+                i.Location = x;
+            }
+
+            
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            timer1.Stop();
         }
     }
 }

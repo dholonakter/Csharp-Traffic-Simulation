@@ -41,16 +41,26 @@ namespace City_Traffic_Simulation_Application
             this.road = r;
         }
 
-        public double[] CalculateNewWaypoint(double x, double y, Waypoint w)
+
+        public double[] Move()
         {
-            
+
+            return;
+        }
+        public double[] CalculateNewWaypoint(double x, double y, Waypoint w) //method that 
+        {
+            if(w==null)
+            {
+                //todo make an event(?) to put the car on a road
+                //or, add a reference to a road object in the waypoint class and put the car on that road
+            }
 
             double deltaX = w.x - x;
             double deltaY = w.y - y;
 
             double deltaH = Math.Sqrt(deltaX * deltaX + deltaY * deltaY);
 
-            distanceTillWaypoint = Math.Sqrt(deltaH);
+            distanceTillWaypoint = deltaH;
 
             double ratioX = deltaX / deltaH;
             double ratioY = deltaY / deltaH;
@@ -59,7 +69,7 @@ namespace City_Traffic_Simulation_Application
             return result; 
         }
 
-        public double[] Move(double x, double y, double ratioX, double ratioY)
+        public double[] Move(double x, double y, double ratioX, double ratioY) ///method that moves an entity after CalculateNewWaypoint
         {
             if (Speed <= maxSpeed)
             {
@@ -69,6 +79,17 @@ namespace City_Traffic_Simulation_Application
             {
                 Speed -= Decel * Clock.dt;
             }
+            /* . A
+             * |\
+             * | \  <-frameSpeedH
+             * |__\
+             * | x \ 
+             * |    \
+             * |     \  <-straight line through waypoint B
+             * |______\. B
+             *    x' 
+             *   x/framespeedH == x'/AB == ratioX -> similar triangles
+             */
             double frameSpeedH = Clock.dt * Speed; //Hypotenuse of similar triangle
             x += ratioX * frameSpeedH;
             y += ratioY * frameSpeedH;
@@ -83,7 +104,8 @@ namespace City_Traffic_Simulation_Application
 
         public void MoveRoad()
         {
-
+            //todo implement. Increases roadProgress according to road.maxspeed and road.lenght . 
+            //When over 100%, create an event where the entity is put on the right crossing.
         }
     }
 }
