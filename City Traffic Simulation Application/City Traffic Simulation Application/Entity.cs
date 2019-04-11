@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Drawing;
 
 namespace City_Traffic_Simulation_Application
 {
@@ -22,17 +23,24 @@ namespace City_Traffic_Simulation_Application
 
         private double distanceTillWaypoint;
 
+        double x;
+        double y;
+        double ratioX;
+        double ratioY;
 
         public Entity ()
         {
             lastEntityId++;
             this.id = lastEntityId;
         }
-        public Entity(Waypoint w)
+        public Entity(Waypoint w, double x, double y)
         {
             lastEntityId++;
             this.id = lastEntityId;
             this.nextWayPoint = w;
+            this.x = x;
+            this.y = y;
+            CalculateDirection(x, y, w);
         }
         public Entity(Road r)
         {
@@ -42,43 +50,15 @@ namespace City_Traffic_Simulation_Application
         }
 
 
-        public double[] Move()
+        public void Move()  //method for offscreen entities
         {
-
-            return;
-        }
-        public double[] CalculateNewWaypoint(double x, double y, Waypoint w) //method that 
-        {
-            if(w==null)
+            if (nextWayPoint == null)
             {
-                //todo make an event(?) to put the car on a road
-                //or, add a reference to a road object in the waypoint class and put the car on that road
+                return;  // do nothing if there is nowhere to go
             }
 
-            double deltaX = w.x - x;
-            double deltaY = w.y - y;
+            ChangeSpeed();
 
-            double deltaH = Math.Sqrt(deltaX * deltaX + deltaY * deltaY);
-
-            distanceTillWaypoint = deltaH;
-
-            double ratioX = deltaX / deltaH;
-            double ratioY = deltaY / deltaH;
-
-            double[] result = new double[2] {ratioX, ratioY };
-            return result; 
-        }
-
-        public double[] Move(double x, double y, double ratioX, double ratioY) ///method that moves an entity after CalculateNewWaypoint
-        {
-            if (Speed <= maxSpeed)
-            {
-                Speed += Accel * Clock.dt;
-            }
-            else if ( Speed - maxSpeed > Speed *0.1f )
-            {
-                Speed -= Decel * Clock.dt;
-            }
             /* . A
              * |\
              * | \  <-frameSpeedH
@@ -94,18 +74,64 @@ namespace City_Traffic_Simulation_Application
             x += ratioX * frameSpeedH;
             y += ratioY * frameSpeedH;
             distanceTillWaypoint -= frameSpeedH;
+
             if (distanceTillWaypoint <= 0)
             {
-                CalculateNewWaypoint(x, y, nextWayPoint.nextWaypoint);
+                CalculateDirection(x, y, nextWayPoint.nextWaypoint);
             }
-            double[] result = new double[2] { x, y };
-            return result;
+
+            return;
         }
 
+        public Point Move(Point p) //method for onscreen entities
+        {
+            Move();
+            p.X = Convert.ToInt32(x);
+            p.Y = Convert.ToInt32(y);
+            return p; //returns the updated Point value for the entity
+        }
+
+        private void CalculateDirection(double x, double y, Waypoint w) //method that 
+        {
+            if(w==null)
+            {
+                //todo make an event(?) to put the car on a road
+                //or, add a reference to a road object in the waypoint class and put the car on that road
+            }
+
+            double deltaX = w.x - x;
+            double deltaY = w.y - y;
+
+            double deltaH = Math.Sqrt(deltaX * deltaX + deltaY * deltaY);
+
+            distanceTillWaypoint = deltaH;
+
+            ratioX = deltaX / deltaH;
+            ratioY = deltaY / deltaH;
+
+            //double[] result = new double[2] {ratioX, ratioY };
+            //return result; 
+        }
+
+        
         public void MoveRoad()
         {
             //todo implement. Increases roadProgress according to road.maxspeed and road.lenght . 
-            //When over 100%, create an event where the entity is put on the right crossing.
+            //When over 100%, put a reference to the car in the Crossing object it enters, give it a location and route to follow
+            //remove reference to the car from the road
+
+        }
+
+        private void ChangeSpeed()
+        {
+            if (Speed <= maxSpeed)
+            {
+                Speed += Accel * Clock.dt;
+            }
+            else if (Speed - maxSpeed > Speed * 0.1f)
+            {
+                Speed -= Decel * Clock.dt;
+            }
         }
     }
 }

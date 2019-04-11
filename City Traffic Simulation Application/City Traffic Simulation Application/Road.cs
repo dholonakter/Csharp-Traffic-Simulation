@@ -6,16 +6,17 @@ using System.Threading.Tasks;
 
 namespace City_Traffic_Simulation_Application
 {
-   public class Road
+    public class Road
     {
         Crossing pointA;
         Crossing pointB;
+        Car[] cars;
 
-        public Crossing PointA  {
-            get { return pointA ; }
+        public Crossing PointA {
+            get { return pointA; }
             set
             {
-                if (value == pointB) { throw new Exception("Road endpoint is equal to starting point."); } 
+                if (value == pointB) { throw new Exception("Road endpoint is equal to starting point."); }
                 else { pointA = value; }
             }
         } //Connection 1 property
@@ -33,5 +34,13 @@ namespace City_Traffic_Simulation_Application
         public double length { get; set; }
         public double speedlimit { get; set; }
 
+
+        public void MoveCars()
+        {
+            foreach (Car c in cars)
+            {
+                c.MoveRoad();
+            }
+        }
     }
 }

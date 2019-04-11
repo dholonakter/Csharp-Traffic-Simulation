@@ -7,21 +7,25 @@ using System.Drawing;
 
 namespace City_Traffic_Simulation_Application
 {
-    class City
+    public class City
     {
         //a collection of crossings connected by roads
-
-        public Crossing[] allCrossings;
-        public Car[] allCars;
+        public string Cityname;
+        public Crossing[] allCrossings; //doesn't need direct access to cars, all cars are either on crossings or roads
         public Road[] allRoads;
 
 
         public Point[] Frame(Point[] p) //this function will update everything
         {
             //virtual positions of entities
-            foreach (Car car in allCars)
+            foreach (Crossing c in allCrossings)
             {
-                car.Move();
+                c.MoveCars();
+            }
+
+            foreach(Road r in allRoads)
+            {
+                r.MoveCars();
             }
             //virtual states of traffic lights
 
