@@ -21,6 +21,7 @@ namespace City_Traffic_Simulation_Application
         public Crossing()
         {
             crossingID = ++lastCrossing;
+            cars = new List<Car>();
         }
 
         public List<object> MoveCars()

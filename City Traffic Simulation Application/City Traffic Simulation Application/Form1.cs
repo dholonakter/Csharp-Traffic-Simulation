@@ -17,8 +17,9 @@ namespace City_Traffic_Simulation_Application
         List<PictureBox> Boxes;
         public Form1()
         {
-
+            TestPointsCar();
             InitializeComponent();
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -47,10 +48,10 @@ namespace City_Traffic_Simulation_Application
         {
             
             List<object> carData = city.Frame(1); //puts out a list of points for how to move picture boxes
-            
+            /*
             foreach(PictureBox i in Boxes)
             {
-                // change the location of the boxes
+                // change the location of the boxes       // code is supposed to run for all pictureboxes
                 Point x = i.Location;
                 
                 foreach (object o in carData)
@@ -64,8 +65,16 @@ namespace City_Traffic_Simulation_Application
                 }
                 //x.Offset(1, 0); todo consider whether to use offset instead?
             }
+            */
+            foreach (object o in carData) //temporary testing code for a single picturebox
+            {
+                int[] array = (int[])o;
 
-            
+                
+                    pictureBox1.Location = new Point(array[0], array[1]);
+                
+            }
+
         }
 
         private void button2_Click(object sender, EventArgs e)

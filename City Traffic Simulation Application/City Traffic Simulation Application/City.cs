@@ -14,7 +14,11 @@ namespace City_Traffic_Simulation_Application
         public List<Crossing> allCrossings; //doesn't need direct access to cars, all cars are either on crossings or roads
         public List<Road> allRoads;
 
-        
+        public City()
+        {
+            allCrossings = new List<Crossing>();
+            allRoads = new List<Road>();
+        }
 
         public List<object> Frame(int crossingId) //this function will update everything
         {

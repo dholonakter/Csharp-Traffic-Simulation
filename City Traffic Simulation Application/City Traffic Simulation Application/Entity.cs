@@ -30,8 +30,7 @@ namespace City_Traffic_Simulation_Application
 
         public Entity ()
         {
-            lastEntityId++;
-            this.id = lastEntityId;
+            this.id = ++lastEntityId;
         }
         public Entity(Waypoint w, double x, double y)
         {
