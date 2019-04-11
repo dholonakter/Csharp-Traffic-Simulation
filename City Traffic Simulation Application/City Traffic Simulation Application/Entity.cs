@@ -50,11 +50,13 @@ namespace City_Traffic_Simulation_Application
         }
 
 
-        public void Move()  //method for offscreen entities
+
+
+        public int[] Move() //method for onscreen entities
         {
             if (nextWayPoint == null)
             {
-                return;  // do nothing if there is nowhere to go
+                return new int[3] { (int)x, (int)y, id };  // do nothing if there is nowhere to go
             }
 
             ChangeSpeed();
@@ -80,15 +82,11 @@ namespace City_Traffic_Simulation_Application
                 CalculateDirection(x, y, nextWayPoint.nextWaypoint);
             }
 
-            return;
-        }
 
-        public Point Move(Point p) //method for onscreen entities
-        {
-            Move();
-            p.X = Convert.ToInt32(x);
-            p.Y = Convert.ToInt32(y);
-            return p; //returns the updated Point value for the entity
+            int xRound = Convert.ToInt32(x);
+            int yRound = Convert.ToInt32(y);
+            int[] result = new int[3]{xRound, yRound, id};
+            return result ; //returns the updated Point value for the entity
         }
 
         private void CalculateDirection(double x, double y, Waypoint w) //method that 

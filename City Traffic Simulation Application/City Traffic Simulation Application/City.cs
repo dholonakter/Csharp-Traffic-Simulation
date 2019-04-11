@@ -11,26 +11,32 @@ namespace City_Traffic_Simulation_Application
     {
         //a collection of crossings connected by roads
         public string Cityname;
-        public Crossing[] allCrossings; //doesn't need direct access to cars, all cars are either on crossings or roads
-        public Road[] allRoads;
+        public List<Crossing> allCrossings; //doesn't need direct access to cars, all cars are either on crossings or roads
+        public List<Road> allRoads;
 
+        
 
-        public Point[] Frame(Point[] p) //this function will update everything
+        public List<object> Frame(int crossingId) //this function will update everything
         {
+            List<object> currentCrossingFrame = new List<object>();
             //virtual positions of entities
             foreach (Crossing c in allCrossings)
             {
-                c.MoveCars();
+                List<object> res =  c.MoveCars();
+                if (c.crossingID == crossingId)
+                {
+                    currentCrossingFrame = res;
+                }
             }
 
             foreach(Road r in allRoads)
             {
                 r.MoveCars();
             }
-            //virtual states of traffic lights
+            //virtual states of traffic lights todo
 
             // 
-            return p;
+            return currentCrossingFrame;
         }
     }
 }

@@ -14,7 +14,7 @@ namespace City_Traffic_Simulation_Application
     {
         Clock clock = new Clock();
         City city = new City();
-        PictureBox[] Boxes;
+        List<PictureBox> Boxes;
         public Form1()
         {
 
@@ -35,18 +35,34 @@ namespace City_Traffic_Simulation_Application
             N.nextWaypoint = W;
 
 
+            Crossing crossing = new Crossing();
+            crossing.crossingID = 1;
+            Car car = new Car();
+            crossing.cars.Add(car);
+            city.allCrossings.Add(crossing);
+
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            city.Frame(); //puts out a list of points for how to move picture boxes
+            
+            List<object> carData = city.Frame(1); //puts out a list of points for how to move picture boxes
             
             foreach(PictureBox i in Boxes)
             {
                 // change the location of the boxes
                 Point x = i.Location;
-                x.Offset(1, 0);
-                i.Location = x;
+                
+                foreach (object o in carData)
+                {
+                    int[] array = (int[])o;
+                    
+                    if ("Car"+array[2].ToString()  == i.Name)
+                    {
+                        i.Location = new Point(array[0], array[1]);
+                    }
+                }
+                //x.Offset(1, 0); todo consider whether to use offset instead?
             }
 
             
