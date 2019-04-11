@@ -9,9 +9,10 @@ namespace City_Traffic_Simulation_Application
    public class Car : Entity
     {
         //will be inheriting from Entity
-        public Car() : base()
+        public Car(Waypoint w, double x, double y) : base(w, x, y)
         {
-
+            this.maxSpeed = 20;
+            this.Speed = 0.1;
         }
     }
 }

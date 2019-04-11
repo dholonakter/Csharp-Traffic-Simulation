@@ -38,7 +38,7 @@ namespace City_Traffic_Simulation_Application
 
             Crossing crossing = new Crossing();
             crossing.crossingID = 1;
-            Car car = new Car();
+            Car car = new Car(N, 100, 100);
             crossing.cars.Add(car);
             city.allCrossings.Add(crossing);
 
