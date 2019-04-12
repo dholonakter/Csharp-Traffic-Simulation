@@ -45,6 +45,22 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
+            this.ovalShape1 = new Microsoft.VisualBasic.PowerPacks.OvalShape();
+            this.ovalShape2 = new Microsoft.VisualBasic.PowerPacks.OvalShape();
+            this.ovalShape3 = new Microsoft.VisualBasic.PowerPacks.OvalShape();
+            this.ovalShape4 = new Microsoft.VisualBasic.PowerPacks.OvalShape();
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.timer3 = new System.Windows.Forms.Timer(this.components);
+            this.timer4 = new System.Windows.Forms.Timer(this.components);
+            this.timer5 = new System.Windows.Forms.Timer(this.components);
+            this.timer6 = new System.Windows.Forms.Timer(this.components);
+            this.timer7 = new System.Windows.Forms.Timer(this.components);
+            this.timer8 = new System.Windows.Forms.Timer(this.components);
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.comboBox4 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -210,6 +226,108 @@
             this.label4.TabIndex = 14;
             this.label4.Text = "0";
             // 
+            // shapeContainer1
+            // 
+            this.shapeContainer1.Location = new System.Drawing.Point(0, 0);
+            this.shapeContainer1.Margin = new System.Windows.Forms.Padding(0);
+            this.shapeContainer1.Name = "shapeContainer1";
+            this.shapeContainer1.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
+            this.ovalShape4,
+            this.ovalShape3,
+            this.ovalShape2,
+            this.ovalShape1});
+            this.shapeContainer1.Size = new System.Drawing.Size(1080, 539);
+            this.shapeContainer1.TabIndex = 15;
+            this.shapeContainer1.TabStop = false;
+            // 
+            // ovalShape1
+            // 
+            this.ovalShape1.BackColor = System.Drawing.Color.Red;
+            this.ovalShape1.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
+            this.ovalShape1.BorderColor = System.Drawing.Color.Red;
+            this.ovalShape1.Location = new System.Drawing.Point(412, 220);
+            this.ovalShape1.Name = "ovalShape1";
+            this.ovalShape1.Size = new System.Drawing.Size(29, 29);
+            // 
+            // ovalShape2
+            // 
+            this.ovalShape2.BackColor = System.Drawing.Color.Red;
+            this.ovalShape2.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
+            this.ovalShape2.BorderColor = System.Drawing.Color.Red;
+            this.ovalShape2.Location = new System.Drawing.Point(452, 313);
+            this.ovalShape2.Name = "ovalShape2";
+            this.ovalShape2.Size = new System.Drawing.Size(29, 29);
+            // 
+            // ovalShape3
+            // 
+            this.ovalShape3.BackColor = System.Drawing.Color.Red;
+            this.ovalShape3.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
+            this.ovalShape3.BorderColor = System.Drawing.Color.Red;
+            this.ovalShape3.Location = new System.Drawing.Point(601, 282);
+            this.ovalShape3.Name = "ovalShape3";
+            this.ovalShape3.Size = new System.Drawing.Size(29, 29);
+            // 
+            // ovalShape4
+            // 
+            this.ovalShape4.BackColor = System.Drawing.Color.Red;
+            this.ovalShape4.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
+            this.ovalShape4.BorderColor = System.Drawing.Color.Red;
+            this.ovalShape4.Location = new System.Drawing.Point(575, 206);
+            this.ovalShape4.Name = "ovalShape4";
+            this.ovalShape4.Size = new System.Drawing.Size(29, 29);
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.AllowDrop = true;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3"});
+            this.comboBox1.Location = new System.Drawing.Point(306, 160);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(83, 24);
+            this.comboBox1.TabIndex = 16;
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.AllowDrop = true;
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3"});
+            this.comboBox2.Location = new System.Drawing.Point(306, 349);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(83, 24);
+            this.comboBox2.TabIndex = 17;
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.AllowDrop = true;
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3"});
+            this.comboBox3.Location = new System.Drawing.Point(677, 160);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(83, 24);
+            this.comboBox3.TabIndex = 18;
+            // 
+            // comboBox4
+            // 
+            this.comboBox4.AllowDrop = true;
+            this.comboBox4.FormattingEnabled = true;
+            this.comboBox4.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3"});
+            this.comboBox4.Location = new System.Drawing.Point(677, 349);
+            this.comboBox4.Name = "comboBox4";
+            this.comboBox4.Size = new System.Drawing.Size(83, 24);
+            this.comboBox4.TabIndex = 19;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -217,6 +335,10 @@
             this.BackgroundImage = global::City_Traffic_Simulation_Application.Properties.Resources.Map;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1080, 539);
+            this.Controls.Add(this.comboBox4);
+            this.Controls.Add(this.comboBox3);
+            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -232,7 +354,10 @@
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.shapeContainer1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Form1";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -267,6 +392,22 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+        private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer1;
+        private Microsoft.VisualBasic.PowerPacks.OvalShape ovalShape4;
+        private Microsoft.VisualBasic.PowerPacks.OvalShape ovalShape3;
+        private Microsoft.VisualBasic.PowerPacks.OvalShape ovalShape2;
+        private Microsoft.VisualBasic.PowerPacks.OvalShape ovalShape1;
+        private System.Windows.Forms.Timer timer2;
+        private System.Windows.Forms.Timer timer3;
+        private System.Windows.Forms.Timer timer4;
+        private System.Windows.Forms.Timer timer5;
+        private System.Windows.Forms.Timer timer6;
+        private System.Windows.Forms.Timer timer7;
+        private System.Windows.Forms.Timer timer8;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox comboBox4;
     }
 }
 
