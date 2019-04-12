@@ -33,6 +33,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.VisualBasic.PowerPacks, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -92,6 +94,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\alienguy.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Map.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GreenCarRight.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GreenCarUp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GreenCarLeft.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GreenCarDown.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

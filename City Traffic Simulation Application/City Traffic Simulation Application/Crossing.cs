@@ -29,10 +29,8 @@ namespace City_Traffic_Simulation_Application
             List<object> carCoordinates= new List<object> { };
             foreach (Car c in cars)
             {
-                
-                carCoordinates.Add(c.Move());
-                
-                
+              carCoordinates.Add(c.Move());
+
             }
             return carCoordinates;
         }
