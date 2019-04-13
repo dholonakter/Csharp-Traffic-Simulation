@@ -46,10 +46,10 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
-            this.ovalShape1 = new Microsoft.VisualBasic.PowerPacks.OvalShape();
-            this.ovalShape2 = new Microsoft.VisualBasic.PowerPacks.OvalShape();
-            this.ovalShape3 = new Microsoft.VisualBasic.PowerPacks.OvalShape();
             this.ovalShape4 = new Microsoft.VisualBasic.PowerPacks.OvalShape();
+            this.ovalShape3 = new Microsoft.VisualBasic.PowerPacks.OvalShape();
+            this.ovalShape2 = new Microsoft.VisualBasic.PowerPacks.OvalShape();
+            this.ovalShape1 = new Microsoft.VisualBasic.PowerPacks.OvalShape();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.timer3 = new System.Windows.Forms.Timer(this.components);
             this.timer4 = new System.Windows.Forms.Timer(this.components);
@@ -236,27 +236,18 @@
             this.ovalShape3,
             this.ovalShape2,
             this.ovalShape1});
-            this.shapeContainer1.Size = new System.Drawing.Size(1080, 539);
+            this.shapeContainer1.Size = new System.Drawing.Size(1314, 670);
             this.shapeContainer1.TabIndex = 15;
             this.shapeContainer1.TabStop = false;
             // 
-            // ovalShape1
+            // ovalShape4
             // 
-            this.ovalShape1.BackColor = System.Drawing.Color.Red;
-            this.ovalShape1.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
-            this.ovalShape1.BorderColor = System.Drawing.Color.Red;
-            this.ovalShape1.Location = new System.Drawing.Point(412, 220);
-            this.ovalShape1.Name = "ovalShape1";
-            this.ovalShape1.Size = new System.Drawing.Size(29, 29);
-            // 
-            // ovalShape2
-            // 
-            this.ovalShape2.BackColor = System.Drawing.Color.Red;
-            this.ovalShape2.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
-            this.ovalShape2.BorderColor = System.Drawing.Color.Red;
-            this.ovalShape2.Location = new System.Drawing.Point(452, 313);
-            this.ovalShape2.Name = "ovalShape2";
-            this.ovalShape2.Size = new System.Drawing.Size(29, 29);
+            this.ovalShape4.BackColor = System.Drawing.Color.Red;
+            this.ovalShape4.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
+            this.ovalShape4.BorderColor = System.Drawing.Color.Red;
+            this.ovalShape4.Location = new System.Drawing.Point(575, 206);
+            this.ovalShape4.Name = "ovalShape4";
+            this.ovalShape4.Size = new System.Drawing.Size(29, 29);
             // 
             // ovalShape3
             // 
@@ -267,14 +258,23 @@
             this.ovalShape3.Name = "ovalShape3";
             this.ovalShape3.Size = new System.Drawing.Size(29, 29);
             // 
-            // ovalShape4
+            // ovalShape2
             // 
-            this.ovalShape4.BackColor = System.Drawing.Color.Red;
-            this.ovalShape4.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
-            this.ovalShape4.BorderColor = System.Drawing.Color.Red;
-            this.ovalShape4.Location = new System.Drawing.Point(575, 206);
-            this.ovalShape4.Name = "ovalShape4";
-            this.ovalShape4.Size = new System.Drawing.Size(29, 29);
+            this.ovalShape2.BackColor = System.Drawing.Color.Red;
+            this.ovalShape2.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
+            this.ovalShape2.BorderColor = System.Drawing.Color.Red;
+            this.ovalShape2.Location = new System.Drawing.Point(452, 313);
+            this.ovalShape2.Name = "ovalShape2";
+            this.ovalShape2.Size = new System.Drawing.Size(29, 29);
+            // 
+            // ovalShape1
+            // 
+            this.ovalShape1.BackColor = System.Drawing.Color.Red;
+            this.ovalShape1.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
+            this.ovalShape1.BorderColor = System.Drawing.Color.Red;
+            this.ovalShape1.Location = new System.Drawing.Point(412, 220);
+            this.ovalShape1.Name = "ovalShape1";
+            this.ovalShape1.Size = new System.Drawing.Size(29, 29);
             // 
             // comboBox1
             // 
@@ -334,7 +334,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::City_Traffic_Simulation_Application.Properties.Resources.Map;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1080, 539);
+            this.ClientSize = new System.Drawing.Size(1314, 670);
             this.Controls.Add(this.comboBox4);
             this.Controls.Add(this.comboBox3);
             this.Controls.Add(this.comboBox2);
