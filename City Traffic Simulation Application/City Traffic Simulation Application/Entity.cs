@@ -88,8 +88,17 @@ namespace City_Traffic_Simulation_Application
 
             if (distanceTillWaypoint <= 0)
             {
-                CalculateDirection(x, y, nextWayPoint.nextWaypoint);
-                this.nextWayPoint=nextWayPoint.nextWaypoint;
+                Waypoint w = this.nextWayPoint.nextWaypoint;
+                if (path == (int)TrafficLight.Directions.L)
+                {
+                    w = nextWayPoint.waypointLeft;
+                }
+                else if (path == (int)TrafficLight.Directions.R)
+                {
+                    w = nextWayPoint.waypointRight;
+                }
+                CalculateDirection(x, y, w);
+                this.nextWayPoint=w;
             }
 
 

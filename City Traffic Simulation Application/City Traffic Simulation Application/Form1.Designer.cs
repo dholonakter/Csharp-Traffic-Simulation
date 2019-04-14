@@ -39,10 +39,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
+            this.waypoint3 = new Microsoft.VisualBasic.PowerPacks.OvalShape();
             this.waypoint1 = new Microsoft.VisualBasic.PowerPacks.OvalShape();
             this.waypoint2 = new Microsoft.VisualBasic.PowerPacks.OvalShape();
             this.buttonStop = new System.Windows.Forms.Button();
-            this.waypoint3 = new Microsoft.VisualBasic.PowerPacks.OvalShape();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -59,7 +60,7 @@
             // 
             this.pictureBox1.Image = global::City_Traffic_Simulation_Application.Properties.Resources.GreenCarRight;
             this.pictureBox1.Location = new System.Drawing.Point(283, 232);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(75, 28);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -70,7 +71,7 @@
             // 
             this.pictureBox2.Image = global::City_Traffic_Simulation_Application.Properties.Resources.GreenCarRight;
             this.pictureBox2.Location = new System.Drawing.Point(181, 232);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(75, 28);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -81,7 +82,7 @@
             // 
             this.pictureBox3.Image = global::City_Traffic_Simulation_Application.Properties.Resources.GreenCarRight;
             this.pictureBox3.Location = new System.Drawing.Point(73, 232);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(75, 28);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -92,7 +93,7 @@
             // 
             this.pictureBox9.Image = global::City_Traffic_Simulation_Application.Properties.Resources.GreenCarDown;
             this.pictureBox9.Location = new System.Drawing.Point(501, 117);
-            this.pictureBox9.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox9.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox9.Name = "pictureBox9";
             this.pictureBox9.Size = new System.Drawing.Size(31, 74);
             this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -103,7 +104,7 @@
             // 
             this.pictureBox10.Image = global::City_Traffic_Simulation_Application.Properties.Resources.GreenCarDown;
             this.pictureBox10.Location = new System.Drawing.Point(501, 39);
-            this.pictureBox10.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox10.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox10.Name = "pictureBox10";
             this.pictureBox10.Size = new System.Drawing.Size(31, 74);
             this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -113,7 +114,7 @@
             // buttonStart
             // 
             this.buttonStart.Location = new System.Drawing.Point(73, 64);
-            this.buttonStart.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonStart.Margin = new System.Windows.Forms.Padding(2);
             this.buttonStart.Name = "buttonStart";
             this.buttonStart.Size = new System.Drawing.Size(56, 19);
             this.buttonStart.TabIndex = 10;
@@ -159,6 +160,15 @@
             this.shapeContainer1.TabIndex = 15;
             this.shapeContainer1.TabStop = false;
             // 
+            // waypoint3
+            // 
+            this.waypoint3.BackColor = System.Drawing.Color.Red;
+            this.waypoint3.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
+            this.waypoint3.BorderColor = System.Drawing.Color.Red;
+            this.waypoint3.Location = new System.Drawing.Point(778, 236);
+            this.waypoint3.Name = "waypoint3";
+            this.waypoint3.Size = new System.Drawing.Size(29, 29);
+            // 
             // waypoint1
             // 
             this.waypoint1.BackColor = System.Drawing.Color.Red;
@@ -188,14 +198,16 @@
             this.buttonStop.UseVisualStyleBackColor = true;
             this.buttonStop.Click += new System.EventHandler(this.buttonStop_Click);
             // 
-            // waypoint3
+            // button1
             // 
-            this.waypoint3.BackColor = System.Drawing.Color.Red;
-            this.waypoint3.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
-            this.waypoint3.BorderColor = System.Drawing.Color.Red;
-            this.waypoint3.Location = new System.Drawing.Point(778, 236);
-            this.waypoint3.Name = "waypoint3";
-            this.waypoint3.Size = new System.Drawing.Size(29, 29);
+            this.button1.Location = new System.Drawing.Point(193, 64);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(56, 19);
+            this.button1.TabIndex = 21;
+            this.button1.Text = "Reset";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Form1
             // 
@@ -204,6 +216,7 @@
             this.BackgroundImage = global::City_Traffic_Simulation_Application.Properties.Resources.Map;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(986, 544);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.buttonStop);
             this.Controls.Add(this.comboBox4);
             this.Controls.Add(this.label1);
@@ -214,7 +227,7 @@
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.shapeContainer1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Form1";
@@ -244,6 +257,7 @@
         private Microsoft.VisualBasic.PowerPacks.OvalShape waypoint1;
         private Microsoft.VisualBasic.PowerPacks.OvalShape waypoint2;
         private System.Windows.Forms.Button buttonStop;
+        private System.Windows.Forms.Button button1;
     }
 }
 

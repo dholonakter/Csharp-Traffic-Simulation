@@ -29,12 +29,18 @@ namespace City_Traffic_Simulation_Application
             this.x = x;
             this.y = y;
             this.nextWaypoint = w;
+            waypointStraight = w;
+            waypointLeft = w;
+            waypointRight = w;
         }
         public Waypoint (Point p, Waypoint w)
         {
             this.x = p.X;
             this.y = p.Y;
             this.nextWaypoint = w;
+            waypointStraight = w;
+            waypointLeft = w;
+            waypointRight = w;
         }
         public Waypoint(Point p)
         {

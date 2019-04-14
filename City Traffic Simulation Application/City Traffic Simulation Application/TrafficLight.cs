@@ -14,8 +14,8 @@ namespace City_Traffic_Simulation_Application
         public enum Directions
         {
             X = -1,
-            R = 0,
-            S = 1,
+            S = 0,
+            R = 1,
             L = 2
         }
 
