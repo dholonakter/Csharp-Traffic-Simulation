@@ -7,9 +7,9 @@ using System.Drawing;
 
 namespace City_Traffic_Simulation_Application
 {
-  public  class Entity
+    public class Entity
     {
-        private Waypoint nextWayPoint { get; set; }
+        public Waypoint nextWayPoint { get; set; }
 
         public static int lastEntityId { get; set; } = 0;
 
@@ -20,22 +20,25 @@ namespace City_Traffic_Simulation_Application
         public double Decel { get; set; }
         public Road road { get; set; } //Road object the car is on. these may be moved to the car specific class if we don't let pedestrians have roads
         public double roadProgress { get; set; } //determines how far a car is along a road
+        public int path { get; set; }
+
+        public int xoffset { get; set; }
+        public int yoffset { get; set; }
 
         private double distanceTillWaypoint;
 
-        double x;
-        double y;
+        public double x;
+        public double y;
         double ratioX;
         double ratioY;
 
-        public Entity ()
+        public Entity()
         {
             this.id = ++lastEntityId;
         }
-        public Entity(Waypoint w, double x, double y)
+        public Entity( double x, double y, Waypoint w)
         {
-            lastEntityId++;
-            this.id = lastEntityId;
+            this.id = ++lastEntityId;
             this.nextWayPoint = w;
             this.x = x;
             this.y = y;
@@ -43,12 +46,19 @@ namespace City_Traffic_Simulation_Application
         }
         public Entity(Road r)
         {
-            lastEntityId++;
-            this.id = lastEntityId;
+            this.id = ++lastEntityId;
             this.road = r;
         }
 
 
+        public Entity (Point p, Waypoint w)
+        {
+            this.id = ++lastEntityId;
+            this.nextWayPoint = w;
+            this.x = p.X;
+            this.y = p.Y;
+            CalculateDirection(x, y, w);
+        }
 
 
         public int[] Move() //method for onscreen entities
@@ -79,6 +89,7 @@ namespace City_Traffic_Simulation_Application
             if (distanceTillWaypoint <= 0)
             {
                 CalculateDirection(x, y, nextWayPoint.nextWaypoint);
+                this.nextWayPoint=nextWayPoint.nextWaypoint;
             }
 
 
@@ -88,16 +99,17 @@ namespace City_Traffic_Simulation_Application
             return result ; //returns the updated Point value for the entity
         }
 
-        private void CalculateDirection(double x, double y, Waypoint w) //method that 
+        public virtual void CalculateDirection(double x, double y, Waypoint w) //method that 
         {
             if(w==null)
             {
-                //todo make an event(?) to put the car on a road
+                return;
+                //todo make an event(?) to put the car on a road and delete the old picturebox
                 //or, add a reference to a road object in the waypoint class and put the car on that road
             }
 
-            double deltaX = w.x - x;
-            double deltaY = w.y - y;
+            double deltaX = w.x - x -xoffset;
+            double deltaY = w.y - y -yoffset;
 
             double deltaH = Math.Sqrt(deltaX * deltaX + deltaY * deltaY);
 

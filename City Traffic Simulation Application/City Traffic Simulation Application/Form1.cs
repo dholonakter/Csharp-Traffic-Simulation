@@ -17,28 +17,23 @@ namespace City_Traffic_Simulation_Application
         List<PictureBox> Boxes;
         public Form1()
         {
-            TestPointsCar();
-            InitializeComponent();
             
+            InitializeComponent();
+            TestPointsCar();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            timer1.Start(); 
-        }
+
 
         private void TestPointsCar()
         {
-            Waypoint N = new Waypoint(200, 100); // this makes some test waypoints
-            Waypoint E = new Waypoint(300, 200, N);
-            Waypoint S = new Waypoint(200, 300, E);
-            Waypoint W = new Waypoint(100, 200, S);
-            N.nextWaypoint = W;
+            Waypoint w2 = new Waypoint(waypoint2.Location,new Waypoint((double)this.Width/2, (double)this.Height) );
+            Waypoint w1 = new Waypoint(waypoint1.Location, w2); // this makes some test waypoints
+            
 
 
             Crossing crossing = new Crossing();
             crossing.crossingID = 1;
-            Car car = new Car(N, 100, 100);
+            Car car = new Car(pictureBox1.Location, w1, pictureBox1.Width, pictureBox1.Height);
             crossing.cars.Add(car);
             city.allCrossings.Add(crossing);
 
@@ -77,7 +72,12 @@ namespace City_Traffic_Simulation_Application
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void buttonStart_Click(object sender, EventArgs e)
+        {
+            timer1.Start();
+        }
+
+        private void buttonStop_Click(object sender, EventArgs e)
         {
             timer1.Stop();
         }
