@@ -23,14 +23,17 @@ namespace City_Traffic_Simulation_Application
         #region Constructor
         public Form1()
         {
+            InitializeComponent();
 
             clock = new Clock();
             this.Text = "Eindhoven";
             city = new City(Text);
             Boxes = new List<PictureBox>();
+
             initialpoint = pictureBox1.Location;
             initialpoint2 = pictureBox2.Location;
             TestPointsCar();
+
         }
 
         #endregion
@@ -42,8 +45,9 @@ namespace City_Traffic_Simulation_Application
         private void TestPointsCar()
         {
 
-            Waypoint w2 = new Waypoint(waypoint2.Location,new Waypoint((double)this.Width/2, (double)this.Height) );
+            Waypoint w2 = new Waypoint(waypoint2.Location, new Waypoint((double)this.Width / 2, (double)this.Height));
             Waypoint w1 = new Waypoint(waypoint1.Location, w2); // this makes some test waypoints
+
             Waypoint w3 = new Waypoint(waypoint3.Location, new Waypoint((double)this.Width+100, (double)this.Height/2));
             w1.waypointLeft = w3;
 
@@ -128,6 +132,11 @@ namespace City_Traffic_Simulation_Application
             TestPointsCar();
             timer1.Stop();
             
+        }
+
+        private void waypoint1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
