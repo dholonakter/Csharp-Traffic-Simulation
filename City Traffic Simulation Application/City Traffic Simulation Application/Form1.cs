@@ -10,25 +10,35 @@ using System.Windows.Forms;
 
 namespace City_Traffic_Simulation_Application
 {
+    #region private fields
     public partial class Form1 : Form
     {
-        Clock clock = new Clock();
-        City city = new City();
-        List<PictureBox> Boxes= new List<PictureBox>();
-        int i =0;
-        Point initialpoint;
-        Point initialpoint2;
+        private int i = 0;
+        private Point initialpoint;
+        private Point initialpoint2;
+        private Clock clock;
+        private City city;
+        private List<PictureBox> Boxes;
+        #endregion
+        #region Constructor
         public Form1()
         {
-            
-            InitializeComponent();
+
+            clock = new Clock();
+            this.Text = "Eindhoven";
+            city = new City(Text);
+            Boxes = new List<PictureBox>();
             initialpoint = pictureBox1.Location;
             initialpoint2 = pictureBox2.Location;
             TestPointsCar();
         }
 
+        #endregion
 
-
+        /// <summary>
+        /// 
+        /// </summary>
+        #region private fields
         private void TestPointsCar()
         {
 
@@ -61,7 +71,7 @@ namespace City_Traffic_Simulation_Application
             city.allCrossings.Add(crossing);
 
         }
-
+        #endregion
         private void timer1_Tick(object sender, EventArgs e)
         {
             
@@ -114,7 +124,7 @@ namespace City_Traffic_Simulation_Application
                 i = 2;
             else
                 i = 0;
-            city = new City();
+            city = new City(Text);
             TestPointsCar();
             timer1.Stop();
             

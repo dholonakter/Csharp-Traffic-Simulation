@@ -10,14 +10,17 @@ namespace City_Traffic_Simulation_Application
     public class City
     {
         //a collection of crossings connected by roads
-        public string Cityname;
         public List<Crossing> allCrossings; //doesn't need direct access to cars, all cars are either on crossings or roads
         public List<Road> allRoads;
+        public string CityName { get; set; }
 
-        public City()
+
+        public City(string cityname)
         {
             allCrossings = new List<Crossing>();
             allRoads = new List<Road>();
+            this.CityName = cityname;
+
         }
 
         public List<object> Frame(int crossingId) //this function will update everything
