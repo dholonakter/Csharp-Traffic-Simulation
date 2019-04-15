@@ -37,7 +37,6 @@
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
             this.buttonStart = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.waypoint3 = new Microsoft.VisualBasic.PowerPacks.OvalShape();
             this.waypoint1 = new Microsoft.VisualBasic.PowerPacks.OvalShape();
@@ -133,20 +132,6 @@
             this.label1.TabIndex = 11;
             this.label1.Text = "0";
             // 
-            // comboBox4
-            // 
-            this.comboBox4.AllowDrop = true;
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3"});
-            this.comboBox4.Location = new System.Drawing.Point(765, 380);
-            this.comboBox4.Margin = new System.Windows.Forms.Padding(2);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(63, 21);
-            this.comboBox4.TabIndex = 19;
-            // 
             // shapeContainer1
             // 
             this.shapeContainer1.Location = new System.Drawing.Point(0, 0);
@@ -218,7 +203,6 @@
             this.ClientSize = new System.Drawing.Size(986, 544);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.buttonStop);
-            this.Controls.Add(this.comboBox4);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonStart);
             this.Controls.Add(this.pictureBox10);
@@ -251,7 +235,6 @@
         private System.Windows.Forms.PictureBox pictureBox10;
         private System.Windows.Forms.Button buttonStart;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox4;
         private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer1;
         private Microsoft.VisualBasic.PowerPacks.OvalShape waypoint3;
         private Microsoft.VisualBasic.PowerPacks.OvalShape waypoint1;

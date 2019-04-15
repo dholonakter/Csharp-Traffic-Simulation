@@ -14,14 +14,16 @@ namespace City_Traffic_Simulation_Application
     {
         Clock clock = new Clock();
         City city = new City();
-        List<PictureBox> Boxes;
+        List<PictureBox> Boxes= new List<PictureBox>();
         int i =0;
         Point initialpoint;
+        Point initialpoint2;
         public Form1()
         {
             
             InitializeComponent();
             initialpoint = pictureBox1.Location;
+            initialpoint2 = pictureBox2.Location;
             TestPointsCar();
         }
 
@@ -38,11 +40,24 @@ namespace City_Traffic_Simulation_Application
 
             Crossing crossing = new Crossing();
             crossing.crossingID = 1;
+
+            Boxes.Add(pictureBox1);
+            Boxes.Add(pictureBox2);
             
+            foreach (PictureBox b in Boxes)
+            {
+                Car car = new Car(b.Location, w1, b.Width, b.Height, i);
+
+                if (i == 0)
+                    i = 2;
+                else
+                    i = 0;
+
+                crossing.cars.Add(car);
+            }
             
-            Car car = new Car(pictureBox1.Location, w1, pictureBox1.Width, pictureBox1.Height, i);
-            
-            crossing.cars.Add(car);
+
+
             city.allCrossings.Add(crossing);
 
         }
@@ -69,13 +84,14 @@ namespace City_Traffic_Simulation_Application
                 //x.Offset(1, 0); todo consider whether to use offset instead?
             }
             */
+            int boxnumber = 0;
             foreach (object o in carData) //temporary testing code for a single picturebox
             {
                 int[] array = (int[])o;
 
                 
-                    pictureBox1.Location = new Point(array[0], array[1]);
-                
+                    Boxes[boxnumber].Location = new Point(array[0], array[1]);
+                boxnumber++;
             }
 
         }
@@ -93,6 +109,7 @@ namespace City_Traffic_Simulation_Application
         private void button1_Click(object sender, EventArgs e)
         {
             pictureBox1.Location = initialpoint;
+            pictureBox2.Location = initialpoint2;
             if (i == 0)
                 i = 2;
             else
