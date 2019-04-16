@@ -69,3 +69,15 @@ E:\CurrentProcpWorkGit\procp-8\procp\City Traffic Simulation Application\City Tr
 E:\CurrentProcpWorkGit\procp-8\procp\City Traffic Simulation Application\City Traffic Simulation Application\obj\Debug\City Traffic Simulation Application.csproj.CopyComplete
 E:\CurrentProcpWorkGit\procp-8\procp\City Traffic Simulation Application\City Traffic Simulation Application\obj\Debug\City Traffic Simulation Application.exe
 E:\CurrentProcpWorkGit\procp-8\procp\City Traffic Simulation Application\City Traffic Simulation Application\obj\Debug\City Traffic Simulation Application.pdb
+E:\CurrentProcpWorkGit\prop-9\procp\City Traffic Simulation Application\City Traffic Simulation Application\bin\Debug\City Traffic Simulation Application.exe.config
+E:\CurrentProcpWorkGit\prop-9\procp\City Traffic Simulation Application\City Traffic Simulation Application\bin\Debug\City Traffic Simulation Application.exe
+E:\CurrentProcpWorkGit\prop-9\procp\City Traffic Simulation Application\City Traffic Simulation Application\bin\Debug\City Traffic Simulation Application.pdb
+E:\CurrentProcpWorkGit\prop-9\procp\City Traffic Simulation Application\City Traffic Simulation Application\bin\Debug\Microsoft.VisualBasic.PowerPacks.xml
+E:\CurrentProcpWorkGit\prop-9\procp\City Traffic Simulation Application\City Traffic Simulation Application\obj\Debug\City Traffic Simulation Application.csprojAssemblyReference.cache
+E:\CurrentProcpWorkGit\prop-9\procp\City Traffic Simulation Application\City Traffic Simulation Application\obj\Debug\City_Traffic_Simulation_Application.Form1.resources
+E:\CurrentProcpWorkGit\prop-9\procp\City Traffic Simulation Application\City Traffic Simulation Application\obj\Debug\City_Traffic_Simulation_Application.Properties.Resources.resources
+E:\CurrentProcpWorkGit\prop-9\procp\City Traffic Simulation Application\City Traffic Simulation Application\obj\Debug\City Traffic Simulation Application.csproj.GenerateResource.cache
+E:\CurrentProcpWorkGit\prop-9\procp\City Traffic Simulation Application\City Traffic Simulation Application\obj\Debug\City Traffic Simulation Application.csproj.CoreCompileInputs.cache
+E:\CurrentProcpWorkGit\prop-9\procp\City Traffic Simulation Application\City Traffic Simulation Application\obj\Debug\City Traffic Simulation Application.csproj.CopyComplete
+E:\CurrentProcpWorkGit\prop-9\procp\City Traffic Simulation Application\City Traffic Simulation Application\obj\Debug\City Traffic Simulation Application.exe
+E:\CurrentProcpWorkGit\prop-9\procp\City Traffic Simulation Application\City Traffic Simulation Application\obj\Debug\City Traffic Simulation Application.pdb
