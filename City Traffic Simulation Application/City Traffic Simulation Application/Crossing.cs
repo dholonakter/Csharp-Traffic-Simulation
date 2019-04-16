@@ -34,5 +34,17 @@ namespace City_Traffic_Simulation_Application
             }
             return carCoordinates;
         }
+
+        public void nextPattern()
+        {
+            //should get a pattern and change whether cars are driving or not according to it.
+            //todo actually implement this method, this is just a hardcoded test method currently.
+
+            foreach (Car car in cars)
+            {
+                car.driving = !car.driving;
+            }
+
+        }
     }
 }

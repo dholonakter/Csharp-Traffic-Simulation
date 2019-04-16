@@ -25,6 +25,8 @@ namespace City_Traffic_Simulation_Application
         public int xoffset { get; set; }
         public int yoffset { get; set; }
 
+        public bool driving { get; set; } = false;
+
         private double distanceTillWaypoint;
 
         public double x;
@@ -66,6 +68,10 @@ namespace City_Traffic_Simulation_Application
             if (nextWayPoint == null)
             {
                 return new int[3] { (int)x, (int)y, id };  // do nothing if there is nowhere to go
+            }
+            else if (!driving)
+            {
+                return new int[3] { (int)x, (int)y, id }; 
             }
 
             ChangeSpeed();

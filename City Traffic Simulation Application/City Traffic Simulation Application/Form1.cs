@@ -16,9 +16,11 @@ namespace City_Traffic_Simulation_Application
         private int i = 0;
         private Point initialpoint;
         private Point initialpoint2;
+        private Point initialpoint3;
         private Clock clock;
         private City city;
         private List<PictureBox> Boxes;
+        private int timeuntilflip = 8000;
         #endregion
         #region Constructor
         public Form1()
@@ -32,6 +34,7 @@ namespace City_Traffic_Simulation_Application
 
             initialpoint = pictureBox1.Location;
             initialpoint2 = pictureBox2.Location;
+            initialpoint3 = pictureBox9.Location;
             TestPointsCar();
 
         }
@@ -41,7 +44,7 @@ namespace City_Traffic_Simulation_Application
         /// <summary>
         /// 
         /// </summary>
-        #region private fields
+        
         private void TestPointsCar()
         {
 
@@ -58,6 +61,7 @@ namespace City_Traffic_Simulation_Application
             Boxes.Add(pictureBox1);
             Boxes.Add(pictureBox2);
             
+            
             foreach (PictureBox b in Boxes)
             {
                 Car car = new Car(b.Location, w1, b.Width, b.Height, i);
@@ -69,13 +73,16 @@ namespace City_Traffic_Simulation_Application
 
                 crossing.cars.Add(car);
             }
-            
 
+            Boxes.Add(pictureBox9);
+            Car topcar = new Car(initialpoint3, new Waypoint(this.Width / 2, this.Height + 100), pictureBox9.Width, pictureBox9.Height);
+            topcar.driving = true;
+            crossing.cars.Add(topcar);
 
             city.allCrossings.Add(crossing);
 
         }
-        #endregion
+        
         private void timer1_Tick(object sender, EventArgs e)
         {
             
@@ -108,6 +115,22 @@ namespace City_Traffic_Simulation_Application
                 boxnumber++;
             }
 
+            timeuntilflip -= timer1.Interval;
+            if (timeuntilflip < 0)
+            {
+                city.allCrossings[0].nextPattern();
+                timeuntilflip = 8000;
+                if (trafficlightRight.BackColor != Color.Red)
+                    trafficlightRight.BackColor = Color.Red;
+                else
+                    trafficlightRight.BackColor = Color.Green;
+
+                if (ovalShape1.BackColor != Color.Red)
+                    ovalShape1.BackColor = Color.Red;
+                else
+                    ovalShape1.BackColor = Color.Green;
+            }
+
         }
 
         private void buttonStart_Click(object sender, EventArgs e)
@@ -124,19 +147,24 @@ namespace City_Traffic_Simulation_Application
         {
             pictureBox1.Location = initialpoint;
             pictureBox2.Location = initialpoint2;
+            pictureBox9.Location = initialpoint3;
             if (i == 0)
                 i = 2;
             else
                 i = 0;
             city = new City(Text);
+            Boxes = new List<PictureBox>();
             TestPointsCar();
             timer1.Stop();
+            timeuntilflip = 8000;
+                
+               
+            trafficlightRight.BackColor = Color.Green;
+
+            ovalShape1.BackColor = Color.Red;
+
             
         }
 
-        private void waypoint1_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
