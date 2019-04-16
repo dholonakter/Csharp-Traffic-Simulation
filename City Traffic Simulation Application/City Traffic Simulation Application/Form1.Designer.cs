@@ -58,10 +58,10 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::City_Traffic_Simulation_Application.Properties.Resources.GreenCarRight;
-            this.pictureBox1.Location = new System.Drawing.Point(283, 232);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox1.Location = new System.Drawing.Point(377, 286);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(75, 28);
+            this.pictureBox1.Size = new System.Drawing.Size(100, 34);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -69,10 +69,10 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = global::City_Traffic_Simulation_Application.Properties.Resources.GreenCarRight;
-            this.pictureBox2.Location = new System.Drawing.Point(181, 232);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox2.Location = new System.Drawing.Point(241, 286);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(75, 28);
+            this.pictureBox2.Size = new System.Drawing.Size(100, 34);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 1;
             this.pictureBox2.TabStop = false;
@@ -80,10 +80,10 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = global::City_Traffic_Simulation_Application.Properties.Resources.GreenCarRight;
-            this.pictureBox3.Location = new System.Drawing.Point(73, 232);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox3.Location = new System.Drawing.Point(97, 286);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(75, 28);
+            this.pictureBox3.Size = new System.Drawing.Size(100, 34);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 2;
             this.pictureBox3.TabStop = false;
@@ -91,10 +91,10 @@
             // pictureBox9
             // 
             this.pictureBox9.Image = global::City_Traffic_Simulation_Application.Properties.Resources.GreenCarDown;
-            this.pictureBox9.Location = new System.Drawing.Point(501, 117);
-            this.pictureBox9.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox9.Location = new System.Drawing.Point(668, 144);
+            this.pictureBox9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(31, 74);
+            this.pictureBox9.Size = new System.Drawing.Size(41, 91);
             this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox9.TabIndex = 8;
             this.pictureBox9.TabStop = false;
@@ -102,20 +102,20 @@
             // pictureBox10
             // 
             this.pictureBox10.Image = global::City_Traffic_Simulation_Application.Properties.Resources.GreenCarDown;
-            this.pictureBox10.Location = new System.Drawing.Point(501, 39);
-            this.pictureBox10.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox10.Location = new System.Drawing.Point(668, 48);
+            this.pictureBox10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox10.Name = "pictureBox10";
-            this.pictureBox10.Size = new System.Drawing.Size(31, 74);
+            this.pictureBox10.Size = new System.Drawing.Size(41, 91);
             this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox10.TabIndex = 9;
             this.pictureBox10.TabStop = false;
             // 
             // buttonStart
             // 
-            this.buttonStart.Location = new System.Drawing.Point(73, 64);
-            this.buttonStart.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonStart.Location = new System.Drawing.Point(97, 79);
+            this.buttonStart.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonStart.Name = "buttonStart";
-            this.buttonStart.Size = new System.Drawing.Size(56, 19);
+            this.buttonStart.Size = new System.Drawing.Size(75, 23);
             this.buttonStart.TabIndex = 10;
             this.buttonStart.Text = "Start";
             this.buttonStart.UseVisualStyleBackColor = true;
@@ -125,10 +125,9 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(815, 440);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(1087, 542);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(27, 29);
+            this.label1.Size = new System.Drawing.Size(33, 36);
             this.label1.TabIndex = 11;
             this.label1.Text = "0";
             // 
@@ -141,7 +140,7 @@
             this.waypoint3,
             this.waypoint1,
             this.waypoint2});
-            this.shapeContainer1.Size = new System.Drawing.Size(986, 544);
+            this.shapeContainer1.Size = new System.Drawing.Size(1315, 670);
             this.shapeContainer1.TabIndex = 15;
             this.shapeContainer1.TabStop = false;
             // 
@@ -150,7 +149,7 @@
             this.waypoint3.BackColor = System.Drawing.Color.Red;
             this.waypoint3.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
             this.waypoint3.BorderColor = System.Drawing.Color.Red;
-            this.waypoint3.Location = new System.Drawing.Point(778, 236);
+            this.waypoint3.Location = new System.Drawing.Point(725, 259);
             this.waypoint3.Name = "waypoint3";
             this.waypoint3.Size = new System.Drawing.Size(29, 29);
             // 
@@ -159,7 +158,7 @@
             this.waypoint1.BackColor = System.Drawing.Color.Red;
             this.waypoint1.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
             this.waypoint1.BorderColor = System.Drawing.Color.Red;
-            this.waypoint1.Location = new System.Drawing.Point(445, 251);
+            this.waypoint1.Location = new System.Drawing.Point(507, 267);
             this.waypoint1.Name = "waypoint1";
             this.waypoint1.Size = new System.Drawing.Size(29, 29);
             // 
@@ -168,16 +167,16 @@
             this.waypoint2.BackColor = System.Drawing.Color.Red;
             this.waypoint2.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
             this.waypoint2.BorderColor = System.Drawing.Color.Red;
-            this.waypoint2.Location = new System.Drawing.Point(520, 478);
+            this.waypoint2.Location = new System.Drawing.Point(542, 382);
             this.waypoint2.Name = "waypoint2";
             this.waypoint2.Size = new System.Drawing.Size(29, 29);
             // 
             // buttonStop
             // 
-            this.buttonStop.Location = new System.Drawing.Point(133, 64);
-            this.buttonStop.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonStop.Location = new System.Drawing.Point(177, 79);
+            this.buttonStop.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonStop.Name = "buttonStop";
-            this.buttonStop.Size = new System.Drawing.Size(56, 19);
+            this.buttonStop.Size = new System.Drawing.Size(75, 23);
             this.buttonStop.TabIndex = 20;
             this.buttonStop.Text = "Stop";
             this.buttonStop.UseVisualStyleBackColor = true;
@@ -185,10 +184,10 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(193, 64);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
+            this.button1.Location = new System.Drawing.Point(257, 79);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(56, 19);
+            this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 21;
             this.button1.Text = "Reset";
             this.button1.UseVisualStyleBackColor = true;
@@ -196,11 +195,11 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::City_Traffic_Simulation_Application.Properties.Resources.Map;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(986, 544);
+            this.ClientSize = new System.Drawing.Size(1315, 670);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.buttonStop);
             this.Controls.Add(this.label1);
@@ -211,7 +210,7 @@
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.shapeContainer1);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Form1";
