@@ -10,30 +10,44 @@ using System.Windows.Forms;
 
 namespace City_Traffic_Simulation_Application
 {
+    #region private fields
     public partial class Form1 : Form
     {
-        Clock clock = new Clock();
-        City city = new City();
-        List<PictureBox> Boxes= new List<PictureBox>();
-        int i =0;
-        Point initialpoint;
-        Point initialpoint2;
+        private int i = 0;
+        private Point initialpoint;
+        private Point initialpoint2;
+        private Clock clock;
+        private City city;
+        private List<PictureBox> Boxes;
+        #endregion
+        #region Constructor
         public Form1()
         {
-            
             InitializeComponent();
+
+            clock = new Clock();
+            this.Text = "Eindhoven";
+            city = new City(Text);
+            Boxes = new List<PictureBox>();
+
             initialpoint = pictureBox1.Location;
             initialpoint2 = pictureBox2.Location;
             TestPointsCar();
+
         }
 
+        #endregion
 
-
+        /// <summary>
+        /// 
+        /// </summary>
+        #region private fields
         private void TestPointsCar()
         {
 
-            Waypoint w2 = new Waypoint(waypoint2.Location,new Waypoint((double)this.Width/2, (double)this.Height) );
+            Waypoint w2 = new Waypoint(waypoint2.Location, new Waypoint((double)this.Width / 2, (double)this.Height));
             Waypoint w1 = new Waypoint(waypoint1.Location, w2); // this makes some test waypoints
+
             Waypoint w3 = new Waypoint(waypoint3.Location, new Waypoint((double)this.Width+100, (double)this.Height/2));
             w1.waypointLeft = w3;
 
@@ -61,7 +75,7 @@ namespace City_Traffic_Simulation_Application
             city.allCrossings.Add(crossing);
 
         }
-
+        #endregion
         private void timer1_Tick(object sender, EventArgs e)
         {
             
@@ -114,10 +128,15 @@ namespace City_Traffic_Simulation_Application
                 i = 2;
             else
                 i = 0;
-            city = new City();
+            city = new City(Text);
             TestPointsCar();
             timer1.Stop();
             
+        }
+
+        private void waypoint1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -43,6 +43,10 @@
             this.waypoint2 = new Microsoft.VisualBasic.PowerPacks.OvalShape();
             this.buttonStop = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.ovalShape1 = new Microsoft.VisualBasic.PowerPacks.OvalShape();
+            this.ovalShape2 = new Microsoft.VisualBasic.PowerPacks.OvalShape();
+            this.ovalShape3 = new Microsoft.VisualBasic.PowerPacks.OvalShape();
+            this.ovalShape4 = new Microsoft.VisualBasic.PowerPacks.OvalShape();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -125,7 +129,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+<<<<<<< HEAD
             this.label1.Location = new System.Drawing.Point(1087, 542);
+=======
+            this.label1.Location = new System.Drawing.Point(772, 374);
+>>>>>>> 3ecd610dff2ee76485a3f499533f3fd9fe77c9eb
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(33, 36);
             this.label1.TabIndex = 11;
@@ -137,6 +145,10 @@
             this.shapeContainer1.Margin = new System.Windows.Forms.Padding(0);
             this.shapeContainer1.Name = "shapeContainer1";
             this.shapeContainer1.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
+            this.ovalShape4,
+            this.ovalShape3,
+            this.ovalShape2,
+            this.ovalShape1,
             this.waypoint3,
             this.waypoint1,
             this.waypoint2});
@@ -149,25 +161,39 @@
             this.waypoint3.BackColor = System.Drawing.Color.Red;
             this.waypoint3.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
             this.waypoint3.BorderColor = System.Drawing.Color.Red;
+<<<<<<< HEAD
             this.waypoint3.Location = new System.Drawing.Point(725, 259);
+=======
+            this.waypoint3.Location = new System.Drawing.Point(724, 252);
+>>>>>>> 3ecd610dff2ee76485a3f499533f3fd9fe77c9eb
             this.waypoint3.Name = "waypoint3";
             this.waypoint3.Size = new System.Drawing.Size(29, 29);
             // 
             // waypoint1
             // 
-            this.waypoint1.BackColor = System.Drawing.Color.Red;
+            this.waypoint1.BackColor = System.Drawing.Color.RosyBrown;
             this.waypoint1.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
+<<<<<<< HEAD
             this.waypoint1.BorderColor = System.Drawing.Color.Red;
             this.waypoint1.Location = new System.Drawing.Point(507, 267);
+=======
+            this.waypoint1.BorderColor = System.Drawing.Color.RosyBrown;
+            this.waypoint1.Location = new System.Drawing.Point(640, 305);
+>>>>>>> 3ecd610dff2ee76485a3f499533f3fd9fe77c9eb
             this.waypoint1.Name = "waypoint1";
             this.waypoint1.Size = new System.Drawing.Size(29, 29);
+            this.waypoint1.Click += new System.EventHandler(this.waypoint1_Click);
             // 
             // waypoint2
             // 
             this.waypoint2.BackColor = System.Drawing.Color.Red;
             this.waypoint2.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
             this.waypoint2.BorderColor = System.Drawing.Color.Red;
+<<<<<<< HEAD
             this.waypoint2.Location = new System.Drawing.Point(542, 382);
+=======
+            this.waypoint2.Location = new System.Drawing.Point(541, 399);
+>>>>>>> 3ecd610dff2ee76485a3f499533f3fd9fe77c9eb
             this.waypoint2.Name = "waypoint2";
             this.waypoint2.Size = new System.Drawing.Size(29, 29);
             // 
@@ -192,6 +218,44 @@
             this.button1.Text = "Reset";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // ovalShape1
+            // 
+            this.ovalShape1.BackColor = System.Drawing.Color.Red;
+            this.ovalShape1.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
+            this.ovalShape1.BorderColor = System.Drawing.Color.Red;
+            this.ovalShape1.Location = new System.Drawing.Point(542, 250);
+            this.ovalShape1.Name = "ovalShape1";
+            this.ovalShape1.Size = new System.Drawing.Size(29, 29);
+            // 
+            // ovalShape2
+            // 
+            this.ovalShape2.BackColor = System.Drawing.Color.Red;
+            this.ovalShape2.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
+            this.ovalShape2.BorderColor = System.Drawing.Color.Red;
+            this.ovalShape2.Location = new System.Drawing.Point(739, 380);
+            this.ovalShape2.Name = "ovalShape2";
+            this.ovalShape2.Size = new System.Drawing.Size(29, 29);
+            // 
+            // ovalShape3
+            // 
+            this.ovalShape3.BackColor = System.Drawing.Color.RosyBrown;
+            this.ovalShape3.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
+            this.ovalShape3.BorderColor = System.Drawing.Color.RosyBrown;
+            this.ovalShape3.Location = new System.Drawing.Point(636, 422);
+            this.ovalShape3.Name = "ovalShape3";
+            this.ovalShape3.Size = new System.Drawing.Size(29, 29);
+            this.ovalShape3.Click += new System.EventHandler(this.waypoint1_Click);
+            // 
+            // ovalShape4
+            // 
+            this.ovalShape4.BackColor = System.Drawing.Color.RosyBrown;
+            this.ovalShape4.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
+            this.ovalShape4.BorderColor = System.Drawing.Color.RosyBrown;
+            this.ovalShape4.Location = new System.Drawing.Point(807, 309);
+            this.ovalShape4.Name = "ovalShape4";
+            this.ovalShape4.Size = new System.Drawing.Size(29, 29);
+            this.ovalShape4.Click += new System.EventHandler(this.waypoint1_Click);
             // 
             // Form1
             // 
@@ -240,6 +304,10 @@
         private Microsoft.VisualBasic.PowerPacks.OvalShape waypoint2;
         private System.Windows.Forms.Button buttonStop;
         private System.Windows.Forms.Button button1;
+        private Microsoft.VisualBasic.PowerPacks.OvalShape ovalShape4;
+        private Microsoft.VisualBasic.PowerPacks.OvalShape ovalShape3;
+        private Microsoft.VisualBasic.PowerPacks.OvalShape ovalShape2;
+        private Microsoft.VisualBasic.PowerPacks.OvalShape ovalShape1;
     }
 }
 
