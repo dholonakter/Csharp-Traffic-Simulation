@@ -4,9 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
+//using System.Runtime.Serialization.Formatters.Binary;
 
 namespace City_Traffic_Simulation_Application
 {
+    
     public class City
     {
         //a collection of crossings connected by roads

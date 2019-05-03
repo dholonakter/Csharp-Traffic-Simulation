@@ -7,6 +7,7 @@ using System.Drawing;
 
 namespace City_Traffic_Simulation_Application
 {
+    [Serializable]// M
     public class Entity
     {
         public Waypoint nextWayPoint { get; set; }

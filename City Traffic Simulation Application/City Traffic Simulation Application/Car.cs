@@ -5,11 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
 
+
 namespace City_Traffic_Simulation_Application
 {
+    [Serializable]
    public class Car : Entity
     {
         //will be inheriting from Entity
+      
         public Car(Point p, Waypoint w,int width, int height) : base(p,w)
         {
             this.maxSpeed = 0.1;

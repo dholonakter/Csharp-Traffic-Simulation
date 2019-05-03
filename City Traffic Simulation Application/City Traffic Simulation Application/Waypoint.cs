@@ -4,9 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
+using System.Runtime.Serialization.Formatters.Binary;
 
 namespace City_Traffic_Simulation_Application
 {
+    [Serializable]
   public  class Waypoint
     {
         //waypoints are a coordinate on the map. when the final waypoint is reached the entity will be sent to a Road.

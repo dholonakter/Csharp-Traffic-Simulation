@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Runtime.Serialization.Formatters.Binary;
 
 namespace City_Traffic_Simulation_Application
-{
+{[Serializable]
     public class Road
     {
         Crossing pointA;

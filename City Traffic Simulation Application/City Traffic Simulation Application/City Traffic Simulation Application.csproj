@@ -63,7 +63,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Road.cs" />
-    <Compile Include="SaveFile.cs" />
+    <Compile Include="SerializeData.cs" />
     <Compile Include="TrafficLight.cs" />
     <Compile Include="Waypoint.cs" />
     <EmbeddedResource Include="Form1.resx">
