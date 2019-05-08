@@ -93,3 +93,4 @@ C:\Users\Eng Dinga\Desktop\proc p\procp\City Traffic Simulation Application\City
 C:\Users\Eng Dinga\Desktop\proc p\procp\City Traffic Simulation Application\City Traffic Simulation Application\bin\Debug\City Traffic Simulation Application.pdb
 C:\Users\Eng Dinga\Desktop\proc p\procp\City Traffic Simulation Application\City Traffic Simulation Application\bin\Debug\Microsoft.VisualBasic.PowerPacks.xml
 C:\Users\Eng Dinga\Desktop\proc p\procp\City Traffic Simulation Application\City Traffic Simulation Application\obj\Debug\City Traffic Simulation Application.csproj.CopyComplete
+C:\Users\Eng Dinga\Desktop\proc p\procp\City Traffic Simulation Application\City Traffic Simulation Application\obj\Debug\City_Traffic_Simulation_Application.Traffic_simulaator.resources
