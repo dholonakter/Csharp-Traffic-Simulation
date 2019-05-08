@@ -52,6 +52,7 @@
     <Compile Include="City.cs" />
     <Compile Include="Clock.cs" />
     <Compile Include="Crossing.cs" />
+    <Compile Include="CrossingType1.cs" />
     <Compile Include="Entity.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
