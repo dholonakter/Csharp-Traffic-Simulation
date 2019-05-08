@@ -8,5 +8,6 @@ namespace City_Traffic_Simulation_Application
 {
     class CrossingType1
     {
+        
     }
 }
