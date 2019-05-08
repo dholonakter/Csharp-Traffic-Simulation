@@ -176,5 +176,10 @@ namespace City_Traffic_Simulation_Application
             sdata.DeSerialiseObjects();
             sdata.closeStream();
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
