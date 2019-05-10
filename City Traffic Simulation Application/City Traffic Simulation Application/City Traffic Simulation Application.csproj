@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Car.cs" />
+    <Compile Include="Cell.cs" />
     <Compile Include="City.cs" />
     <Compile Include="Clock.cs" />
     <Compile Include="Crossing.cs" />
@@ -60,6 +61,7 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Grid.cs" />
     <Compile Include="Pedestrian.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
