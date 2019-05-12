@@ -34,6 +34,7 @@ namespace City_Traffic_Simulation_Application
             int column = ((cursor.X - panel1.Left) / 300) + 1;
             int row = (cursor.Y - panel1.Top) / 300;
             selectedCell = row * 4 + column;
+            
         }
 
         private void panel1_DragOver(object sender, DragEventArgs e)
