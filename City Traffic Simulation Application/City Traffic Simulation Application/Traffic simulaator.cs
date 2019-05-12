@@ -24,6 +24,7 @@ namespace City_Traffic_Simulation_Application
             InitializeComponent();
             runningSimulation = false;
             panel1.AllowDrop = true;
+            panel2.AllowDrop = true;
             grid = new Grid();
         }
 
@@ -44,20 +45,35 @@ namespace City_Traffic_Simulation_Application
 
         private void panel1_DragDrop(object sender, DragEventArgs e)
         {
+            //List<Panel> listP = new List<Panel>();
             Panel destination = (Panel)sender;
-            destination.Size = new Size(300, 300);
+            destination.Size = new Size(250, 250);
             destination.BackgroundImage = (Bitmap)e.Data.GetData(typeof(Bitmap));
-
             
             
-            //Point cursor = PointToClient(Cursor.Position);
-            //Point drawPoint = new Point();
+            Point cursor = PointToClient(Cursor.Position);
+            Point drawPoint = new Point();
 
             //Finding out which cell the crossing is dropped on
-            //determineCell(e);
-            //drawPoint = grid.Cells[selectedCell - 1].Location;
-            
-            
+            determineCell(e);
+            drawPoint = grid.Cells[selectedCell - 1].Location;
+            //if (e.AllowedEffect == DragDropEffects.Move)
+            //{
+            //    foreach (Panel p in listP)
+            //    {
+            //        if(p.Location == mouseDown && !grid.Cells[selectedCell - 1].Taken)
+            //        {
+            //            p.Location = drawPoint;
+            //            destination.Location = drawPoint;
+
+            //            grid.Cells[selectedCell - 1].Taken = true;
+                        
+            //        }
+            //    }
+            //}
+
+
+
         }
 
         private void Mouse_Down(object sender, MouseEventArgs e)
@@ -140,6 +156,40 @@ namespace City_Traffic_Simulation_Application
         }
 
         private void panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            Panel source = (Panel)sender;
+            DoDragDrop(source.BackgroundImage,
+                       DragDropEffects.Copy);
+        }
+
+        private void panel2_DragDrop(object sender, DragEventArgs e)
+        {
+            Panel destination = (Panel)sender;
+            destination.Size = new Size(250, 250);
+            destination.BackgroundImage = (Bitmap)e.Data.GetData(typeof(Bitmap));
+        }
+
+        private void panel2_DragEnter(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.Bitmap) &&
+            (e.AllowedEffect & DragDropEffects.Copy) != 0)
+            {
+                // Allow this.
+                e.Effect = DragDropEffects.Copy;
+            }
+            else
+            {
+                // Don't allow any other drop.
+                e.Effect = DragDropEffects.None;
+            }
+        }
+
+        private void panel2_DragOver(object sender, DragEventArgs e)
+        {
+            e.Effect = DragDropEffects.All;
+        }
+
+        private void panel2_MouseDown(object sender, MouseEventArgs e)
         {
             Panel source = (Panel)sender;
             DoDragDrop(source.BackgroundImage,

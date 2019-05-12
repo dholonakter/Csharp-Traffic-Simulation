@@ -38,6 +38,7 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbcrossing1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbcrossing2)).BeginInit();
@@ -47,9 +48,10 @@
             // panel1
             // 
             this.panel1.AllowDrop = true;
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel1.Location = new System.Drawing.Point(141, 190);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1318, 456);
+            this.panel1.Size = new System.Drawing.Size(250, 250);
             this.panel1.TabIndex = 0;
             this.panel1.DragDrop += new System.Windows.Forms.DragEventHandler(this.panel1_DragDrop);
             this.panel1.DragEnter += new System.Windows.Forms.DragEventHandler(this.panel1_DragEnter);
@@ -123,7 +125,7 @@
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(105, 97);
             this.button3.TabIndex = 2;
-            this.button3.Text = "save";
+            this.button3.Text = "Save";
             this.button3.UseVisualStyleBackColor = true;
             // 
             // button2
@@ -144,11 +146,25 @@
             this.button1.Text = "Start ";
             this.button1.UseVisualStyleBackColor = true;
             // 
+            // panel2
+            // 
+            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel2.Location = new System.Drawing.Point(461, 190);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(250, 250);
+            this.panel2.TabIndex = 1;
+            this.panel2.DragDrop += new System.Windows.Forms.DragEventHandler(this.panel2_DragDrop);
+            this.panel2.DragEnter += new System.Windows.Forms.DragEventHandler(this.panel2_DragEnter);
+            this.panel2.DragOver += new System.Windows.Forms.DragEventHandler(this.panel2_DragOver);
+            this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown);
+            // 
             // Traffic_simulaator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1518, 701);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel1);
@@ -174,5 +190,6 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Panel panel2;
     }
 }

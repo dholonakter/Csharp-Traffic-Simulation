@@ -23,7 +23,7 @@ namespace City_Traffic_Simulation_Application
             this.cells = new List<Cell>();
             //this.crossings = new List<Crossing>();
             this.junctionDefinition = 40;
-            //this.InitializeCarTimer();
+            this.InitializeCarTimer();
             this.AddCells();
         }
 
@@ -35,18 +35,18 @@ namespace City_Traffic_Simulation_Application
             }
         }
 
-        //public int Junction
-        //{
-        //    get { return junctionDefinition; }
-        //    set { junctionDefinition = value; }
-        //}
+        public int Junction
+        {
+            get { return junctionDefinition; }
+            set { junctionDefinition = value; }
+        }
 
-        //public void InitializeCarTimer()
-        //{
-        //    car_timer = new Timer();
-        //    car_timer.Interval = 40;
-        //    car_timer.Tick += car_timer_Tick;
-        //}
+        public void InitializeCarTimer()
+        {
+            car_timer = new Timer();
+            car_timer.Interval = 40;
+            //car_timer.Tick += car_timer_Tick;
+        }
 
         public void AddCells()
         {

@@ -97,8 +97,6 @@ C:\Users\Eng Dinga\Desktop\proc p\procp\City Traffic Simulation Application\City
 D:\Fakultet\ProCP\procp\City Traffic Simulation Application\City Traffic Simulation Application\bin\Debug\City Traffic Simulation Application.exe.config
 D:\Fakultet\ProCP\procp\City Traffic Simulation Application\City Traffic Simulation Application\bin\Debug\City Traffic Simulation Application.exe
 D:\Fakultet\ProCP\procp\City Traffic Simulation Application\City Traffic Simulation Application\bin\Debug\City Traffic Simulation Application.pdb
-D:\Fakultet\ProCP\procp\City Traffic Simulation Application\City Traffic Simulation Application\bin\Debug\Microsoft.VisualBasic.PowerPacks.xml
-D:\Fakultet\ProCP\procp\City Traffic Simulation Application\City Traffic Simulation Application\obj\Debug\City Traffic Simulation Application.csprojAssemblyReference.cache
 D:\Fakultet\ProCP\procp\City Traffic Simulation Application\City Traffic Simulation Application\obj\Debug\City_Traffic_Simulation_Application.Form1.resources
 D:\Fakultet\ProCP\procp\City Traffic Simulation Application\City Traffic Simulation Application\obj\Debug\City_Traffic_Simulation_Application.Properties.Resources.resources
 D:\Fakultet\ProCP\procp\City Traffic Simulation Application\City Traffic Simulation Application\obj\Debug\City_Traffic_Simulation_Application.Traffic_simulaator.resources
