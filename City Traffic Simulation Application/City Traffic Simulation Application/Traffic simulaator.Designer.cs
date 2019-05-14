@@ -149,7 +149,7 @@
             // panel2
             // 
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel2.Location = new System.Drawing.Point(461, 190);
+            this.panel2.Location = new System.Drawing.Point(460, 190);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(250, 250);
             this.panel2.TabIndex = 1;

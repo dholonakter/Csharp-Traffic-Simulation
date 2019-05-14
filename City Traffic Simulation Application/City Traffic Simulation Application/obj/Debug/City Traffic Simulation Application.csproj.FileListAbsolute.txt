@@ -105,3 +105,4 @@ D:\Fakultet\ProCP\procp\City Traffic Simulation Application\City Traffic Simulat
 D:\Fakultet\ProCP\procp\City Traffic Simulation Application\City Traffic Simulation Application\obj\Debug\City Traffic Simulation Application.csproj.CopyComplete
 D:\Fakultet\ProCP\procp\City Traffic Simulation Application\City Traffic Simulation Application\obj\Debug\City Traffic Simulation Application.exe
 D:\Fakultet\ProCP\procp\City Traffic Simulation Application\City Traffic Simulation Application\obj\Debug\City Traffic Simulation Application.pdb
+D:\Fakultet\ProCP\procp\City Traffic Simulation Application\City Traffic Simulation Application\obj\Debug\City Traffic Simulation Application.csprojAssemblyReference.cache
