@@ -210,9 +210,13 @@ namespace City_Traffic_Simulation_Application
         private void button1_Click(object sender, EventArgs e)
         {
             Pen p = new Pen(Color.Yellow);
-            drawarea.DrawRectangle(p,15,15,15,15);
-            SolidBrush b = new SolidBrush(Color.RoyalBlue);
-            drawarea.FillRectangle(b, 15, 15, 15, 15);
+           
+            
+                drawarea.DrawRectangle(p, 300, 50, 15, 15);
+                SolidBrush b = new SolidBrush(Color.RoyalBlue);
+                drawarea.FillRectangle(b, 300, 50, 15, 15);
+
+            
         }
     }
 }
