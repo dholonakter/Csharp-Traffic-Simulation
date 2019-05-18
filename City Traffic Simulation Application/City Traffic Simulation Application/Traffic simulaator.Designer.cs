@@ -31,8 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Traffic_simulaator));
             this.panel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.pbcrossing1 = new System.Windows.Forms.PictureBox();
             this.pbcrossing2 = new System.Windows.Forms.PictureBox();
+            this.pbcrossing1 = new System.Windows.Forms.PictureBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -41,8 +41,8 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbcrossing1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbcrossing2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbcrossing1)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -74,6 +74,19 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Crossings tools";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // pbcrossing2
+            // 
+            this.pbcrossing2.Image = ((System.Drawing.Image)(resources.GetObject("pbcrossing2.Image")));
+            this.pbcrossing2.Location = new System.Drawing.Point(12, 149);
+            this.pbcrossing2.Name = "pbcrossing2";
+            this.pbcrossing2.Size = new System.Drawing.Size(100, 118);
+            this.pbcrossing2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbcrossing2.TabIndex = 1;
+            this.pbcrossing2.TabStop = false;
+            this.pbcrossing2.DragDrop += new System.Windows.Forms.DragEventHandler(this.pictureBox2_DragDrop);
+            this.pbcrossing2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pbcrossing2_MouseDown);
             // 
             // pbcrossing1
             // 
@@ -88,18 +101,6 @@
             this.pbcrossing1.DoubleClick += new System.EventHandler(this.pbcrossing1_DoubleClick);
             this.pbcrossing1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pbcrossing1_MouseClick);
             this.pbcrossing1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pbcrossing1_MouseDown);
-            // 
-            // pbcrossing2
-            // 
-            this.pbcrossing2.Image = ((System.Drawing.Image)(resources.GetObject("pbcrossing2.Image")));
-            this.pbcrossing2.Location = new System.Drawing.Point(12, 149);
-            this.pbcrossing2.Name = "pbcrossing2";
-            this.pbcrossing2.Size = new System.Drawing.Size(100, 118);
-            this.pbcrossing2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbcrossing2.TabIndex = 1;
-            this.pbcrossing2.TabStop = false;
-            this.pbcrossing2.DragDrop += new System.Windows.Forms.DragEventHandler(this.pictureBox2_DragDrop);
-            this.pbcrossing2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pbcrossing2_MouseDown);
             // 
             // groupBox2
             // 
@@ -150,6 +151,7 @@
             this.button1.TabIndex = 0;
             this.button1.Text = "Start ";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // panel2
             // 
@@ -191,8 +193,8 @@
             this.Text = "Traffic_simulaator";
             this.Load += new System.EventHandler(this.Traffic_simulaator_Load);
             this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pbcrossing1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbcrossing2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbcrossing1)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);

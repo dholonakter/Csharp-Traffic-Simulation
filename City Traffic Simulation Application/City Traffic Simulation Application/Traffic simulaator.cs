@@ -18,7 +18,11 @@ namespace City_Traffic_Simulation_Application
         int selectedCell = 0;
         int firstSelection = 0;
         bool runningSimulation;
+        //creating the draw area 
 
+        Graphics drawarea;
+
+        
         public Traffic_simulaator()
         {
             InitializeComponent();
@@ -26,6 +30,8 @@ namespace City_Traffic_Simulation_Application
             panel1.AllowDrop = true;
             panel2.AllowDrop = true;
             grid = new Grid();
+            // instanciating the draw area 
+            drawarea = panel2.CreateGraphics(); // to create the cars on the picture box with the crossing
         }
 
 
@@ -194,6 +200,19 @@ namespace City_Traffic_Simulation_Application
             Panel source = (Panel)sender;
             DoDragDrop(source.BackgroundImage,
                        DragDropEffects.Copy);
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Pen p = new Pen(Color.Yellow);
+            drawarea.DrawRectangle(p,15,15,15,15);
+            SolidBrush b = new SolidBrush(Color.RoyalBlue);
+            drawarea.FillRectangle(b, 15, 15, 15, 15);
         }
     }
 }
