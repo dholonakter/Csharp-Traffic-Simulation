@@ -207,12 +207,32 @@ namespace City_Traffic_Simulation_Application
 
         }
 
+        List<Graphics> cars;
         private void button1_Click(object sender, EventArgs e)
         {
             Pen p = new Pen(Color.Yellow);
-            drawarea.DrawRectangle(p,15,15,15,15);
-            SolidBrush b = new SolidBrush(Color.RoyalBlue);
-            drawarea.FillRectangle(b, 15, 15, 15, 15);
+           
+            
+                drawarea.DrawRectangle(p, 300, 50, 15, 15);
+                SolidBrush b1 = new SolidBrush(Color.RoyalBlue);
+                drawarea.FillRectangle(b1, 300, 50, 15, 15);
+
+            //second car
+                drawarea.DrawRectangle(p, 250, 50, 15, 15);
+                SolidBrush b = new SolidBrush(Color.Yellow);
+                drawarea.FillRectangle(b, 250, 50, 15, 15);
+            // the third car 
+            drawarea.DrawRectangle(p, 100, 270, 15, 15);
+            SolidBrush b2 = new SolidBrush(Color.Red);
+            drawarea.FillRectangle(b2, 100, 270, 15, 15);
+
+            // the fourth car
+            // the third car 
+            drawarea.DrawRectangle(p, 100, 333, 15, 15);
+            SolidBrush b3 = new SolidBrush(Color.Purple);
+            drawarea.FillRectangle(b3, 100, 333, 15, 15);
+
+
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
