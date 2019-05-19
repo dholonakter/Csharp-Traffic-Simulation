@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace City_Traffic_Simulation_Application
 {
@@ -15,6 +17,9 @@ namespace City_Traffic_Simulation_Application
         private Road East;     //may be changed to an array of connected roads instead
         private Road West;
         public List<Car> cars;
+        private Point location;
+        [NonSerialized]
+        Graphics gr;
         public int crossingID;
         static int lastCrossing = 0;
 
@@ -22,6 +27,12 @@ namespace City_Traffic_Simulation_Application
         {
             crossingID = ++lastCrossing;
             cars = new List<Car>();
+        }
+
+        public Crossing(Point l)
+        {
+            this.location = l;
+            //gr = 
         }
 
         public List<object> MoveCars()
@@ -45,6 +56,11 @@ namespace City_Traffic_Simulation_Application
                 car.driving = !car.driving;
             }
 
+        }
+
+        public void PlaceCarsOnCrossingPb()
+        {
+            //lane.PlaceCars(gr);
         }
     }
 }

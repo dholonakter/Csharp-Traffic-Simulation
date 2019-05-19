@@ -12,7 +12,10 @@ namespace City_Traffic_Simulation_Application
    public class Car : Entity
     {
         //will be inheriting from Entity
-      
+        private Point location; //location on the crossing, upper left corner of the drawing
+        private int width; //width (in pixels) of the visual representation of a car, X
+        private int height; //height (in pixels) of the visual representation of a car, Y
+
         public Car(Point p, Waypoint w,int width, int height) : base(p,w)
         {
             this.maxSpeed = 0.1;
@@ -21,6 +24,14 @@ namespace City_Traffic_Simulation_Application
             xoffset = width/2;
             yoffset = height/2;
             CalculateDirection(x, y, nextWayPoint);
+        }
+
+        public Car(Point loc)
+        {
+            this.location = loc;
+            this.width = 8;
+            this.height = 8;
+
         }
 
         public Car(Point p, Waypoint w, int width, int height, int direction) : base(p, w)
@@ -34,6 +45,25 @@ namespace City_Traffic_Simulation_Application
             path = direction;
         }
 
+        public int Width
+        {
+            get { return width; }
+        }
 
+        public int Height
+        {
+            get { return height; }
+        }
+
+        public Point Location
+        {
+            get { return location; }
+            set { location = value; }
+        }
+
+        public void Draw(ref Graphics gr)
+        {
+            gr.FillRectangle(Brushes.Violet, this.location.X, this.location.Y, this.width, this.height);
+        }
     }
 }
