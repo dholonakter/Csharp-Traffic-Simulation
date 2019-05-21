@@ -60,9 +60,7 @@
             this.panel1.Size = new System.Drawing.Size(735, 756);
             this.panel1.TabIndex = 0;
             this.panel1.DragDrop += new System.Windows.Forms.DragEventHandler(this.panel1_DragDrop);
-            this.panel1.DragEnter += new System.Windows.Forms.DragEventHandler(this.panel1_DragEnter);
             this.panel1.DragOver += new System.Windows.Forms.DragEventHandler(this.panel1_DragOver);
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             this.panel1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseClick);
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             // 
@@ -76,7 +74,6 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Crossings tools";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // pbcrossing2
             // 
@@ -99,8 +96,6 @@
             this.pbcrossing1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbcrossing1.TabIndex = 0;
             this.pbcrossing1.TabStop = false;
-            this.pbcrossing1.DragDrop += new System.Windows.Forms.DragEventHandler(this.pictureBox1_DragDrop);
-            this.pbcrossing1.DoubleClick += new System.EventHandler(this.pbcrossing1_DoubleClick);
             this.pbcrossing1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pbcrossing1_MouseClick);
             this.pbcrossing1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pbcrossing1_MouseDown);
             // 
@@ -164,7 +159,6 @@
             this.panel2.Size = new System.Drawing.Size(735, 756);
             this.panel2.TabIndex = 1;
             this.panel2.DragDrop += new System.Windows.Forms.DragEventHandler(this.panel2_DragDrop);
-            this.panel2.DragEnter += new System.Windows.Forms.DragEventHandler(this.panel2_DragEnter);
             this.panel2.DragOver += new System.Windows.Forms.DragEventHandler(this.panel2_DragOver);
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown);
@@ -198,7 +192,6 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "Traffic_simulaator";
             this.Text = "Traffic_simulaator";
-            this.Load += new System.EventHandler(this.Traffic_simulaator_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbcrossing2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbcrossing1)).EndInit();
