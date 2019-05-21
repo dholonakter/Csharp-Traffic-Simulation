@@ -18,6 +18,7 @@ namespace City_Traffic_Simulation_Application
         int selectedCell = 0;
         int firstSelection = 0;
         bool runningSimulation;
+        Car car;
         //creating the draw area 
 
         Graphics drawarea;
@@ -32,6 +33,8 @@ namespace City_Traffic_Simulation_Application
             grid = new Grid();
             // instanciating the draw area 
             drawarea = panel2.CreateGraphics(); // to create the cars on the picture box with the crossing
+            //timer1.Start();
+            //timer1.Enabled = true;
         }
 
 
@@ -206,17 +209,20 @@ namespace City_Traffic_Simulation_Application
         {
 
         }
+        
 
-        List<Graphics> cars;
         private void button1_Click(object sender, EventArgs e)
         {
-            Pen p = new Pen(Color.Yellow);
-           
-            
-                drawarea.DrawRectangle(p, 300, 50, 15, 15);
-                SolidBrush b1 = new SolidBrush(Color.RoyalBlue);
-                drawarea.FillRectangle(b1, 300, 50, 15, 15);
+            Point loc = new Point(300, 50);
+            car = new Car(loc, 300, 50);            
+            car.Draw(ref drawarea);
+            //timer1.Start();
+            //timer1.Enabled = true;
 
+            Pen p = new Pen(Color.Yellow);
+            //    drawarea.DrawRectangle(p, 300, 50, 15, 15);
+            //    SolidBrush b1 = new SolidBrush(Color.RoyalBlue);
+            //    drawarea.FillRectangle(b1, 300, 50, 15, 15);
             //second car
                 drawarea.DrawRectangle(p, 250, 50, 15, 15);
                 SolidBrush b = new SolidBrush(Color.Yellow);
@@ -228,6 +234,7 @@ namespace City_Traffic_Simulation_Application
 
             // the fourth car
             // the third car 
+            
             drawarea.DrawRectangle(p, 100, 333, 15, 15);
             SolidBrush b3 = new SolidBrush(Color.Purple);
             drawarea.FillRectangle(b3, 100, 333, 15, 15);
@@ -236,22 +243,33 @@ namespace City_Traffic_Simulation_Application
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-            Graphics g = e.Graphics;
-            int numOfCells = 6;
-            int cellSize = 200;
-            Pen p = new Pen(Color.Black);
+        {   
+            //grid
+            //Graphics g = e.Graphics;
+            //int numOfCells = 6;
+            //int cellSize = 200;
+            //Pen p = new Pen(Color.Black);
 
-            for (int y = 0; y < numOfCells; ++y)
-            {
-                g.DrawLine(p, 0, y * cellSize, numOfCells * cellSize, y * cellSize);
+            //for (int y = 0; y < numOfCells; ++y)
+            //{
+            //    g.DrawLine(p, 0, y * cellSize, numOfCells * cellSize, y * cellSize);
                 
-            }
+            //}
 
-            for (int x = 0; x < numOfCells; ++x)
-            {
-                g.DrawLine(p, x * cellSize, 0, x * cellSize, numOfCells * cellSize);
-            }
+            //for (int x = 0; x < numOfCells; ++x)
+            //{
+            //    g.DrawLine(p, x * cellSize, 0, x * cellSize, numOfCells * cellSize);
+            //}
+            
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            //Point loc = new Point(300, 50);
+            //car = new Car(loc, 15, 15);
+            //car.Location = new Point(car.Location.X + 5, car.Location.Y);
+            //car.Draw(ref drawarea);
+
             
         }
     }

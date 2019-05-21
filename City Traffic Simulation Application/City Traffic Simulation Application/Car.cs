@@ -26,11 +26,11 @@ namespace City_Traffic_Simulation_Application
             CalculateDirection(x, y, nextWayPoint);
         }
 
-        public Car(Point loc)
+        public Car(Point loc, int width, int height)
         {
             this.location = loc;
-            this.width = 8;
-            this.height = 8;
+            this.width = 15;
+            this.height = 15;
 
         }
 
