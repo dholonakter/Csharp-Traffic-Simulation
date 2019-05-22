@@ -22,6 +22,9 @@ namespace City_Traffic_Simulation_Application
         Graphics gr;
         public int crossingID;
         static int lastCrossing = 0;
+        Timer t;
+
+
 
         public Crossing()
         {
@@ -56,6 +59,11 @@ namespace City_Traffic_Simulation_Application
                 car.driving = !car.driving;
             }
 
+        }
+
+        public void StartTime()
+        {
+            t.Start();
         }
 
         public void PlaceCarsOnCrossingPb()
