@@ -22,7 +22,10 @@ namespace City_Traffic_Simulation_Application
         Point loc = new Point(300, 50);
         //creating the draw area 
         Car car;
-        List<Car> carList;
+        List<Car> carListNorth;
+        List<Car> carListEast;
+        List<Car> carListSouth;
+        List<Car> carListWest;
         Graphics drawarea;
 
 
@@ -37,14 +40,23 @@ namespace City_Traffic_Simulation_Application
 
             grid = new Grid();
             // instanciating the draw area 
-            carList = new List<Car>();
-            carList.Add(new Car(new Point(225, 25), 15, 15));
-
-            carList.Add(new Car(new Point(225, 50), 15, 15));
-
+            carListNorth = new List<Car>();
+            carListEast = new List<Car>();
+            carListSouth = new List<Car>();
+            carListWest = new List<Car>();
+            //North
+            carListNorth.Add(new Car(new Point(225, 25), 15, 15));
+            carListNorth.Add(new Car(new Point(225, 50), 15, 15));
+            //East
+            carListEast.Add(new Car(new Point(0, 140), 8, 8));
+            carListEast.Add(new Car(new Point(25, 140), 8, 8));
+            //South
+            carListSouth.Add(new Car(new Point(265, 230), 15, 15));
+            //West
+            carListWest.Add(new Car(new Point(450, 115), 15, 15));
             //carList.Add(new Car(new Point(300, 50), 15, 15));
-            
-           drawarea = p1.CreateGraphics(); // to create the cars on the picture box with the crossing
+            Random r = new Random();
+            drawarea = p1.CreateGraphics(); // to create the cars on the picture box with the crossing
             timer1.Interval = 100;
         }
 
@@ -203,7 +215,6 @@ namespace City_Traffic_Simulation_Application
         {
             
             timer1.Start();
-
             Pen p = new Pen(Color.Yellow);
           
         }
@@ -212,12 +223,32 @@ namespace City_Traffic_Simulation_Application
         private void timer1_Tick(object sender, EventArgs e)
         {
             p1.Refresh();
-            foreach (Car c in carList)
+            foreach (Car c in carListNorth)
             {
                 c.Location = new Point(c.Location.X, c.Location.Y + 1);
                 c.Draw(ref drawarea);
             }
+
+            foreach (Car c in carListEast)
+            {
+                c.Location = new Point(c.Location.X + 1, c.Location.Y);
+                c.Draw(ref drawarea);
+            }
+
+            foreach (Car c in carListSouth)
+            {
+                c.Location = new Point(c.Location.X, c.Location.Y - 1);
+                c.Draw(ref drawarea);
+            }
+
+            foreach (Car c in carListWest)
+            {
+                c.Location = new Point(c.Location.X - 1, c.Location.Y);
+                c.Draw(ref drawarea);
+            }
         }
+
+
 
         private void panel3_Paint(object sender, PaintEventArgs e)
         {
@@ -307,6 +338,11 @@ namespace City_Traffic_Simulation_Application
         private void p1_DragEnter(object sender, DragEventArgs e)
         {
             e.Effect = e.AllowedEffect;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            timer1.Stop();
         }
     }
     

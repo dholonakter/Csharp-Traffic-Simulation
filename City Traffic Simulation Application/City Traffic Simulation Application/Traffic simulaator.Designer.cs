@@ -47,8 +47,8 @@
             this.pb3 = new System.Windows.Forms.PictureBox();
             this.pb4 = new System.Windows.Forms.PictureBox();
             this.pb2 = new System.Windows.Forms.PictureBox();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.p1 = new System.Windows.Forms.PictureBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbcrossing2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbcrossing1)).BeginInit();
@@ -140,6 +140,7 @@
             this.button2.TabIndex = 1;
             this.button2.Text = "Stop";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -257,10 +258,6 @@
             this.pb2.DragDrop += new System.Windows.Forms.DragEventHandler(this.pb2_DragDrop);
             this.pb2.DragEnter += new System.Windows.Forms.DragEventHandler(this.pb2_DragEnter);
             // 
-            // timer1
-            // 
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
             // p1
             // 
             this.p1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -272,6 +269,10 @@
             this.p1.TabStop = false;
             this.p1.DragDrop += new System.Windows.Forms.DragEventHandler(this.p1_DragDrop);
             this.p1.DragEnter += new System.Windows.Forms.DragEventHandler(this.p1_DragEnter);
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // Traffic_simulaator
             // 
