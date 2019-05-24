@@ -30,8 +30,6 @@ namespace City_Traffic_Simulation_Application
         {
             InitializeComponent();
             runningSimulation = false;
-            //panel1.AllowDrop = true;
-            //panel2.AllowDrop = true;
             pb3.AllowDrop = true;
             pb2.AllowDrop = true;
             p1.AllowDrop = true;
@@ -40,9 +38,9 @@ namespace City_Traffic_Simulation_Application
             grid = new Grid();
             // instanciating the draw area 
             carList = new List<Car>();
-            carList.Add(new Car(new Point(250, 25), 15, 15));
+            carList.Add(new Car(new Point(225, 25), 15, 15));
 
-            carList.Add(new Car(new Point(250, 50), 15, 15));
+            carList.Add(new Car(new Point(225, 50), 15, 15));
 
             //carList.Add(new Car(new Point(300, 50), 15, 15));
             
@@ -213,7 +211,7 @@ namespace City_Traffic_Simulation_Application
        
         private void timer1_Tick(object sender, EventArgs e)
         {
-            //panel1.Refresh();
+            p1.Refresh();
             foreach (Car c in carList)
             {
                 c.Location = new Point(c.Location.X, c.Location.Y + 1);
