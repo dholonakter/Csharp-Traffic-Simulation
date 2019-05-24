@@ -60,6 +60,13 @@ namespace City_Traffic_Simulation_Application
             timer1.Interval = 100;
         }
 
+        private void CarWaypoints()
+        {
+            Waypoint w1 = new Waypoint(0, 140);
+            Waypoint w2 = new Waypoint(200, 140);
+            Waypoint w3 = new Waypoint(280, 140);
+            Waypoint w4 = new Waypoint(450, 140);
+        }
 
         private void determineCell(DragEventArgs e)
         {
