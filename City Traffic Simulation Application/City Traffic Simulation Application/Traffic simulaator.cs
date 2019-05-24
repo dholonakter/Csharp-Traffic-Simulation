@@ -30,8 +30,13 @@ namespace City_Traffic_Simulation_Application
         {
             InitializeComponent();
             runningSimulation = false;
-            panel1.AllowDrop = true;
-            panel2.AllowDrop = true;
+            //panel1.AllowDrop = true;
+            //panel2.AllowDrop = true;
+            pb3.AllowDrop = true;
+            pb2.AllowDrop = true;
+            p1.AllowDrop = true;
+            pb4.AllowDrop = true;
+
             grid = new Grid();
             // instanciating the draw area 
             carList = new List<Car>();
@@ -41,17 +46,17 @@ namespace City_Traffic_Simulation_Application
 
             //carList.Add(new Car(new Point(300, 50), 15, 15));
             
-            drawarea = panel2.CreateGraphics(); // to create the cars on the picture box with the crossing
+           drawarea = p1.CreateGraphics(); // to create the cars on the picture box with the crossing
             timer1.Interval = 100;
         }
 
 
         private void determineCell(DragEventArgs e)
         {
-            Point cursor = PointToClient(Cursor.Position);
-            int column = ((cursor.X - panel1.Left) / 300) + 1;
-            int row = (cursor.Y - panel1.Top) / 300;
-            selectedCell = row * 4 + column;
+            //Point cursor = PointToClient(Cursor.Position);
+            //int column = ((cursor.X - panel1.Left) / 300) + 1;
+            //int row = (cursor.Y - panel1.Top) / 300;
+            //selectedCell = row * 4 + column;
 
         }
 
@@ -97,12 +102,12 @@ namespace City_Traffic_Simulation_Application
 
         private void Mouse_Down(object sender, MouseEventArgs e)
         {
-            Point cursor = PointToClient(Cursor.Position);
-            int column = ((cursor.X - panel1.Left) / 300) + 1;
-            int row = (cursor.Y - panel1.Top) / 300;
-            selectedCell = row * 4 + column;
-            mouseDown = grid.Cells[selectedCell - 1].Location;
-            firstSelection = selectedCell;
+            //Point cursor = PointToClient(Cursor.Position);
+            //int column = ((cursor.X - panel1.Left) / 300) + 1;
+            //int row = (cursor.Y - panel1.Top) / 300;
+            //selectedCell = row * 4 + column;
+            //mouseDown = grid.Cells[selectedCell - 1].Location;
+            //firstSelection = selectedCell;
         }
 
         private void pbcrossing1_MouseDown(object sender, MouseEventArgs e)
@@ -198,63 +203,113 @@ namespace City_Traffic_Simulation_Application
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //Point loc = new Point(300, 50);
-            //car = new Car(loc, 15, 15);
-            //car.Draw(ref drawarea);
-
+            
             timer1.Start();
 
             Pen p = new Pen(Color.Yellow);
-            //    drawarea.DrawRectangle(p, 300, 50, 15, 15);
-            //    SolidBrush b1 = new SolidBrush(Color.RoyalBlue);
-            //    drawarea.FillRectangle(b1, 300, 50, 15, 15);
-            //second car
-            //drawarea.DrawRectangle(p, 250, 50, 15, 15);
-            //SolidBrush b = new SolidBrush(Color.Yellow);
-            //drawarea.FillRectangle(b, 250, 50, 15, 15);
-            // the third car 
-            //drawarea.DrawRectangle(p, 100, 270, 15, 15);
-            //SolidBrush b2 = new SolidBrush(Color.Red);
-            //drawarea.FillRectangle(b2, 100, 270, 15, 15);
-
-            // the fourth car
-            // the third car 
-
-            //drawarea.DrawRectangle(p, 100, 333, 15, 15);
-            //SolidBrush b3 = new SolidBrush(Color.Purple);
-            //drawarea.FillRectangle(b3, 100, 333, 15, 15);
-
-
+          
         }
 
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-            //grid
-            //Graphics g = e.Graphics;
-            //int numOfCells = 6;
-            //int cellSize = 200;
-            //Pen p = new Pen(Color.Black);
-
-            //for (int y = 0; y < numOfCells; ++y)
-            //{
-            //    g.DrawLine(p, 0, y * cellSize, numOfCells * cellSize, y * cellSize);
-
-            //}
-
-            //for (int x = 0; x < numOfCells; ++x)
-            //{
-            //    g.DrawLine(p, x * cellSize, 0, x * cellSize, numOfCells * cellSize);
-            //}
-
-        }
+       
         private void timer1_Tick(object sender, EventArgs e)
         {
-            panel2.Refresh();
+            //panel1.Refresh();
             foreach (Car c in carList)
             {
                 c.Location = new Point(c.Location.X, c.Location.Y + 1);
                 c.Draw(ref drawarea);
             }
         }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pb3_DragDrop(object sender, DragEventArgs e)
+        {
+
+        }
+
+        private void pb4_DragDrop(object sender, DragEventArgs e)
+        {
+            pb3.Image = (Bitmap)e.Data.GetData(DataFormats.Bitmap);
+        }
+
+        private void pb3_DragEnter(object sender, DragEventArgs e)
+        {
+            e.Effect = e.AllowedEffect;
+        }
+
+        private void pb4_DragEnter(object sender, DragEventArgs e)
+        {
+            e.Effect = e.AllowedEffect;
+        }
+
+        private void pb1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pb1_DragDrop(object sender, DragEventArgs e)
+        {
+            pb1.Image = (Bitmap)e.Data.GetData(DataFormats.Bitmap);
+        }
+
+        private void pb1_DragEnter(object sender, DragEventArgs e)
+        {
+            e.Effect = e.AllowedEffect;
+        }
+
+        private void pb2_DragDrop(object sender, DragEventArgs e)
+        {
+            pb2.Image = (Bitmap)e.Data.GetData(DataFormats.Bitmap);
+        }
+
+        private void pb2_DragEnter(object sender, DragEventArgs e)
+        {
+            e.Effect = e.AllowedEffect;
+        }
+
+        private void pb4_DragEnter_1(object sender, DragEventArgs e)
+        {
+            e.Effect = e.AllowedEffect;
+        }
+
+        private void pb4_DragDrop_1(object sender, DragEventArgs e)
+        {
+            pb4.Image = (Bitmap)e.Data.GetData(DataFormats.Bitmap);
+        }
+
+        private void pic1_DragEnter(object sender, DragEventArgs e)
+        {
+            e.Effect = e.AllowedEffect;
+        }
+
+        private void pic1_DragDrop(object sender, DragEventArgs e)
+        {
+          //  pic1.Image = (Bitmap)e.Data.GetData(DataFormats.Bitmap);
+        }
+
+        private void panel1_DragDrop_1(object sender, DragEventArgs e)
+        {
+         //   panel1.Image = (Bitmap)e.Data.GetData(DataFormats.Bitmap);
+        }
+
+        private void p1_DragDrop(object sender, DragEventArgs e)
+        {
+            p1.Image = (Bitmap)e.Data.GetData(DataFormats.Bitmap);
+        }
+
+        private void p1_DragEnter(object sender, DragEventArgs e)
+        {
+            e.Effect = e.AllowedEffect;
+        }
     }
+    
 }
