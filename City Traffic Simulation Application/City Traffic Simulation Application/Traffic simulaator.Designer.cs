@@ -278,7 +278,6 @@
             // 
             // timer2
             // 
-            this.timer2.Enabled = true;
             this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
             // Traffic_simulaator

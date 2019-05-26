@@ -61,12 +61,12 @@ namespace City_Traffic_Simulation_Application
             carListSouth.Add(new Car(new Point(265, 230), 15, 15));
             //West
             carListWest.Add(new Car(new Point(450, 115), 15, 15));
+            traffics.Add(new Car(new Point(0, 140), 15, 15));
             //carList.Add(new Car(new Point(300, 50), 15, 15));
-            Random r = new Random();
             drawarea = p1.CreateGraphics(); // to create the cars on the picture box with the crossing
             drawarea2 = pb2.CreateGraphics();
-            timer1.Interval = 25;
-            timer2.Interval = 50;
+            timer1.Interval = 10;
+            timer2.Interval = 10;
         }
 
         private void CarWaypoints()
@@ -253,16 +253,16 @@ namespace City_Traffic_Simulation_Application
             {
                 c.Location = new Point(c.Location.X + 1, c.Location.Y);
                 c.Draw(ref drawarea);
-                //c.Draw(ref drawarea2);
-                if (c.Location == new Point(450, 140))
-                {
-                    pb2.Refresh();
-                    foreach (Car c2 in carListEast)
-                    {
-                        c2.Location = new Point(c2.Location.X + 1, c2.Location.Y);
-                        c2.Draw(ref drawarea2);
-                    }
-                }
+                ////c.Draw(ref drawarea2);
+                //if (c.Location == new Point(450, 140))
+                //{
+                //    pb2.Refresh();
+                //    foreach (Car c2 in carListEast)
+                //    {
+                //        c2.Location = new Point(c2.Location.X + 1, c2.Location.Y);
+                //        c2.Draw(ref drawarea2);
+                //    }
+                //}
             }
 
             foreach (Car c in carListSouth)
@@ -373,6 +373,7 @@ namespace City_Traffic_Simulation_Application
         private void button2_Click(object sender, EventArgs e)
         {
             timer1.Stop();
+            timer2.Stop();
         }
 
         private void p1_Click(object sender, EventArgs e)
@@ -382,8 +383,13 @@ namespace City_Traffic_Simulation_Application
 
         private void timer2_Tick(object sender, EventArgs e)
         {
-           traffics.Add(new Car(new Point(300, 50), 10, 10));
-          
+            pb2.Refresh();
+            foreach (Car c2 in carListEast)
+            {
+                c2.Location = new Point(c2.Location.X + 1, c2.Location.Y);
+                c2.Draw(ref drawarea2);
+            }
+            
         }
     }
     
