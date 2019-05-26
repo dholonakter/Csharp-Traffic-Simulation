@@ -27,6 +27,7 @@ namespace City_Traffic_Simulation_Application
         List<Car> carListSouth;
         List<Car> carListWest;
         Graphics drawarea;
+        Graphics drawarea2;
 
 
         public Traffic_simulaator()
@@ -57,7 +58,8 @@ namespace City_Traffic_Simulation_Application
             //carList.Add(new Car(new Point(300, 50), 15, 15));
             Random r = new Random();
             drawarea = p1.CreateGraphics(); // to create the cars on the picture box with the crossing
-            timer1.Interval = 100;
+            drawarea2 = pb2.CreateGraphics();
+            timer1.Interval = 10;
         }
 
         private void CarWaypoints()
@@ -229,7 +231,9 @@ namespace City_Traffic_Simulation_Application
        
         private void timer1_Tick(object sender, EventArgs e)
         {
+            
             p1.Refresh();
+            //pb2.Refresh();
             foreach (Car c in carListNorth)
             {
                 c.Location = new Point(c.Location.X, c.Location.Y + 1);
@@ -240,6 +244,16 @@ namespace City_Traffic_Simulation_Application
             {
                 c.Location = new Point(c.Location.X + 1, c.Location.Y);
                 c.Draw(ref drawarea);
+                //c.Draw(ref drawarea2);
+                if (c.Location == new Point(450, 140))
+                {
+                    pb2.Refresh();
+                    foreach (Car c2 in carListEast)
+                    {
+                        c2.Location = new Point(c2.Location.X + 1, c2.Location.Y);
+                        c2.Draw(ref drawarea2);
+                    }
+                }
             }
 
             foreach (Car c in carListSouth)
