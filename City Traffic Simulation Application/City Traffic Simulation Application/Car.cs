@@ -61,6 +61,10 @@ namespace City_Traffic_Simulation_Application
             set { location = value; }
         }
 
+        public void Drawtrafic(ref Graphics gr)
+        {
+            gr.FillRectangle(Brushes.Green, this.location.X, this.location.Y, this.width, this.height);
+        }
         public void Draw(ref Graphics gr)
         {
             gr.FillRectangle(Brushes.Violet, this.location.X, this.location.Y, this.width, this.height);

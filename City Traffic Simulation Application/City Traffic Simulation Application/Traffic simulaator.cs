@@ -26,6 +26,7 @@ namespace City_Traffic_Simulation_Application
         List<Car> carListEast;
         List<Car> carListSouth;
         List<Car> carListWest;
+        List<Car> traffics;
         Graphics drawarea;
         Graphics drawarea2;
 
@@ -38,16 +39,21 @@ namespace City_Traffic_Simulation_Application
             pb2.AllowDrop = true;
             p1.AllowDrop = true;
             pb4.AllowDrop = true;
-
+            // car speed
+            
+            
             grid = new Grid();
             // instanciating the draw area 
             carListNorth = new List<Car>();
             carListEast = new List<Car>();
             carListSouth = new List<Car>();
             carListWest = new List<Car>();
+            traffics = new List<Car>();
             //North
             carListNorth.Add(new Car(new Point(225, 25), 15, 15));
             carListNorth.Add(new Car(new Point(225, 50), 15, 15));
+           
+            carListNorth.Add(new Car(new Point(225, 5), 15, 15));
             //East
             carListEast.Add(new Car(new Point(0, 140), 8, 8));
             carListEast.Add(new Car(new Point(25, 140), 8, 8));
@@ -59,7 +65,8 @@ namespace City_Traffic_Simulation_Application
             Random r = new Random();
             drawarea = p1.CreateGraphics(); // to create the cars on the picture box with the crossing
             drawarea2 = pb2.CreateGraphics();
-            timer1.Interval = 10;
+            timer1.Interval = 25;
+            timer2.Interval = 50;
         }
 
         private void CarWaypoints()
@@ -224,7 +231,9 @@ namespace City_Traffic_Simulation_Application
         {
             
             timer1.Start();
-            Pen p = new Pen(Color.Yellow);
+            timer2.Start();
+           // Pen p = new Pen(Color.Yellow);
+           // car.Drawtrafic(Graphics(250,200,20,20));
           
         }
 
@@ -364,6 +373,17 @@ namespace City_Traffic_Simulation_Application
         private void button2_Click(object sender, EventArgs e)
         {
             timer1.Stop();
+        }
+
+        private void p1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+           traffics.Add(new Car(new Point(300, 50), 10, 10));
+          
         }
     }
     
