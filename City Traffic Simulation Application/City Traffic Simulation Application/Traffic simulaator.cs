@@ -391,6 +391,16 @@ namespace City_Traffic_Simulation_Application
             }
             
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+           
+            timer1.Stop();
+            timer1.Start();
+            timer2.Stop();
+           
+            timer2.Start();
+        }
     }
     
 }
