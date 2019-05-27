@@ -29,6 +29,7 @@ namespace City_Traffic_Simulation_Application
         List<Car> traffics;
         Graphics drawarea;
         Graphics drawarea2;
+        Graphics drawarea3;
 
 
         public Traffic_simulaator()
@@ -65,6 +66,7 @@ namespace City_Traffic_Simulation_Application
             //carList.Add(new Car(new Point(300, 50), 15, 15));
             drawarea = p1.CreateGraphics(); // to create the cars on the picture box with the crossing
             drawarea2 = pb2.CreateGraphics();
+            drawarea3 = p1.CreateGraphics();
             timer1.Interval = 10;
             timer2.Interval = 10;
         }
@@ -124,6 +126,33 @@ namespace City_Traffic_Simulation_Application
 
 
 
+        }
+        // for creating the traffic light
+        public void drawtraffic()
+        {
+            Pen p = new Pen(Color.Red);
+            drawarea3.DrawRectangle(p,280,110,10,10);
+            SolidBrush s = new SolidBrush(Color.Red);
+            drawarea3.FillEllipse(s,280,110,10,10);
+           // drawarea3.Dispose();
+        }
+
+        public void drawtrafficgreen()
+        {
+            Pen p = new Pen(Color.Green);
+            drawarea3.DrawRectangle(p, 280, 150, 10, 10);
+            SolidBrush s = new SolidBrush(Color.Green);
+            drawarea3.FillEllipse(s, 280, 150, 10, 10);
+            // drawarea3.Dispose();
+        }
+
+        public void drawtrafficgreen2()
+        {
+            Pen p = new Pen(Color.Green);
+            drawarea3.DrawRectangle(p, 200, 150, 10, 10);
+            SolidBrush s = new SolidBrush(Color.Green);
+            drawarea3.FillEllipse(s, 200, 150, 10, 10);
+            // drawarea3.Dispose();
         }
 
         private void Mouse_Down(object sender, MouseEventArgs e)
@@ -232,9 +261,11 @@ namespace City_Traffic_Simulation_Application
             
             timer1.Start();
             timer2.Start();
-           // Pen p = new Pen(Color.Yellow);
-           // car.Drawtrafic(Graphics(250,200,20,20));
-          
+            // Pen p = new Pen(Color.Yellow);
+            // car.Drawtrafic(Graphics(250,200,20,20));
+           
+
+
         }
 
        
@@ -242,6 +273,10 @@ namespace City_Traffic_Simulation_Application
         {
             
             p1.Refresh();
+            this.drawtraffic();
+            this.drawtrafficgreen();
+            this.drawtrafficgreen();
+
             //pb2.Refresh();
             foreach (Car c in carListNorth)
             {
@@ -400,6 +435,16 @@ namespace City_Traffic_Simulation_Application
             timer2.Stop();
            
             timer2.Start();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            drawtraffic();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            drawtraffic();
         }
     }
     

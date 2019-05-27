@@ -34,6 +34,7 @@
             this.pbcrossing2 = new System.Windows.Forms.PictureBox();
             this.pbcrossing1 = new System.Windows.Forms.PictureBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -50,7 +51,6 @@
             this.p1 = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timer2 = new System.Windows.Forms.Timer(this.components);
-            this.button5 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbcrossing2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbcrossing1)).BeginInit();
@@ -117,6 +117,16 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "OPERATIONS";
             // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(11, 161);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(105, 67);
+            this.button5.TabIndex = 4;
+            this.button5.Text = "ReStart ";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
             // button4
             // 
             this.button4.Location = new System.Drawing.Point(11, 316);
@@ -125,6 +135,7 @@
             this.button4.TabIndex = 3;
             this.button4.Text = "Print";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button3
             // 
@@ -134,6 +145,7 @@
             this.button3.TabIndex = 2;
             this.button3.Text = "Save";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
@@ -281,16 +293,6 @@
             // timer2
             // 
             this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(11, 161);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(105, 67);
-            this.button5.TabIndex = 4;
-            this.button5.Text = "ReStart ";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // Traffic_simulaator
             // 
