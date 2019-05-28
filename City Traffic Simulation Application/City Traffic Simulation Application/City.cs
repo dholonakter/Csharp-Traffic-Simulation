@@ -31,7 +31,7 @@ namespace City_Traffic_Simulation_Application
             //virtual positions of entities
             foreach (Crossing c in allCrossings)
             {
-                List<object> res =  c.MoveCars();
+                List<object> res = new List<object>(); //c.MoveCars();
                 if (c.crossingID == crossingId)
                 {
                     currentCrossingFrame = res;

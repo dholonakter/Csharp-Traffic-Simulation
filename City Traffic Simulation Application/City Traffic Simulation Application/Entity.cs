@@ -69,15 +69,15 @@ namespace City_Traffic_Simulation_Application
         }
 
 
-        public int[] Move() //method for onscreen entities
+        public void Move() //method for onscreen entities
         {
             if (nextWayPoint == null)
             {
-                return new int[3] { (int)x, (int)y, id };  // do nothing if there is nowhere to go
+                return;// new int[3] { (int)x, (int)y, id };  // do nothing if there is nowhere to go
             }
             else if (!driving)
             {
-                return new int[3] { (int)x, (int)y, id }; 
+                return;// new int[3] { (int)x, (int)y, id }; 
             }
 
             if (distanceTillWaypoint <= 0)
@@ -85,7 +85,7 @@ namespace City_Traffic_Simulation_Application
                 if (waiting)
                 {
                     driving = false;
-                    return new int[3] { (int)x, (int)y, id };// if we're waiting and past our waiting point, do nothing.
+                    return;// new int[3] { (int)x, (int)y, id };// if we're waiting and past our waiting point, do nothing.
                 }
             }
 
@@ -104,7 +104,7 @@ namespace City_Traffic_Simulation_Application
              */
             if(driving)
             {
-                double frameSpeedH = Clock.dt * Speed; //Hypotenuse of similar triangle
+                double frameSpeedH = 10 * Speed; //Hypotenuse of similar triangle
                 x += ratioX * frameSpeedH;
                 y += ratioY * frameSpeedH;
 
@@ -121,6 +121,8 @@ namespace City_Traffic_Simulation_Application
                 if (this.nextWayPoint.nextWaypoint==null)
                 {
                     leaving = this.nextWayPoint.End;
+                    driving = false;
+                    return;
                 }
 
                 Waypoint w = this.nextWayPoint.nextWaypoint;
@@ -144,15 +146,17 @@ namespace City_Traffic_Simulation_Application
                 {
                     w = nextWayPoint.waypointRight;
                 }
+                this.nextWayPoint = w;
                 CalculateDirection(x, y, w);
-                this.nextWayPoint=w;
+                
             }
 
-
+            /*
             int xRound = Convert.ToInt32(x);
             int yRound = Convert.ToInt32(y);
             int[] result = new int[3]{xRound, yRound, id};
             return result ; //returns the updated Point value for the entity
+            */
         }
 
         public virtual void CalculateDirection(double x, double y, Waypoint w) //method that calculates the direction to go in
@@ -165,7 +169,12 @@ namespace City_Traffic_Simulation_Application
             double deltaH = Math.Sqrt(deltaX * deltaX + deltaY * deltaY);
 
             distanceTillWaypoint = deltaH;
-
+            if (deltaH == 0)
+            {
+                ratioX = 0;
+                ratioY = 0;
+                return;
+            } 
             ratioX = deltaX / deltaH;
             ratioY = deltaY / deltaH;
 
@@ -186,11 +195,11 @@ namespace City_Traffic_Simulation_Application
         {
             if (Speed <= maxSpeed)
             {
-                Speed += Accel * Clock.dt;
+                Speed += Accel * 10;
             }
             else if (Speed - maxSpeed > Speed * 0.1f)
             {
-                Speed -= Decel * Clock.dt;
+                Speed -= Decel * 10;
             }
         }
 

@@ -45,14 +45,13 @@ namespace City_Traffic_Simulation_Application
             path = direction;
         }
 
-        public int Width
+        public Car(Waypoint w): base (w.x,w.y,w)
         {
-            get { return width; }
-        }
-
-        public int Height
-        {
-            get { return height; }
+            this.maxSpeed = 0.1;
+            this.Speed = 0;
+            this.Accel = 0.0001;
+            this.width = 15;
+            this.height = 15;
         }
 
         public Point Location
@@ -61,13 +60,10 @@ namespace City_Traffic_Simulation_Application
             set { location = value; }
         }
 
-        public void Drawtrafic(ref Graphics gr)
-        {
-            gr.FillRectangle(Brushes.Green, this.location.X, this.location.Y, this.width, this.height);
-        }
+
         public void Draw(ref Graphics gr)
         {
-            gr.FillRectangle(Brushes.Violet, this.location.X, this.location.Y, this.width, this.height);
+            gr.FillRectangle(Brushes.Violet, (float)this.x, (float)this.y, this.width, this.height);
         }
     }
 }

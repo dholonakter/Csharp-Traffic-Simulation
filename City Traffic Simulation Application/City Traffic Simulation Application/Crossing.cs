@@ -38,19 +38,20 @@ namespace City_Traffic_Simulation_Application
             //gr = 
         }
 
-        public List<object> MoveCars()
+        public void MoveCars()
         {
-            List<object> carCoordinates= new List<object> { };
-            foreach (Car c in cars)
+            //List<object> carCoordinates= new List<object> { };
+            foreach (Car c in cars.ToList())
             {
-              carCoordinates.Add(c.Move());
+                c.Move();
+              //carCoordinates.Add(c.Move());
                 if (c.leaving != null)
                 {
                     cars.Remove(c);
                     //todo get the proper crossing and add C to their list of cars
                 }
             }
-            return carCoordinates;
+            //return carCoordinates;
         }
 
         public void nextPattern()
@@ -68,6 +69,11 @@ namespace City_Traffic_Simulation_Application
         public void StartTime()
         {
             t.Start();
+        }
+
+        public void TestCar()
+        {
+            cars.Add(new Car(West));
         }
 
         public void CreatePoints(int width, int height)
