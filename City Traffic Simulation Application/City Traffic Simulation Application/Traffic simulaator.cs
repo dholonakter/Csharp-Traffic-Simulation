@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Timers;
 
 namespace City_Traffic_Simulation_Application
 {
@@ -41,8 +42,8 @@ namespace City_Traffic_Simulation_Application
             p1.AllowDrop = true;
             pb4.AllowDrop = true;
             // car speed
-            
-            
+
+
             grid = new Grid();
             // instanciating the draw area 
             carListNorth = new List<Car>();
@@ -53,7 +54,7 @@ namespace City_Traffic_Simulation_Application
             //North
             carListNorth.Add(new Car(new Point(225, 25), 15, 15));
             carListNorth.Add(new Car(new Point(225, 50), 15, 15));
-           
+
             carListNorth.Add(new Car(new Point(225, 5), 15, 15));
             //East
             carListEast.Add(new Car(new Point(0, 140), 8, 8));
@@ -103,12 +104,12 @@ namespace City_Traffic_Simulation_Application
             destination.BackgroundImage = (Bitmap)e.Data.GetData(typeof(Bitmap));
 
 
-            Point cursor = PointToClient(Cursor.Position);
-            Point drawPoint = new Point();
+            //Point cursor = PointToClient(Cursor.Position);
+            //Point drawPoint = new Point();
 
             //Finding out which cell the crossing is dropped on
-            determineCell(e);
-            drawPoint = grid.Cells[selectedCell - 1].Location;
+            //determineCell(e);
+            //drawPoint = grid.Cells[selectedCell - 1].Location;
             //if (e.AllowedEffect == DragDropEffects.Move)
             //{
             //    foreach (Panel p in listP)
@@ -131,10 +132,10 @@ namespace City_Traffic_Simulation_Application
         public void drawtraffic()
         {
             Pen p = new Pen(Color.Red);
-            drawarea3.DrawRectangle(p,280,110,10,10);
+            drawarea3.DrawRectangle(p, 280, 110, 10, 10);
             SolidBrush s = new SolidBrush(Color.Red);
-            drawarea3.FillEllipse(s,280,110,10,10);
-           // drawarea3.Dispose();
+            drawarea3.FillEllipse(s, 280, 110, 10, 10);
+            // drawarea3.Dispose();
         }
 
         public void drawtrafficgreen()
@@ -167,36 +168,70 @@ namespace City_Traffic_Simulation_Application
 
         private void pbcrossing1_MouseDown(object sender, MouseEventArgs e)
         {
-            if (e.Button == MouseButtons.Left)
+            try
             {
-                dragTypeOne = true;
-                pbcrossing1.DoDragDrop(pbcrossing1.Image, DragDropEffects.Copy);
+                if (e.Button == MouseButtons.Left)
+                {
+                    dragTypeOne = true;
+                    pbcrossing1.DoDragDrop(pbcrossing1.Image, DragDropEffects.Copy);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
             }
         }
 
         private void pbcrossing2_MouseDown(object sender, MouseEventArgs e)
         {
-            if (e.Button == MouseButtons.Left)
+            try
             {
-                dragTypeOne = true;
-                pbcrossing2.DoDragDrop(pbcrossing2.Image, DragDropEffects.Copy);
+                if (e.Button == MouseButtons.Left)
+                {
+                    dragTypeOne = true;
+                    pbcrossing2.DoDragDrop(pbcrossing2.Image, DragDropEffects.Copy);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
             }
         }
 
         private void pictureBox2_DragDrop(object sender, DragEventArgs e)
         {
-            e.Effect = e.AllowedEffect;// to set some default effect  when it is drag and drop
+            try
+            {
+                e.Effect = e.AllowedEffect;// to set some default effect  when it is drag and drop
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
 
         private void panel1_MouseClick(object sender, MouseEventArgs e)
         {
-
-            pbcrossing1.DoDragDrop(pbcrossing1.Image, DragDropEffects.Copy);
+            try
+            {
+                pbcrossing1.DoDragDrop(pbcrossing1.Image, DragDropEffects.Copy);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
 
         private void pbcrossing1_MouseClick(object sender, MouseEventArgs e)
         {
-            pbcrossing1.DoDragDrop(pbcrossing1.Image, DragDropEffects.Copy);
+            try
+            {
+                pbcrossing1.DoDragDrop(pbcrossing1.Image, DragDropEffects.Copy);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
 
         //private void panel1_DragEnter(object sender, DragEventArgs e)
@@ -217,16 +252,32 @@ namespace City_Traffic_Simulation_Application
         private void panel1_MouseDown(object sender, MouseEventArgs e)
         {
             //Displays the image on panel when mouse click is released
-            Panel source = (Panel)sender;
-            DoDragDrop(source.BackgroundImage,
-                       DragDropEffects.Copy);
+            try
+            {
+                Panel source = (Panel)sender;
+                DoDragDrop(source.BackgroundImage,
+                           DragDropEffects.Copy);
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
 
         private void panel2_DragDrop(object sender, DragEventArgs e)
         {
-            Panel destination = (Panel)sender;
-            destination.Size = new Size(250, 250);
-            destination.BackgroundImage = (Bitmap)e.Data.GetData(typeof(Bitmap));
+            try
+            {
+                Panel destination = (Panel)sender;
+                destination.Size = new Size(250, 250);
+                destination.BackgroundImage = (Bitmap)e.Data.GetData(typeof(Bitmap));
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
 
         //private void panel2_DragEnter(object sender, DragEventArgs e)
@@ -246,26 +297,50 @@ namespace City_Traffic_Simulation_Application
 
         private void panel2_DragOver(object sender, DragEventArgs e)
         {
-            e.Effect = DragDropEffects.All;
+            try
+            {
+                e.Effect = DragDropEffects.All;
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
 
         private void panel2_MouseDown(object sender, MouseEventArgs e)
         {
-            Panel source = (Panel)sender;
-            DoDragDrop(source.BackgroundImage,
-                       DragDropEffects.Copy);
+            try
+            {
+                Panel source = (Panel)sender;
+                DoDragDrop(source.BackgroundImage,
+                           DragDropEffects.Copy);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
-            timer1.Start();
-            timer2.Start();
-            // Pen p = new Pen(Color.Yellow);
-            // car.Drawtrafic(Graphics(250,200,20,20));
-           
-
-
+            if (p1.Image == pbcrossing1.Image || p1.Image == pbcrossing2.Image)
+             //|| pb2.Image == pbcrossing1.Image || pb2.Image == pbcrossing2.Image
+             //|| pb3.Image == pbcrossing1.Image || pb3.Image == pbcrossing2.Image
+             //|| pb4.Image == pbcrossing1.Image || pb4.Image == pbcrossing2.Image)
+            {
+                try
+                {
+                    timer1.Start();
+                    timer2.Start();
+                    // Pen p = new Pen(Color.Yellow);
+                    // car.Drawtrafic(Graphics(250,200,20,20));
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
+            }
         }
 
        
@@ -426,16 +501,15 @@ namespace City_Traffic_Simulation_Application
             }
             
         }
-
+        
         private void button5_Click(object sender, EventArgs e)
         {
-           
+
             timer1.Stop();
-            timer1.Start();
             timer2.Stop();
-           
-            timer2.Start();
+            tableLayoutPanel1.Refresh();
         }
+
 
         private void button3_Click(object sender, EventArgs e)
         {
