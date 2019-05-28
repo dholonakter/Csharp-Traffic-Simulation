@@ -1,0 +1,7 @@
+WEST ENTRANCE 1 0,166 -> 2 126,166 -> 3 180,166 -> 4 300,166 END EAST
+FROM 1 LEFT -> 5 44,152 -> 6 126,152 -> 7 160,139 -> 8 164,100 -> 9 164,0 END NORTH
+FROM 2 RIGHT -> 10 140,176 -> 11 140,300 END SOUTH
+SOUTH ENTRANCE 12 164,300 -> 13 164,175 -> TO 8
+FROM 13 LEFT -> 14 150,150 -> 15 126,136 -> 16 0,136 END WEST
+FROM 13 RIGHT -> TO 3
+reference frame is 300x300 in size. Figure out relative distance -> place waypoints at appropriate spot.

@@ -26,7 +26,12 @@ namespace City_Traffic_Simulation_Application
         public int xoffset { get; set; }
         public int yoffset { get; set; }
 
-        public bool driving { get; set; } = false;
+        public bool driving { get; set; } = true;
+        private bool waiting { get; set; } = false;
+
+        public string leaving { get; set; } = null;
+
+        Waypoint.GreenLightHandler GreenHandler;
 
         private double distanceTillWaypoint;
 
@@ -75,7 +80,16 @@ namespace City_Traffic_Simulation_Application
                 return new int[3] { (int)x, (int)y, id }; 
             }
 
-            ChangeSpeed();
+            if (distanceTillWaypoint <= 0)
+            {
+                if (waiting)
+                {
+                    driving = false;
+                    return new int[3] { (int)x, (int)y, id };// if we're waiting and past our waiting point, do nothing.
+                }
+            }
+
+                ChangeSpeed();
 
             /* . A
              * |\
@@ -88,14 +102,40 @@ namespace City_Traffic_Simulation_Application
              *    x' 
              *   x/framespeedH == x'/AB == ratioX -> similar triangles
              */
-            double frameSpeedH = Clock.dt * Speed; //Hypotenuse of similar triangle
-            x += ratioX * frameSpeedH;
-            y += ratioY * frameSpeedH;
-            distanceTillWaypoint -= frameSpeedH;
+            if(driving)
+            {
+                double frameSpeedH = Clock.dt * Speed; //Hypotenuse of similar triangle
+                x += ratioX * frameSpeedH;
+                y += ratioY * frameSpeedH;
 
+                distanceTillWaypoint -= frameSpeedH;
+            }
+            
+
+
+            //code to find a new waypoint when the car passes the old one
             if (distanceTillWaypoint <= 0)
             {
+               
+
+                if (this.nextWayPoint.nextWaypoint==null)
+                {
+                    leaving = this.nextWayPoint.End;
+                }
+
                 Waypoint w = this.nextWayPoint.nextWaypoint;
+                if (w.RedLight==true) //IF THE NEXT WAYPOINT IS A TRAFFICLIGHT AND IT IS RED
+                {
+                    
+                    w = new Waypoint(w.x-ratioX*w.waitingcars*(3+xoffset*2), w.y-ratioY*w.waitingcars*(3 + yoffset * 2), w);
+                    w.waitingcars++;
+                    waiting = true;
+                    GreenHandler = new Waypoint.GreenLightHandler(stopwaiting);
+                    w.turngreen += GreenHandler;
+                    //todo subscribe to an event from w where redlight turns false;
+                }
+                
+                
                 if (path == (int)TrafficLight.Directions.L)
                 {
                     w = nextWayPoint.waypointLeft;
@@ -115,14 +155,9 @@ namespace City_Traffic_Simulation_Application
             return result ; //returns the updated Point value for the entity
         }
 
-        public virtual void CalculateDirection(double x, double y, Waypoint w) //method that 
+        public virtual void CalculateDirection(double x, double y, Waypoint w) //method that calculates the direction to go in
         {
-            if(w==null)
-            {
-                return;
-                //todo make an event(?) to put the car on a road and delete the old picturebox
-                //or, add a reference to a road object in the waypoint class and put the car on that road
-            }
+            
 
             double deltaX = w.x - x -xoffset;
             double deltaY = w.y - y -yoffset;
@@ -157,6 +192,14 @@ namespace City_Traffic_Simulation_Application
             {
                 Speed -= Decel * Clock.dt;
             }
+        }
+
+
+        private void stopwaiting(Waypoint w, EventArgs e)
+        {
+            driving = true;
+            waiting = false;
+            w.turngreen -= GreenHandler;
         }
     }
 }

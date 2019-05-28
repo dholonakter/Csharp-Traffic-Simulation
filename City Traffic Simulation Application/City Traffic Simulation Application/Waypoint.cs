@@ -16,11 +16,31 @@ namespace City_Traffic_Simulation_Application
         public Waypoint waypointStraight;
         public Waypoint waypointLeft;
         public Waypoint waypointRight;
-        
+        public string End;
+        public int waitingcars =0;
+        private bool redlight = false;
+        public delegate void GreenLightHandler(Waypoint sender, EventArgs e);
+        public event GreenLightHandler turngreen;
 
         public double x;
         public double y;
 
+
+        public bool RedLight
+        {
+            get { return redlight; }
+            set
+            {
+                redlight = value;
+                if (value == false)
+                {
+                    if (turngreen!= null)
+                    {
+                        OnTurnGreen(new EventArgs());
+                    }
+                }
+            }
+        }
         public Waypoint (double x, double y)
         {
             this.x = x;
@@ -48,6 +68,13 @@ namespace City_Traffic_Simulation_Application
         {
             this.x = p.X;
             this.y = p.Y;
+        }
+
+        protected virtual void OnTurnGreen(EventArgs e)
+        {
+            waitingcars = 0;
+            turngreen(this,e);
+            
         }
     }
 }
