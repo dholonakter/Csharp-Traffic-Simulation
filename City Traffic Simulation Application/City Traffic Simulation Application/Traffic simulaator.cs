@@ -406,7 +406,11 @@ namespace City_Traffic_Simulation_Application
 
         private void button5_Click(object sender, EventArgs e)
         {
-           //todo restart functionality
+            //todo reset functionality
+            tableLayoutPanel1.Refresh();
+            timer1.Stop();
+            timer2.Stop();
+
         }
 
         private void button3_Click(object sender, EventArgs e)
