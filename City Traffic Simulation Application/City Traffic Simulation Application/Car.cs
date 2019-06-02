@@ -51,7 +51,10 @@ namespace City_Traffic_Simulation_Application
             this.Speed = 0;
             this.Accel = 0.0001;
             this.width = 15;
-            this.height = 15;
+            this.height = 10;
+            xoffset = width / 2;
+            yoffset = height / 2;
+            RandomDirection();
         }
 
         public Point Location

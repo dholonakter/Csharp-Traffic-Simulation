@@ -13,14 +13,12 @@ namespace City_Traffic_Simulation_Application
     {
         //a collection of crossings connected by roads
         public List<Crossing> allCrossings; //doesn't need direct access to cars, all cars are either on crossings or roads
-        public List<Road> allRoads;
         public string CityName { get; set; }
 
 
         public City(string cityname)
         {
             allCrossings = new List<Crossing>();
-            allRoads = new List<Road>();
             this.CityName = cityname;
 
         }
@@ -38,10 +36,6 @@ namespace City_Traffic_Simulation_Application
                 }
             }
 
-            foreach(Road r in allRoads)
-            {
-                r.MoveCars();
-            }
             //virtual states of traffic lights todo
 
             // 

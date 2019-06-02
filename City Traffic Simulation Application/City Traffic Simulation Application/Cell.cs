@@ -21,16 +21,6 @@ namespace City_Traffic_Simulation_Application
             this.taken = false;
         }
 
-        public Point Location
-        {
-            get { return this.location; }
-            set { this.location = value; }
-        }
 
-        public bool Taken
-        {
-            get { return this.taken; }
-            set { this.taken = value; }
-        }
     }
 }

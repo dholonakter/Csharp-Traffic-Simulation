@@ -76,5 +76,13 @@ namespace City_Traffic_Simulation_Application
             turngreen(this,e);
             
         }
+        public void Draw(ref Graphics gr)
+        {
+            Color c = Color.Blue;
+            if (RedLight == true)
+                c = Color.Red;
+            Brush b = new SolidBrush(c);
+            gr.FillEllipse(b, (float)x, (float)y, 2,2);
+        }
     }
 }

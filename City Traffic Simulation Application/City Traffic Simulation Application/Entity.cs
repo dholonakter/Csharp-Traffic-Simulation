@@ -19,12 +19,10 @@ namespace City_Traffic_Simulation_Application
         public double Speed { get; set; }
         public double Accel { get; set; }
         public double Decel { get; set; }
-        public Road road { get; set; } //Road object the car is on. these may be moved to the car specific class if we don't let pedestrians have roads
-        public double roadProgress { get; set; } //determines how far a car is along a road
         public int path { get; set; }
 
-        public int xoffset { get; set; }
-        public int yoffset { get; set; }
+        public float xoffset { get; set; }
+        public float yoffset { get; set; }
 
         public bool driving { get; set; } = true;
         private bool waiting { get; set; } = false;
@@ -52,12 +50,7 @@ namespace City_Traffic_Simulation_Application
             this.y = y;
             CalculateDirection(x, y, w);
         }
-        public Entity(Road r)
-        {
-            this.id = ++lastEntityId;
-            this.road = r;
-        }
-
+        
 
         public Entity (Point p, Waypoint w)
         {
@@ -80,14 +73,7 @@ namespace City_Traffic_Simulation_Application
                 return;// new int[3] { (int)x, (int)y, id }; 
             }
 
-            if (distanceTillWaypoint <= 0)
-            {
-                if (waiting)
-                {
-                    driving = false;
-                    return;// new int[3] { (int)x, (int)y, id };// if we're waiting and past our waiting point, do nothing.
-                }
-            }
+            
 
                 ChangeSpeed();
 
@@ -102,69 +88,77 @@ namespace City_Traffic_Simulation_Application
              *    x' 
              *   x/framespeedH == x'/AB == ratioX -> similar triangles
              */
-            if(driving)
-            {
-                double frameSpeedH = 10 * Speed; //Hypotenuse of similar triangle
-                x += ratioX * frameSpeedH;
-                y += ratioY * frameSpeedH;
-
-                distanceTillWaypoint -= frameSpeedH;
-            }
             
+            double frameSpeedH = 10 * Speed; //Hypotenuse of similar triangle
+            x += ratioX * frameSpeedH;
+            y += ratioY * frameSpeedH;
 
-
-            //code to find a new waypoint when the car passes the old one
-            if (distanceTillWaypoint <= 0)
+            if (driving)
             {
-               
+                distanceTillWaypoint -= frameSpeedH;
+                
 
-                if (this.nextWayPoint.nextWaypoint==null)
-                {
-                    leaving = this.nextWayPoint.End;
-                    driving = false;
-                    return;
-                }
 
-                Waypoint w = this.nextWayPoint.nextWaypoint;
-                if (w.RedLight==true) //IF THE NEXT WAYPOINT IS A TRAFFICLIGHT AND IT IS RED
+                //code to find a new waypoint when the car passes the old one
+                if (distanceTillWaypoint <= 0)
                 {
+                    if (waiting)
+                    {
+                        driving = false;
+                        return;// new int[3] { (int)x, (int)y, id };// if we're waiting and past our waiting point, do nothing.
+                    }
+
+                    if (this.nextWayPoint.nextWaypoint == null)
+                    {
+                        leaving = this.nextWayPoint.End;
+                        driving = false;
+                        return;
+                    }
+
+                    Waypoint w = this.nextWayPoint.nextWaypoint;
+
+                    if (path == (int)TrafficLight.Directions.L)
+                    {
+                        w = nextWayPoint.waypointLeft;
+                    }
+                    else if (path == (int)TrafficLight.Directions.R)
+                    {
+                        w = nextWayPoint.waypointRight;
+                    }
+
+
                     
-                    w = new Waypoint(w.x-ratioX*w.waitingcars*(3+xoffset*2), w.y-ratioY*w.waitingcars*(3 + yoffset * 2), w);
-                    w.waitingcars++;
-                    waiting = true;
-                    GreenHandler = new Waypoint.GreenLightHandler(stopwaiting);
-                    w.turngreen += GreenHandler;
-                    //todo subscribe to an event from w where redlight turns false;
-                }
-                
-                
-                if (path == (int)TrafficLight.Directions.L)
-                {
-                    w = nextWayPoint.waypointLeft;
-                }
-                else if (path == (int)TrafficLight.Directions.R)
-                {
-                    w = nextWayPoint.waypointRight;
-                }
-                this.nextWayPoint = w;
-                CalculateDirection(x, y, w);
-                
-            }
 
-            /*
-            int xRound = Convert.ToInt32(x);
-            int yRound = Convert.ToInt32(y);
-            int[] result = new int[3]{xRound, yRound, id};
-            return result ; //returns the updated Point value for the entity
-            */
+
+
+                    this.nextWayPoint = w;
+
+                    if (w.RedLight == true) //IF THE NEXT WAYPOINT IS A TRAFFICLIGHT AND IT IS RED
+                    {
+                        w.waitingcars++;
+                        CalculateDirection(x, y, w);
+                        
+
+                        waiting = true;
+                        GreenHandler = new Waypoint.GreenLightHandler(stopwaiting);
+                        w.turngreen += GreenHandler;
+                        //todo subscribe to an event from w where redlight turns false;
+                        w = new Waypoint(w.x - ratioX * w.waitingcars * (3 + xoffset * 2), w.y - ratioY * w.waitingcars * (3 + yoffset * 2), w);
+                        this.nextWayPoint = w;
+                    }
+                    CalculateDirection(x, y, w);
+
+                }
+
+            }
         }
 
         public virtual void CalculateDirection(double x, double y, Waypoint w) //method that calculates the direction to go in
         {
             
 
-            double deltaX = w.x - x -xoffset;
-            double deltaY = w.y - y -yoffset;
+            double deltaX = w.x - x ;
+            double deltaY = w.y - y ;
 
             double deltaH = Math.Sqrt(deltaX * deltaX + deltaY * deltaY);
 
@@ -182,14 +176,6 @@ namespace City_Traffic_Simulation_Application
             //return result; 
         }
 
-        
-        public void MoveRoad()
-        {
-            //todo implement. Increases roadProgress according to road.maxspeed and road.lenght . 
-            //When over 100%, put a reference to the car in the Crossing object it enters, give it a location and route to follow
-            //remove reference to the car from the road
-
-        }
 
         private void ChangeSpeed()
         {
@@ -201,9 +187,18 @@ namespace City_Traffic_Simulation_Application
             {
                 Speed -= Decel * 10;
             }
+
+            if (!driving)
+                Speed = 0;
         }
 
-
+        public void RandomDirection()
+        {
+            Array values = Enum.GetValues(typeof(TrafficLight.Directions));
+            Random random = new Random();
+            TrafficLight.Directions randomDirection = (TrafficLight.Directions)values.GetValue(random.Next(values.Length));
+            this.path = (int)randomDirection;
+        }
         private void stopwaiting(Waypoint w, EventArgs e)
         {
             driving = true;

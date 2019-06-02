@@ -12,23 +12,18 @@ namespace City_Traffic_Simulation_Application
     class Grid
     {
         private List<Cell> cells;
-        private List<Crossing> crossings;
         [NonSerialized]
-        private Timer car_timer;
+
         private long time;
         private int junctionDefinition;
 
 
-        public List<Crossing> Crossings
-        {
-            get { return crossings; }
-        }
         public Grid()
         {
             this.cells = new List<Cell>();
             //this.crossings = new List<Crossing>();
             this.junctionDefinition = 40;
-            this.InitializeCarTimer();
+
             this.AddCells();
         }
 
@@ -40,27 +35,7 @@ namespace City_Traffic_Simulation_Application
             }
         }
 
-        public int Junction
-        {
-            get { return junctionDefinition; }
-            set { junctionDefinition = value; }
-        }
 
-        public void InitializeCarTimer()
-        {
-            car_timer = new Timer();
-            car_timer.Interval = 40;
-            //car_timer.Tick += car_timer_Tick;
-        }
-
-        public void StartTimers()
-        {
-            car_timer.Start();
-            foreach  (Crossing c in this.Crossings)
-            {
-                c.StartTime();
-            }
-        }
 
         public void AddCells()
         {

@@ -18,7 +18,7 @@ namespace City_Traffic_Simulation_Application
         private Point initialpoint;
         private Point initialpoint2;
         private Point initialpoint3;
-        private Clock clock;
+
         private City city;
         private List<PictureBox> Boxes;
         private int timeuntilflip = 8000;
@@ -28,7 +28,6 @@ namespace City_Traffic_Simulation_Application
         {
             InitializeComponent();
 
-            clock = new Clock();
             this.Text = "Eindhoven";
             city = new City(Text);
             Boxes = new List<PictureBox>();
