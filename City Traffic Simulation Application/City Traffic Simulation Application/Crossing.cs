@@ -19,12 +19,16 @@ namespace City_Traffic_Simulation_Application
         public Waypoint[] points;
         public Waypoint[] redlights;
         public List<Car> cars;
-        private Point location;
+        PictureBox box;
         [NonSerialized]
         Graphics gr;
         public int crossingID;
         static int lastCrossing = 0;
-        int x=0;
+        int i=0;
+        int x;
+        int y;
+        Crossing[,] crossings;
+        Random r = new Random();
 
         public Crossing()
         {
@@ -32,10 +36,16 @@ namespace City_Traffic_Simulation_Application
             cars = new List<Car>();
         }
 
-        public Crossing(Point l)
+        public Crossing(Graphics gr, PictureBox box, int x, int y, ref Crossing[,] crossings)
         {
-            this.location = l;
-            //gr = 
+            crossingID = ++lastCrossing;
+            cars = new List<Car>();
+            this.gr = gr;
+            this.box = box;
+            this.x = x;
+            this.y = y;
+            this.crossings = crossings;
+            i = r.Next(0, 3);
         }
 
         public void MoveCars()
@@ -47,8 +57,60 @@ namespace City_Traffic_Simulation_Application
               //carCoordinates.Add(c.Move());
                 if (c.leaving != null)
                 {
-                    cars.Remove(c);
+                    c.RandomDirection();
                     //todo get the proper crossing and add C to their list of cars
+                    try
+                    {
+                        if (c.leaving == "North")
+                        {
+
+                            if (y > 0)
+                            {
+                                c.leaving = null;
+                                c.nextWayPoint = crossings[x, y - 1].South;
+                                c.x = c.nextWayPoint.x;
+                                c.y = c.nextWayPoint.y;
+                                crossings[x, y - 1].cars.Add(c);
+                            }
+                        }
+                        if (c.leaving == "South")
+                        {
+                            if (y < 1)
+                            {
+                                c.leaving = null;
+                                c.nextWayPoint = crossings[x, y + 1].North;
+                                c.x = c.nextWayPoint.x;
+                                c.y = c.nextWayPoint.y;
+                                crossings[x, y + 1].cars.Add(c);
+                            }
+                        }
+                        if (c.leaving == "East")
+                        {
+                            if (x < 1)
+                            {
+                                c.leaving = null;
+                                c.nextWayPoint = crossings[x + 1, y].West;
+                                c.x = c.nextWayPoint.x;
+                                c.y = c.nextWayPoint.y;
+                                crossings[x + 1, y].cars.Add(c);
+                            }
+                        }
+                        if (c.leaving == "West")
+                        {
+                            if (x > 0)
+                            {
+                                c.leaving = null;
+                                c.nextWayPoint = crossings[x - 1, y].East;
+                                c.x = c.nextWayPoint.x;
+                                c.y = c.nextWayPoint.y;
+                                crossings[x - 1, y].cars.Add(c);
+                            }
+                        }
+                    }
+                    catch
+                    { }
+                    cars.Remove(c);
+
                 }
             }
             //return carCoordinates;
@@ -59,10 +121,6 @@ namespace City_Traffic_Simulation_Application
             //should get a pattern and change whether cars are driving or not according to it.
             //todo actually implement this method, this is just a hardcoded test method currently.
 
-            foreach (Car car in cars)
-            {
-                car.driving = !car.driving;
-            }
 
         }
 
@@ -70,17 +128,35 @@ namespace City_Traffic_Simulation_Application
         public void TestCar()
         {
             
-            if (x == 0)
+            if (i == 0)
                 cars.Add(new Car(West));
-            else if (x == 1)
+            else if (i == 1)
                 cars.Add(new Car(East));
-            else if (x == 2)
+            else if (i == 2)
                 cars.Add(new Car(North));
-            else if (x == 3)
+            else if (i == 3)
                 cars.Add(new Car(South));
-            x++;
-            if (x == 4)
-                x = 0;
+            i++;
+            if (i == 4)
+                i = 0;
+        }
+
+        public void Draw()
+        {
+            box.Refresh();
+            foreach (Car c2 in this.cars)
+            {
+                c2.Draw(ref gr);
+            }
+            foreach (Waypoint w in this.points)
+            {
+                w.Draw(ref gr);
+            }
+        }
+
+        public void drawpoints()
+        {
+            
         }
 
         public Waypoint[] CreatePoints(float width, float height)
@@ -178,7 +254,7 @@ namespace City_Traffic_Simulation_Application
 
             redlights = new Waypoint[6] { w2, w6, w13, w2c, w6c, w13c };
             foreach (Waypoint w in redlights)
-                w.RedLight = true;
+                w.RedLight = false;
 
             points = L;
             return L;

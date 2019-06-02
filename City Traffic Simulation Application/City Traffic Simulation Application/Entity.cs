@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
+using System.Reflection;
 
 namespace City_Traffic_Simulation_Application
 {
@@ -29,6 +30,10 @@ namespace City_Traffic_Simulation_Application
 
         public string leaving { get; set; } = null;
 
+        Random random = new Random();
+
+        protected Brush color;
+
         Waypoint.GreenLightHandler GreenHandler;
 
         private double distanceTillWaypoint;
@@ -41,6 +46,7 @@ namespace City_Traffic_Simulation_Application
         public Entity()
         {
             this.id = ++lastEntityId;
+            color = PickBrush();
         }
         public Entity( double x, double y, Waypoint w)
         {
@@ -49,6 +55,7 @@ namespace City_Traffic_Simulation_Application
             this.x = x;
             this.y = y;
             CalculateDirection(x, y, w);
+            color = PickBrush();
         }
         
 
@@ -59,6 +66,7 @@ namespace City_Traffic_Simulation_Application
             this.x = p.X;
             this.y = p.Y;
             CalculateDirection(x, y, w);
+            color = PickBrush();
         }
 
 
@@ -111,7 +119,6 @@ namespace City_Traffic_Simulation_Application
                     if (this.nextWayPoint.nextWaypoint == null)
                     {
                         leaving = this.nextWayPoint.End;
-                        driving = false;
                         return;
                     }
 
@@ -195,7 +202,7 @@ namespace City_Traffic_Simulation_Application
         public void RandomDirection()
         {
             Array values = Enum.GetValues(typeof(TrafficLight.Directions));
-            Random random = new Random();
+
             TrafficLight.Directions randomDirection = (TrafficLight.Directions)values.GetValue(random.Next(values.Length));
             this.path = (int)randomDirection;
         }
@@ -204,6 +211,20 @@ namespace City_Traffic_Simulation_Application
             driving = true;
             waiting = false;
             w.turngreen -= GreenHandler;
+        }
+
+        private Brush PickBrush()
+        {
+            Brush result = Brushes.Transparent;
+
+            Type brushesType = typeof(Brushes);
+
+            PropertyInfo[] properties = brushesType.GetProperties();
+
+            int rnd = random.Next(properties.Length);
+            result = (Brush)properties[rnd].GetValue(null, null);
+
+            return result;
         }
     }
 }

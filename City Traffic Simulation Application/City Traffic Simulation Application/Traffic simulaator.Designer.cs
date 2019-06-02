@@ -63,11 +63,11 @@
             // 
             this.groupBox1.Controls.Add(this.pbcrossing2);
             this.groupBox1.Controls.Add(this.pbcrossing1);
-            this.groupBox1.Location = new System.Drawing.Point(12, 9);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox1.Location = new System.Drawing.Point(9, 7);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox1.Size = new System.Drawing.Size(129, 286);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox1.Size = new System.Drawing.Size(97, 232);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Crossings tools";
@@ -75,10 +75,10 @@
             // pbcrossing2
             // 
             this.pbcrossing2.Image = ((System.Drawing.Image)(resources.GetObject("pbcrossing2.Image")));
-            this.pbcrossing2.Location = new System.Drawing.Point(11, 149);
-            this.pbcrossing2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pbcrossing2.Location = new System.Drawing.Point(8, 121);
+            this.pbcrossing2.Margin = new System.Windows.Forms.Padding(2);
             this.pbcrossing2.Name = "pbcrossing2";
-            this.pbcrossing2.Size = new System.Drawing.Size(100, 118);
+            this.pbcrossing2.Size = new System.Drawing.Size(75, 96);
             this.pbcrossing2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbcrossing2.TabIndex = 1;
             this.pbcrossing2.TabStop = false;
@@ -88,10 +88,10 @@
             // pbcrossing1
             // 
             this.pbcrossing1.Image = ((System.Drawing.Image)(resources.GetObject("pbcrossing1.Image")));
-            this.pbcrossing1.Location = new System.Drawing.Point(11, 21);
-            this.pbcrossing1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pbcrossing1.Location = new System.Drawing.Point(8, 17);
+            this.pbcrossing1.Margin = new System.Windows.Forms.Padding(2);
             this.pbcrossing1.Name = "pbcrossing1";
-            this.pbcrossing1.Size = new System.Drawing.Size(100, 122);
+            this.pbcrossing1.Size = new System.Drawing.Size(75, 99);
             this.pbcrossing1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbcrossing1.TabIndex = 0;
             this.pbcrossing1.TabStop = false;
@@ -106,21 +106,21 @@
             this.groupBox2.Controls.Add(this.button3);
             this.groupBox2.Controls.Add(this.button2);
             this.groupBox2.Controls.Add(this.button1);
-            this.groupBox2.Location = new System.Drawing.Point(12, 302);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox2.Location = new System.Drawing.Point(9, 245);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox2.Size = new System.Drawing.Size(123, 470);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox2.Size = new System.Drawing.Size(92, 382);
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "OPERATIONS";
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(6, 372);
-            this.button5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button5.Location = new System.Drawing.Point(8, 131);
+            this.button5.Margin = new System.Windows.Forms.Padding(2);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(105, 66);
+            this.button5.Size = new System.Drawing.Size(79, 54);
             this.button5.TabIndex = 4;
             this.button5.Text = "ReStart ";
             this.button5.UseVisualStyleBackColor = true;
@@ -128,21 +128,21 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(12, 97);
-            this.button4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button4.Location = new System.Drawing.Point(8, 257);
+            this.button4.Margin = new System.Windows.Forms.Padding(2);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(105, 71);
+            this.button4.Size = new System.Drawing.Size(79, 58);
             this.button4.TabIndex = 3;
-            this.button4.Text = "Simulate ";
+            this.button4.Text = "Print";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(6, 284);
-            this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button3.Location = new System.Drawing.Point(8, 190);
+            this.button3.Margin = new System.Windows.Forms.Padding(2);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(105, 60);
+            this.button3.Size = new System.Drawing.Size(79, 49);
             this.button3.TabIndex = 2;
             this.button3.Text = "Save";
             this.button3.UseVisualStyleBackColor = true;
@@ -150,10 +150,10 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(7, 192);
-            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button2.Location = new System.Drawing.Point(9, 76);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(105, 62);
+            this.button2.Size = new System.Drawing.Size(79, 50);
             this.button2.TabIndex = 1;
             this.button2.Text = "Pause";
             this.button2.UseVisualStyleBackColor = true;
@@ -161,10 +161,10 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(7, 21);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button1.Location = new System.Drawing.Point(5, 17);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(105, 50);
+            this.button1.Size = new System.Drawing.Size(79, 41);
             this.button1.TabIndex = 0;
             this.button1.Text = "Start ";
             this.button1.UseVisualStyleBackColor = true;
@@ -190,48 +190,48 @@
             this.tableLayoutPanel1.Controls.Add(this.pb4, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.pb2, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.p1, 0, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(141, 9);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(106, 7);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1333, 740);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1000, 601);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // pb3
             // 
             this.pb3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pb3.Location = new System.Drawing.Point(3, 372);
-            this.pb3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pb3.Location = new System.Drawing.Point(2, 302);
+            this.pb3.Margin = new System.Windows.Forms.Padding(2);
             this.pb3.Name = "pb3";
-            this.pb3.Size = new System.Drawing.Size(660, 366);
+            this.pb3.Size = new System.Drawing.Size(496, 297);
             this.pb3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pb3.TabIndex = 2;
             this.pb3.TabStop = false;
-            this.pb3.DragDrop += new System.Windows.Forms.DragEventHandler(this.pb1_DragEnter);
+            this.pb3.DragDrop += new System.Windows.Forms.DragEventHandler(this.pb1_DragDrop);
             this.pb3.DragEnter += new System.Windows.Forms.DragEventHandler(this.p1_DragEnter);
             // 
             // pb4
             // 
             this.pb4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pb4.Location = new System.Drawing.Point(669, 372);
-            this.pb4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pb4.Location = new System.Drawing.Point(502, 302);
+            this.pb4.Margin = new System.Windows.Forms.Padding(2);
             this.pb4.Name = "pb4";
-            this.pb4.Size = new System.Drawing.Size(661, 366);
+            this.pb4.Size = new System.Drawing.Size(496, 297);
             this.pb4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pb4.TabIndex = 4;
             this.pb4.TabStop = false;
-            this.pb4.DragDrop += new System.Windows.Forms.DragEventHandler(this.pb1_DragEnter);
+            this.pb4.DragDrop += new System.Windows.Forms.DragEventHandler(this.pb1_DragDrop);
             this.pb4.DragEnter += new System.Windows.Forms.DragEventHandler(this.p1_DragEnter);
             // 
             // pb2
             // 
             this.pb2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pb2.Location = new System.Drawing.Point(669, 2);
-            this.pb2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pb2.Location = new System.Drawing.Point(502, 2);
+            this.pb2.Margin = new System.Windows.Forms.Padding(2);
             this.pb2.Name = "pb2";
-            this.pb2.Size = new System.Drawing.Size(661, 366);
+            this.pb2.Size = new System.Drawing.Size(496, 296);
             this.pb2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pb2.TabIndex = 8;
             this.pb2.TabStop = false;
@@ -241,10 +241,10 @@
             // p1
             // 
             this.p1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.p1.Location = new System.Drawing.Point(3, 2);
-            this.p1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.p1.Location = new System.Drawing.Point(2, 2);
+            this.p1.Margin = new System.Windows.Forms.Padding(2);
             this.p1.Name = "p1";
-            this.p1.Size = new System.Drawing.Size(660, 366);
+            this.p1.Size = new System.Drawing.Size(496, 296);
             this.p1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.p1.TabIndex = 9;
             this.p1.TabStop = false;
@@ -257,14 +257,14 @@
             // 
             // Traffic_simulaator
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1485, 751);
+            this.ClientSize = new System.Drawing.Size(1114, 610);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Traffic_simulaator";
             this.Text = "Traffic_simulator";
             this.groupBox1.ResumeLayout(false);
