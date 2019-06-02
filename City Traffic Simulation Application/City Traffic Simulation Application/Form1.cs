@@ -56,7 +56,7 @@ namespace City_Traffic_Simulation_Application
 
 
             Crossing crossing = new Crossing();
-            crossing.crossingID = 1;
+            //crossing.crossingID = 1;
 
             Boxes.Add(pictureBox1);
             Boxes.Add(pictureBox2);

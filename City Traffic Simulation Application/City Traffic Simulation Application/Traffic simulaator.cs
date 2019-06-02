@@ -16,8 +16,9 @@ namespace City_Traffic_Simulation_Application
         //creating the draw area 
 
 
-        public int delay = 999;
-
+        int TrafficSwitch = 10000;
+        int CarDelay = 1000;
+        Random r = new Random();
 
         Crossing[,] crossings =  new Crossing [2,2];
         public Traffic_simulaator()
@@ -94,7 +95,6 @@ namespace City_Traffic_Simulation_Application
 
                 Crossing c = new Crossing(Box.CreateGraphics(),Box, (int)Math.Round((double)Box.Location.X / 500), (int)Math.Round((double)Box.Location.Y / 300),ref crossings);
                 c.CreatePoints(Box.Width, Box.Height);
-                c.TestCar();
                 crossings[(int)Math.Round((double)Box.Location.X / 500), (int)Math.Round((double)Box.Location.Y / 300)]=c;
                 
             }
@@ -120,21 +120,31 @@ namespace City_Traffic_Simulation_Application
 
         private void timer2_Tick(object sender, EventArgs e)
         {
-            
+            TrafficSwitch -= timer2.Interval;
+            CarDelay -= timer2.Interval;
 
             foreach (Crossing c in crossings)
             {
-                delay -= timer2.Interval;
+
                 if (c != null)
                 {
                     c.MoveCars();
-                    c.Draw();
-
+                    c.Draw(false);//flip this bool to draw all waypoints instead of just traffic lights
+                    if (TrafficSwitch < 0)
+                        c.nextPattern();
                 }
             }
 
-            
+            if (TrafficSwitch < 0)
+                TrafficSwitch = 10000;
 
+            if (CarDelay < 0)
+            {
+                CarDelay = (int)numericUpDown1.Value;
+                Crossing c = crossings[r.Next(2), r.Next(2)];
+                if (c!=null)
+                    c.AddCar();
+            }
         }
 
         private void button5_Click(object sender, EventArgs e)

@@ -78,7 +78,8 @@ namespace City_Traffic_Simulation_Application
         }
         public void Draw(ref Graphics gr)
         {
-            Color c = Color.Blue;
+
+            Color c = Color.LimeGreen;
             if (RedLight == true)
                 c = Color.Red;
             Brush b = new SolidBrush(c);

@@ -30,7 +30,10 @@ namespace City_Traffic_Simulation_Application
 
         public string leaving { get; set; } = null;
 
-        Random random = new Random();
+        int reactiontime=0;
+        bool reacting = false;
+
+        static Random random = new Random();
 
         protected Brush color;
 
@@ -75,6 +78,18 @@ namespace City_Traffic_Simulation_Application
             if (nextWayPoint == null)
             {
                 return;// new int[3] { (int)x, (int)y, id };  // do nothing if there is nowhere to go
+            }
+            else if (reacting)
+            {
+                reactiontime -= 10;
+                if (reactiontime < 0)
+                {
+                    driving = true;
+                    waiting = false;
+                    reacting = false;
+                    Speed = 0;
+                }
+                return;
             }
             else if (!driving)
             {
@@ -150,6 +165,7 @@ namespace City_Traffic_Simulation_Application
                         GreenHandler = new Waypoint.GreenLightHandler(stopwaiting);
                         w.turngreen += GreenHandler;
                         //todo subscribe to an event from w where redlight turns false;
+                        reactiontime = 100 * w.waitingcars;
                         w = new Waypoint(w.x - ratioX * w.waitingcars * (3 + xoffset * 2), w.y - ratioY * w.waitingcars * (3 + yoffset * 2), w);
                         this.nextWayPoint = w;
                     }
@@ -208,8 +224,7 @@ namespace City_Traffic_Simulation_Application
         }
         private void stopwaiting(Waypoint w, EventArgs e)
         {
-            driving = true;
-            waiting = false;
+            reacting = true;
             w.turngreen -= GreenHandler;
         }
 

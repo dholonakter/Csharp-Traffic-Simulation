@@ -16,14 +16,12 @@ namespace City_Traffic_Simulation_Application
         private Waypoint South;
         private Waypoint East;     //may be changed to an array of connected roads instead
         private Waypoint West;
-        public Waypoint[] points;
-        public Waypoint[] redlights;
+        private Waypoint[] points;
+        private Waypoint[] redlights;
         public List<Car> cars;
         PictureBox box;
         [NonSerialized]
         Graphics gr;
-        public int crossingID;
-        static int lastCrossing = 0;
         int i=0;
         int x;
         int y;
@@ -32,13 +30,11 @@ namespace City_Traffic_Simulation_Application
 
         public Crossing()
         {
-            crossingID = ++lastCrossing;
             cars = new List<Car>();
         }
 
         public Crossing(Graphics gr, PictureBox box, int x, int y, ref Crossing[,] crossings)
         {
-            crossingID = ++lastCrossing;
             cars = new List<Car>();
             this.gr = gr;
             this.box = box;
@@ -120,14 +116,54 @@ namespace City_Traffic_Simulation_Application
         {
             //should get a pattern and change whether cars are driving or not according to it.
             //todo actually implement this method, this is just a hardcoded test method currently.
-
+            foreach (Waypoint w in redlights)
+                w.RedLight = true;
+            int[] s = new int[4] { redlights[0].waitingcars + redlights[3].waitingcars, redlights[1].waitingcars+redlights[4].waitingcars, redlights[2].waitingcars, redlights[5].waitingcars };
+            int maxValue = s.Max();
+            int maxIndex = s.ToList().IndexOf(maxValue);
+            if(maxIndex==0)
+            {
+                redlights[0].RedLight = false;
+                redlights[3].RedLight = false;
+            }
+            else if (maxIndex==1)
+            {
+                redlights[1].RedLight = false;
+                redlights[4].RedLight = false;
+            }
+            else if (maxIndex==2)
+            {
+                redlights[2].RedLight = false;
+            }
+            else if (maxIndex==3)
+            {
+                redlights[5].RedLight = false;
+            }
 
         }
 
 
+        public void AddCar()
+        {
+            Waypoint E1;
+            if (x == 0)
+                E1 = West;
+            else
+                E1 = East;
+            Waypoint E2;
+            if (y == 0)
+                E2 = North;
+            else
+                E2 = South;
+            if (r.Next(2) == 0)
+                cars.Add(new Car(E1));
+            else
+                cars.Add(new Car(E2));
+
+        }
+
         public void TestCar()
         {
-            
             if (i == 0)
                 cars.Add(new Car(West));
             else if (i == 1)
@@ -141,22 +177,27 @@ namespace City_Traffic_Simulation_Application
                 i = 0;
         }
 
-        public void Draw()
+        public void Draw(bool showwaypoints)
         {
             box.Refresh();
             foreach (Car c2 in this.cars)
             {
                 c2.Draw(ref gr);
             }
-            foreach (Waypoint w in this.points)
+            if(showwaypoints)
             {
-                w.Draw(ref gr);
+                foreach (Waypoint w in this.points)
+                {
+                    w.Draw(ref gr);
+                }
             }
-        }
-
-        public void drawpoints()
-        {
-            
+            else
+            {
+                foreach (Waypoint w in this.redlights)
+                {
+                    w.Draw(ref gr);
+                }
+            }
         }
 
         public Waypoint[] CreatePoints(float width, float height)
@@ -170,7 +211,7 @@ namespace City_Traffic_Simulation_Application
             Waypoint w9 = new Waypoint(width * 164f / 300f, height * 0f / 300f);//N
             w9.End = "North";
             Waypoint w8 = new Waypoint(width * 164f / 300f, height * 100f / 300f, w9);
-            Waypoint w7 = new Waypoint(width * 160f / 300f, height * 139f / 300f, w8);
+            Waypoint w7 = new Waypoint(width * 160f / 300f, height * 130f / 300f, w8);
             Waypoint w6 = new Waypoint(width * 126f / 300f, height * 152f / 300f, w7);
             Waypoint w5 = new Waypoint(width * 44f / 300f, height * 152f / 300f, w6);
             w1.waypointLeft = w5; //making pathing adjustments
@@ -195,7 +236,7 @@ namespace City_Traffic_Simulation_Application
             Waypoint w9c = new Waypoint(width * (1f - 164f / 300f), height * (1f - 0f / 300f));
             w9c.End = "South";
             Waypoint w8c = new Waypoint(width * (1f - 164f / 300f), height * (1f - 100f / 300f), w9c);
-            Waypoint w7c = new Waypoint(width * (1f - 160f / 300f), height * (1f - 139f / 300f), w8c);
+            Waypoint w7c = new Waypoint(width * (1f - 160f / 300f), height * (1f - 130f / 300f), w8c);
             Waypoint w6c = new Waypoint(width * (1f - 126f / 300f), height * (1f - 152f / 300f), w7c);
             Waypoint w5c = new Waypoint(width * (1f - 44f / 300f), height * (1f - 152f / 300f), w6c);
             w1c.waypointLeft = w5c;
@@ -254,7 +295,7 @@ namespace City_Traffic_Simulation_Application
 
             redlights = new Waypoint[6] { w2, w6, w13, w2c, w6c, w13c };
             foreach (Waypoint w in redlights)
-                w.RedLight = false;
+                w.RedLight = true;
 
             points = L;
             return L;
