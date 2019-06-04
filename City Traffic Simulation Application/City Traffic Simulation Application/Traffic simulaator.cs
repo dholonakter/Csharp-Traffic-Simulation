@@ -168,9 +168,26 @@ namespace City_Traffic_Simulation_Application
             timer2.Stop();
         }
 
+        // the saved method 
+        public void Save(string filename)
+        {
+            
+            SerializeData seriliza = new SerializeData(filename);
+        }
+        string filename = "procpdata.txt";
+        public void Saveas()
+        {
+            SaveFileDialog saveas = new SaveFileDialog();
+            saveas.FileName = filename;
+            if (saveas.ShowDialog() == DialogResult.OK)
+            {
+                MessageBox.Show(" Data saved sucessfully!");
+            }
+        }
         private void button3_Click(object sender, EventArgs e)
         {
-
+            Save(filename);
+            Saveas();
         }
 
         private void button4_Click(object sender, EventArgs e)
