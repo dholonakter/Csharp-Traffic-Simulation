@@ -150,11 +150,21 @@ namespace City_Traffic_Simulation_Application
         private void button5_Click(object sender, EventArgs e)
         {
             //todo restart functionality
+            //timer2.Enabled = false;
 
-            timer2.Enabled = false;
+            Crossing[,] newCrossings = new Crossing[2, 2];
+            foreach (Crossing c in crossings)
+            {
+
+                if(c != null)
+                {
+
+                    newCrossings[c.x, c.y] = new Crossing(c.gr, c.box, c.x, c.y, ref newCrossings);
+                    newCrossings[c.x, c.y].CreatePoints(c.box.Width, c.box.Height);
+                }
+            }
+            crossings = newCrossings;
             tableLayoutPanel1.Refresh();
-            
-            //p1.Refresh();
             timer2.Stop();
         }
 

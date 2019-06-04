@@ -19,12 +19,12 @@ namespace City_Traffic_Simulation_Application
         private Waypoint[] points;
         private Waypoint[] redlights;
         public List<Car> cars;
-        PictureBox box;
+        public PictureBox box;
         [NonSerialized]
-        Graphics gr;
+        public Graphics gr;
         int i=0;
-        int x;
-        int y;
+        public int x;
+        public int y;
         Crossing[,] crossings;
         Random r = new Random();
 
