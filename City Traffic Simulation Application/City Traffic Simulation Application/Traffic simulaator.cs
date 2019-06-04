@@ -149,7 +149,13 @@ namespace City_Traffic_Simulation_Application
 
         private void button5_Click(object sender, EventArgs e)
         {
-           //todo restart functionality
+            //todo restart functionality
+
+            timer2.Enabled = false;
+            tableLayoutPanel1.Refresh();
+            
+            //p1.Refresh();
+            timer2.Stop();
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -161,6 +167,11 @@ namespace City_Traffic_Simulation_Application
         {
             /*foreach (Waypoint w in crossings[0].redlights)
                 w.RedLight = !w.RedLight;*/
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+
         }
     }
     
