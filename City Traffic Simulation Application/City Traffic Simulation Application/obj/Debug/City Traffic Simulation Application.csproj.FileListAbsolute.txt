@@ -1,5 +1,4 @@
 C:\Users\s133911\Desktop\ProCP\procp\City Traffic Simulation Application\City Traffic Simulation Application\obj\Debug\City Traffic Simulation Application.csprojAssemblyReference.cache
-C:\Users\s133911\Desktop\ProCP\procp\City Traffic Simulation Application\City Traffic Simulation Application\obj\Debug\City_Traffic_Simulation_Application.Form1.resources
 C:\Users\s133911\Desktop\ProCP\procp\City Traffic Simulation Application\City Traffic Simulation Application\obj\Debug\City_Traffic_Simulation_Application.Properties.Resources.resources
 C:\Users\s133911\Desktop\ProCP\procp\City Traffic Simulation Application\City Traffic Simulation Application\obj\Debug\City Traffic Simulation Application.csproj.GenerateResource.cache
 C:\Users\s133911\Desktop\ProCP\procp\City Traffic Simulation Application\City Traffic Simulation Application\obj\Debug\City Traffic Simulation Application.csproj.CoreCompileInputs.cache

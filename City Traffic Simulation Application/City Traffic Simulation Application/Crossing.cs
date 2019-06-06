@@ -28,12 +28,10 @@ namespace City_Traffic_Simulation_Application
         Crossing[,] crossings;
         Random r = new Random();
 
-        public Crossing()
-        {
-            cars = new List<Car>();
-        }
 
-        public Crossing(Graphics gr, PictureBox box, int x, int y, ref Crossing[,] crossings)
+
+        public Crossing(Graphics gr, PictureBox box, int x, int y, ref Crossing[,] crossings) //TODO it might be smart of instead of passing a reference to 
+            //the crossings array, to just pass a reference to the entire form. this way you can easily access the properties you make in the form class
         {
             cars = new List<Car>();
             this.gr = gr;
@@ -50,11 +48,15 @@ namespace City_Traffic_Simulation_Application
             foreach (Car c in cars.ToList())
             {
                 c.Move();
-              //carCoordinates.Add(c.Move());
                 if (c.leaving != null)
                 {
+                    //TODO Here, collect the value of c.waitingtime, SET IT TO 0 BEFORE THE CAR GOES TO THE NEXT CROSSING, then send it back to the main form 
+                    //maybe by making a list or array on the main form and passing a reference to it here via the crossing constructor
+                    //this will also make it easy to calculate the average waitingtime by collecting the waitingtime in a list
+                    //if you're doing this there should probably be a maximum size to the list. average over like 300 samples. You could also let the user adjust the samples averaging over from the options panel if you want.
+
+                    //
                     c.RandomDirection();
-                    //todo get the proper crossing and add C to their list of cars
                     try
                     {
                         if (c.leaving == "North")
@@ -112,13 +114,31 @@ namespace City_Traffic_Simulation_Application
             //return carCoordinates;
         }
 
+        public void TrafficTick()
+        {
+            //TODO here we need a generic pattern for how the traffic lights operate
+            
+            //first, the redlights should all be red for a certain time period (red light delay on the options panel). Time is measured in seconds so x1000 for ms.
+            //then call nextpattern to change some lights to green according to the strategy selected with the radiobuttons.
+            //these lights should be green for the phase time specified on the panel. See: TrafficSwitch in our form class.
+            //then turn all lights red and start from the top.
+        }
+
+
         public void nextPattern()
         {
-            //should get a pattern and change whether cars are driving or not according to it.
-            //todo actually implement this method, this is just a hardcoded test method currently.
-            foreach (Waypoint w in redlights)
+            //TODO here we need to implement the strategy pattern from DPR. 
+            //Our second strategy will just be going through the trafficlights in order and giving every light equal time.
+            //Which of these strategies is used should depend on the radiobuttons on the options panel.
+            
+            //If time is left over you may add this third strategy. Do this last, it has lowest priority. If you don't know how to do it it's fine.
+            //Our third strategy will be a queue model. If a car starts waiting at a light that light should be added to a queue.
+            //when the queue is popped by calling nextPattern() the first light in the queue goes green and is removed from the queue.
+
+            foreach (Waypoint w in redlights)// our first strategy, changing the state of traffic lights by how many cars are waiting. 
                 w.RedLight = true;
-            int[] s = new int[4] { redlights[0].waitingcars + redlights[3].waitingcars, redlights[1].waitingcars+redlights[4].waitingcars, redlights[2].waitingcars, redlights[5].waitingcars };
+            int[] s = new int[4] { redlights[0].waitingcars + redlights[3].waitingcars,
+                redlights[1].waitingcars+redlights[4].waitingcars, redlights[2].waitingcars, redlights[5].waitingcars };// lights 0 and 3 are a pair, and lights 1 and 4 are a pair
             int maxValue = s.Max();
             int maxIndex = s.ToList().IndexOf(maxValue);
             if(maxIndex==0)
@@ -143,7 +163,7 @@ namespace City_Traffic_Simulation_Application
         }
 
 
-        public void AddCar()
+        public void AddCar(int tick)
         {
             Waypoint E1;
             if (x == 0)
@@ -156,22 +176,22 @@ namespace City_Traffic_Simulation_Application
             else
                 E2 = South;
             if (r.Next(2) == 0)
-                cars.Add(new Car(E1));
+                cars.Add(new Car(E1, tick));
             else
-                cars.Add(new Car(E2));
+                cars.Add(new Car(E2, tick));
 
         }
 
-        public void TestCar()
+        public void TestCar(int tick)
         {
             if (i == 0)
-                cars.Add(new Car(West));
+                cars.Add(new Car(West, tick));
             else if (i == 1)
-                cars.Add(new Car(East));
+                cars.Add(new Car(East,tick));
             else if (i == 2)
-                cars.Add(new Car(North));
+                cars.Add(new Car(North,tick));
             else if (i == 3)
-                cars.Add(new Car(South));
+                cars.Add(new Car(South,tick));
             i++;
             if (i == 4)
                 i = 0;
@@ -258,8 +278,6 @@ namespace City_Traffic_Simulation_Application
             South = w12;
             North = w12c;
 
-
-            //todo unsure if at the end of the function all these waypoints are deleted. If they are, use a list like L to pass back the points.
             L[0] = w1;
             L[1] = w2;
             L[2] = w3;

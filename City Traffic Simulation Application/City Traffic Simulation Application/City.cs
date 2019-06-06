@@ -30,10 +30,10 @@ namespace City_Traffic_Simulation_Application
             foreach (Crossing c in allCrossings)
             {
                 List<object> res = new List<object>(); //c.MoveCars();
-                /*if (c.crossingID == crossingId)
+                if (c.crossingID == crossingId)
                 {
                     currentCrossingFrame = res;
-                }*/
+                }
             }
 
             //virtual states of traffic lights todo

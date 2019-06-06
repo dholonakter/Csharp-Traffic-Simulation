@@ -45,7 +45,7 @@ namespace City_Traffic_Simulation_Application
             path = direction;
         }
 
-        public Car(Waypoint w): base (w.x,w.y,w)
+        public Car(Waypoint w, int ticktime): base (w.x,w.y,w)
         {
             this.maxSpeed = 0.1;
             this.Speed = 0;
@@ -55,6 +55,7 @@ namespace City_Traffic_Simulation_Application
             xoffset = width / 2;
             yoffset = height / 2;
             RandomDirection();
+            this.ticktime = ticktime;
         }
 
         public Point Location

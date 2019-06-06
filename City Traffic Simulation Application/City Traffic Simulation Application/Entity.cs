@@ -11,6 +11,8 @@ namespace City_Traffic_Simulation_Application
     [Serializable]// M
     public class Entity
     {
+        protected int ticktime;
+        private int waitingtime;
         public Waypoint nextWayPoint { get; set; }
 
         public static int lastEntityId { get; set; } = 0;
@@ -81,7 +83,7 @@ namespace City_Traffic_Simulation_Application
             }
             else if (reacting)
             {
-                reactiontime -= 10;
+                reactiontime -= ticktime;
                 if (reactiontime < 0)
                 {
                     driving = true;
@@ -93,6 +95,7 @@ namespace City_Traffic_Simulation_Application
             }
             else if (!driving)
             {
+
                 return;// new int[3] { (int)x, (int)y, id }; 
             }
 
@@ -112,7 +115,7 @@ namespace City_Traffic_Simulation_Application
              *   x/framespeedH == x'/AB == ratioX -> similar triangles
              */
             
-            double frameSpeedH = 10 * Speed; //Hypotenuse of similar triangle
+            double frameSpeedH = ticktime * Speed; //Hypotenuse of similar triangle
             x += ratioX * frameSpeedH;
             y += ratioY * frameSpeedH;
 
@@ -164,7 +167,6 @@ namespace City_Traffic_Simulation_Application
                         waiting = true;
                         GreenHandler = new Waypoint.GreenLightHandler(stopwaiting);
                         w.turngreen += GreenHandler;
-                        //todo subscribe to an event from w where redlight turns false;
                         reactiontime = 100 * w.waitingcars;
                         w = new Waypoint(w.x - ratioX * w.waitingcars * (3 + xoffset * 2), w.y - ratioY * w.waitingcars * (3 + yoffset * 2), w);
                         this.nextWayPoint = w;
@@ -204,11 +206,11 @@ namespace City_Traffic_Simulation_Application
         {
             if (Speed <= maxSpeed)
             {
-                Speed += Accel * 10;
+                Speed += Accel * ticktime;
             }
             else if (Speed - maxSpeed > Speed * 0.1f)
             {
-                Speed -= Decel * 10;
+                Speed -= Decel * ticktime;
             }
 
             if (!driving)

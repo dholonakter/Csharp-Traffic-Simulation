@@ -28,12 +28,18 @@ namespace City_Traffic_Simulation_Application
             pb2.AllowDrop = true;
             p1.AllowDrop = true;
             pb4.AllowDrop = true;
-            // car speed
+
+            panel1.Hide();
             
             
             timer2.Interval = 10;
+<<<<<<< HEAD
+            //TODO maybe make this adjustable? you can make it editable by adding an extra control to the options panel but
+            //make sure that if you do that you can no longer edit the value after you press start by deactivating it when you press start;
+=======
             //todo synch with framerate?
             entity = new Entity();
+>>>>>>> 4f17dd54a005e85f6bffa122f8a4881e83faf488
 
            
         }
@@ -115,7 +121,7 @@ namespace City_Traffic_Simulation_Application
                
         private void timer2_Tick(object sender, EventArgs e)
         {
-            TrafficSwitch -= timer2.Interval;
+            TrafficSwitch -= timer2.Interval;  //TODO
             CarDelay -= timer2.Interval;
 
             foreach (Crossing c in crossings)
@@ -125,28 +131,32 @@ namespace City_Traffic_Simulation_Application
                 {
                     c.MoveCars();
                     c.Draw(false);//flip this bool to draw all waypoints instead of just traffic lights
-                    if (TrafficSwitch < 0)
+                    if (TrafficSwitch < 0)  //TODO instead of having the logic for TrafficSwitch here, put it in Crossing.TrafficTick() . that way you can just call c.move, c.draw, c.traffictick
                         c.nextPattern();
                 }
             }
 
-            if (TrafficSwitch < 0)
+            if (TrafficSwitch < 0) //TODO same as above
                 TrafficSwitch = 10000;
 
             if (CarDelay < 0)
             {
-                CarDelay = (int)numericUpDown1.Value;
+                CarDelay = (int)(numericUpDown1.Value*1000);
                 Crossing c = crossings[r.Next(2), r.Next(2)];
                 if (c!=null)
-                    c.AddCar();
+                    c.AddCar(timer2.Interval);
             }
+
+
+
+            //TODO every few seconds you should calculate the average waiting time and update the label where it should be displayed on the panel.
+            //this way people can see we're actively calculating the numbers. The simulation will still run if it's not visible.
+            //in fact if all the drawn stuff is visible when the options panel is open you can just Hide() the pictureboxes and it should all still work fine.
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            //todo restart functionality
-            //timer2.Enabled = false;
-
+            
             Crossing[,] newCrossings = new Crossing[2, 2];
             foreach (Crossing c in crossings)
             {
@@ -206,13 +216,22 @@ namespace City_Traffic_Simulation_Application
         // loading file from an a chosen directory 
         private void button4_Click(object sender, EventArgs e)
         {
+<<<<<<< HEAD
+            //TODO click to hide/unhide panel 1
+            //i don't know whether hiding or unhiding the panel resets the values of the components, so you may need to store them 
+            //by making new properties here. This way if the panel is opened again you can make sure they're still the same.
+=======
             this.loadFile("ferdi);
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+>>>>>>> 4f17dd54a005e85f6bffa122f8a4881e83faf488
 
+            //also make the average waiting time the latest calculated one.
         }
+
+  
     }
     
 }

@@ -102,7 +102,7 @@ namespace City_Traffic_Simulation_Application
                         i.Location = new Point(array[0], array[1]);
                     }
                 }
-                //x.Offset(1, 0); todo consider whether to use offset instead?
+                //x.Offset(1, 0);consider whether to use offset instead?
             }
             */
             int boxnumber = 0;

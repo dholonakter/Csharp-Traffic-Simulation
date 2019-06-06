@@ -1,0 +1,19 @@
+
+
+
+Data implementation:
+
+-	Add something that sends data back to the form
+		-	Easiest place to do this is the move method in crossing, in the if ( == leaving) section
+		-	If we want to get data on leaving cars we should get it here
+		-	The best data point to send back is the time spent waiting. We can just make an int property and increase that every time Move() is called if(!driving)
+		-	Add a way to compare waitingtime 
+-	Need to focus on our added value in our application
+		-	Add different comparable ways (strategy pattern) for traffic lights
+		-	The best place to add this is the crossing class where it turns the traffic lights on and off
+		-	We need a place to change settings on our form. It's probably easiest to make a secondary form that opens when you click a settings button.
+		-	This form will need several numeric entries and a set of radio buttons for the traffic light strategies.
+-	Documentation stuff
+		-	Process report 		Fer and Fahim, Alex
+		-	Finish Design Doc 	Alex
+		-	Presentation 		Fer and Fahim
