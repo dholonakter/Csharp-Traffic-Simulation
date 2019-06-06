@@ -7,15 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace City_Traffic_Simulation_Application
 {
     public partial class Traffic_simulaator : Form
     {
 
-        //creating the draw area 
 
-
+        Entity entity;
         int TrafficSwitch = 10000;
         int CarDelay = 1000;
         Random r = new Random();
@@ -33,14 +33,11 @@ namespace City_Traffic_Simulation_Application
             
             timer2.Interval = 10;
             //todo synch with framerate?
+            entity = new Entity();
 
-
+           
         }
-
-
-
-
-
+                          
         private void pbcrossing1_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
@@ -115,9 +112,7 @@ namespace City_Traffic_Simulation_Application
         {
             timer2.Stop();
         }
-
-
-
+               
         private void timer2_Tick(object sender, EventArgs e)
         {
             TrafficSwitch -= timer2.Interval;
@@ -171,14 +166,16 @@ namespace City_Traffic_Simulation_Application
         // the saved method 
         public void Save(string filename)
         {
-            
-            SerializeData seriliza = new SerializeData(filename);
+            SerializeData serialised = new SerializeData();
+            serialised.SerialiseObjects(filename, entity);
+            //Entity newentty = (Entity)serialiser.DeSerialiseObjects();
         }
-        string filename = "procpdata.txt";
+       
         public void Saveas()
         {
             SaveFileDialog saveas = new SaveFileDialog();
-            saveas.FileName = filename;
+            saveas.FileName = "simulation data";
+          //  saveas.Filter = "Simulation file|*.sim";
             if (saveas.ShowDialog() == DialogResult.OK)
             {
                 MessageBox.Show(" Data saved sucessfully!");
@@ -186,14 +183,30 @@ namespace City_Traffic_Simulation_Application
         }
         private void button3_Click(object sender, EventArgs e)
         {
-            Save(filename);
-            Saveas();
+           
+        }
+        public void loadFile(string filename)
+        {
+            SerializeData serilise = new SerializeData();
+            this.entity = (Entity)serilise.DeSerialiseObjects(filename);
+
+            OpenFileDialog openFile = new OpenFileDialog();
+            openFile.FileName = "My simulaiton";
+            openFile.Filter = "Simulation file|*.sim";
+
+            if (openFile.ShowDialog() == DialogResult.OK)
+            {
+                MessageBox.Show("open");
+               // panel1.Controls.Clear();
+                loadFile(openFile.FileName);
+            }
         }
 
+
+        // loading file from an a chosen directory 
         private void button4_Click(object sender, EventArgs e)
         {
-            /*foreach (Waypoint w in crossings[0].redlights)
-                w.RedLight = !w.RedLight;*/
+            this.loadFile("ferdi);
         }
 
         private void timer1_Tick(object sender, EventArgs e)

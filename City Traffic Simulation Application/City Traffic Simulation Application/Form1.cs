@@ -168,12 +168,7 @@ namespace City_Traffic_Simulation_Application
 
         private void btnsave_Click(object sender, EventArgs e)
         {
-            SerializeData sdata = new SerializeData("dinga.txt");
-            Car c = new Car(new System.Drawing.Point(2, 3), new Waypoint(2, 7), 5, 9);
-            sdata.SerialiseObjects(c);
-            sdata.closeStream();
-            sdata.DeSerialiseObjects();
-            sdata.closeStream();
+           
         }
 
         private void Form1_Load(object sender, EventArgs e)
