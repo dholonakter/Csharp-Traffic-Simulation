@@ -83,7 +83,7 @@ namespace City_Traffic_Simulation_Application
             if (RedLight == true)
                 c = Color.Red;
             Brush b = new SolidBrush(c);
-            gr.FillEllipse(b, (float)x, (float)y, 2,2);
+            gr.FillEllipse(b, (float)x-5, (float)y-5, 10,10);
         }
     }
 }
