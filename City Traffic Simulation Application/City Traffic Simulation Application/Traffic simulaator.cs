@@ -33,13 +33,10 @@ namespace City_Traffic_Simulation_Application
             
             
             timer2.Interval = 10;
-//<<<<<<< HEAD
             //TODO maybe make this adjustable? you can make it editable by adding an extra control to the options panel but
             //make sure that if you do that you can no longer edit the value after you press start by deactivating it when you press start;
-//=======
             //todo synch with framerate?
             entity = new Entity();
-//>>>>>>> 4f17dd54a005e85f6bffa122f8a4881e83faf488
 
            
         }
@@ -216,17 +213,14 @@ namespace City_Traffic_Simulation_Application
         // loading file from an a chosen directory 
         private void button4_Click(object sender, EventArgs e)
         {
-//<<<<<<< HEAD
             //TODO click to hide/unhide panel 1
             //i don't know whether hiding or unhiding the panel resets the values of the components, so you may need to store them 
             //by making new properties here. This way if the panel is opened again you can make sure they're still the same.
-//=======
             this.loadFile("ferdi");
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-//>>>>>>> 4f17dd54a005e85f6bffa122f8a4881e83faf488
 
             //also make the average waiting time the latest calculated one.
         }
