@@ -136,18 +136,66 @@ namespace City_Traffic_Simulation_Application
                 if (first != null)
                 {
                     statistic_Form.SetTotalCars(1, first.cars.Count);
+
+                    int waitingCarsInWest = first.redlights[0].waitingcars + first.redlights[1].waitingcars;
+                    int waitingCarsInEast = first.redlights[3].waitingcars + first.redlights[4].waitingcars;
+                    int waitingCarsInSouth = first.redlights[2].waitingcars;
+                    int waitingCarsInNorth= first.redlights[5].waitingcars; ;
+                    int totalWaitingCars = waitingCarsInWest + waitingCarsInEast + waitingCarsInSouth + waitingCarsInNorth;
+                    statistic_Form.SetTotalWaitingCars(1, totalWaitingCars);
+
+                    statistic_Form.SetTotalWaitingCarsInEast(1, waitingCarsInEast);
+                    statistic_Form.SetTotalWaitingCarsInWest(1, waitingCarsInWest);
+                    statistic_Form.SetTotalWaitingCarsInNorth(1, waitingCarsInNorth);
+                    statistic_Form.SetTotalWaitingCarsInSouth(1, waitingCarsInSouth);
                 }
                 if (second != null)
                 {
                     statistic_Form.SetTotalCars(2, second.cars.Count);
+
+                    int waitingCarsInWest = second.redlights[0].waitingcars + second.redlights[1].waitingcars;
+                    int waitingCarsInEast = second.redlights[3].waitingcars + second.redlights[4].waitingcars;
+                    int waitingCarsInSouth = second.redlights[2].waitingcars;
+                    int waitingCarsInNorth = second.redlights[5].waitingcars; ;
+                    int totalWaitingCars = waitingCarsInWest + waitingCarsInEast + waitingCarsInSouth + waitingCarsInNorth;
+                    statistic_Form.SetTotalWaitingCars(2, totalWaitingCars);
+
+                    statistic_Form.SetTotalWaitingCarsInEast(2, waitingCarsInEast);
+                    statistic_Form.SetTotalWaitingCarsInWest(2, waitingCarsInWest);
+                    statistic_Form.SetTotalWaitingCarsInNorth(2, waitingCarsInNorth);
+                    statistic_Form.SetTotalWaitingCarsInSouth(2, waitingCarsInSouth);
                 }
                 if (third != null)
                 {
                     statistic_Form.SetTotalCars(3, third.cars.Count);
+
+                    int waitingCarsInWest = third.redlights[0].waitingcars + third.redlights[1].waitingcars;
+                    int waitingCarsInEast = third.redlights[3].waitingcars + third.redlights[4].waitingcars;
+                    int waitingCarsInSouth = third.redlights[2].waitingcars;
+                    int waitingCarsInNorth = third.redlights[5].waitingcars; ;
+                    int totalWaitingCars = waitingCarsInWest + waitingCarsInEast + waitingCarsInSouth + waitingCarsInNorth;
+                    statistic_Form.SetTotalWaitingCars(3, totalWaitingCars);
+
+                    statistic_Form.SetTotalWaitingCarsInEast(3, waitingCarsInEast);
+                    statistic_Form.SetTotalWaitingCarsInWest(3, waitingCarsInWest);
+                    statistic_Form.SetTotalWaitingCarsInNorth(3, waitingCarsInNorth);
+                    statistic_Form.SetTotalWaitingCarsInSouth(3, waitingCarsInSouth);
                 }
                 if (fourth != null)
                 {
                     statistic_Form.SetTotalCars(4, fourth.cars.Count);
+
+                    int waitingCarsInWest = fourth.redlights[0].waitingcars + fourth.redlights[1].waitingcars;
+                    int waitingCarsInEast = fourth.redlights[3].waitingcars + fourth.redlights[4].waitingcars;
+                    int waitingCarsInSouth = fourth.redlights[2].waitingcars;
+                    int waitingCarsInNorth = fourth.redlights[5].waitingcars; ;
+                    int totalWaitingCars = waitingCarsInWest + waitingCarsInEast + waitingCarsInSouth + waitingCarsInNorth;
+                    statistic_Form.SetTotalWaitingCars(4, totalWaitingCars);
+
+                    statistic_Form.SetTotalWaitingCarsInEast(4, waitingCarsInEast);
+                    statistic_Form.SetTotalWaitingCarsInWest(4, waitingCarsInWest);
+                    statistic_Form.SetTotalWaitingCarsInNorth(4, waitingCarsInNorth);
+                    statistic_Form.SetTotalWaitingCarsInSouth(4, waitingCarsInSouth);
                 }
             }
             //Debug.WriteLine(this.crossings[0, 0].EastProp.waitingcars, "Waiting Cars in east in the crossing 1");
