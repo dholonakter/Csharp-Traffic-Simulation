@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Diagnostics;
 
 namespace City_Traffic_Simulation_Application
 {
@@ -46,6 +47,8 @@ namespace City_Traffic_Simulation_Application
             {
                 //dragTypeOne = true;
                 pbcrossing1.DoDragDrop(pbcrossing1.Image, DragDropEffects.Copy);
+
+                Console.Write("");
             }
         }
 
@@ -120,6 +123,7 @@ namespace City_Traffic_Simulation_Application
         {
             TrafficSwitch -= timer2.Interval;  //TODO
             CarDelay -= timer2.Interval;
+          
             foreach (Crossing c in crossings)
             {
 
@@ -244,6 +248,11 @@ namespace City_Traffic_Simulation_Application
         {
             Statistics_Form statistic_Form = new Statistics_Form();
             statistic_Form.Show();
+        }
+
+        private void Traffic_simulaator_Load(object sender, EventArgs e)
+        {
+
         }
     }
     

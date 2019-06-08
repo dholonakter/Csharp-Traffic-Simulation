@@ -34,6 +34,7 @@
             this.pbcrossing2 = new System.Windows.Forms.PictureBox();
             this.pbcrossing1 = new System.Windows.Forms.PictureBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -60,7 +61,6 @@
             this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.button6 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbcrossing2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbcrossing1)).BeginInit();
@@ -133,6 +133,16 @@
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "OPERATIONS";
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(12, 389);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(75, 23);
+            this.button6.TabIndex = 18;
+            this.button6.Text = "Statistics";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button5
             // 
@@ -475,16 +485,6 @@
             this.radioButton1.Text = "Fixed Time per lane strategy";
             this.radioButton1.UseVisualStyleBackColor = true;
             // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(12, 389);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 23);
-            this.button6.TabIndex = 18;
-            this.button6.Text = "Statistics";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
-            // 
             // Traffic_simulaator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -498,6 +498,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Traffic_simulaator";
             this.Text = "Traffic_simulator";
+            this.Load += new System.EventHandler(this.Traffic_simulaator_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbcrossing2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbcrossing1)).EndInit();
