@@ -48,6 +48,7 @@
             this.p1 = new System.Windows.Forms.PictureBox();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
+            this.buttonHide = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
@@ -59,7 +60,7 @@
             this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.buttonHide = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbcrossing2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbcrossing1)).BeginInit();
@@ -118,6 +119,7 @@
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.groupBox2.Controls.Add(this.button6);
             this.groupBox2.Controls.Add(this.button5);
             this.groupBox2.Controls.Add(this.button4);
             this.groupBox2.Controls.Add(this.button3);
@@ -323,6 +325,16 @@
             this.panel1.TabIndex = 1;
             this.panel1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDoubleClick);
             // 
+            // buttonHide
+            // 
+            this.buttonHide.Location = new System.Drawing.Point(95, 374);
+            this.buttonHide.Name = "buttonHide";
+            this.buttonHide.Size = new System.Drawing.Size(75, 23);
+            this.buttonHide.TabIndex = 17;
+            this.buttonHide.Text = "Hide";
+            this.buttonHide.UseVisualStyleBackColor = true;
+            this.buttonHide.Click += new System.EventHandler(this.buttonHide_Click);
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -463,15 +475,15 @@
             this.radioButton1.Text = "Fixed Time per lane strategy";
             this.radioButton1.UseVisualStyleBackColor = true;
             // 
-            // buttonHide
+            // button6
             // 
-            this.buttonHide.Location = new System.Drawing.Point(95, 374);
-            this.buttonHide.Name = "buttonHide";
-            this.buttonHide.Size = new System.Drawing.Size(75, 23);
-            this.buttonHide.TabIndex = 17;
-            this.buttonHide.Text = "Hide";
-            this.buttonHide.UseVisualStyleBackColor = true;
-            this.buttonHide.Click += new System.EventHandler(this.buttonHide_Click);
+            this.button6.Location = new System.Drawing.Point(12, 389);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(75, 23);
+            this.button6.TabIndex = 18;
+            this.button6.Text = "Statistics";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // Traffic_simulaator
             // 
@@ -536,5 +548,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button buttonHide;
+        private System.Windows.Forms.Button button6;
     }
 }

@@ -54,6 +54,12 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SerializeData.cs" />
+    <Compile Include="Statistics_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Statistics_Form.Designer.cs">
+      <DependentUpon>Statistics_Form.cs</DependentUpon>
+    </Compile>
     <Compile Include="Traffic simulaator.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,6 +78,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Statistics_Form.resx">
+      <DependentUpon>Statistics_Form.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Traffic simulaator.resx">
       <DependentUpon>Traffic simulaator.cs</DependentUpon>
     </EmbeddedResource>

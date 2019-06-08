@@ -239,6 +239,12 @@ namespace City_Traffic_Simulation_Application
         {
             panel1.Hide();
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Statistics_Form statistic_Form = new Statistics_Form();
+            statistic_Form.Show();
+        }
     }
     
 }
