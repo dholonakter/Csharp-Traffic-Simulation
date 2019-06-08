@@ -249,3 +249,17 @@ E:\procp new 6\procp\City Traffic Simulation Application\City Traffic Simulation
 E:\procp new 6\procp\City Traffic Simulation Application\City Traffic Simulation Application\obj\Debug\City Traffic Simulation Application.exe
 E:\procp new 6\procp\City Traffic Simulation Application\City Traffic Simulation Application\obj\Debug\City Traffic Simulation Application.pdb
 E:\procp new 6\procp\City Traffic Simulation Application\City Traffic Simulation Application\obj\Debug\City_Traffic_Simulation_Application.Statistics_Form.resources
+D:\FProCp\procp\City Traffic Simulation Application\City Traffic Simulation Application\bin\Debug\City Traffic Simulation Application.exe.config
+D:\FProCp\procp\City Traffic Simulation Application\City Traffic Simulation Application\bin\Debug\City Traffic Simulation Application.exe
+D:\FProCp\procp\City Traffic Simulation Application\City Traffic Simulation Application\bin\Debug\City Traffic Simulation Application.pdb
+D:\FProCp\procp\City Traffic Simulation Application\City Traffic Simulation Application\bin\Debug\Microsoft.VisualBasic.PowerPacks.dll
+D:\FProCp\procp\City Traffic Simulation Application\City Traffic Simulation Application\bin\Debug\Microsoft.VisualBasic.PowerPacks.xml
+D:\FProCp\procp\City Traffic Simulation Application\City Traffic Simulation Application\obj\Debug\City Traffic Simulation Application.csprojAssemblyReference.cache
+D:\FProCp\procp\City Traffic Simulation Application\City Traffic Simulation Application\obj\Debug\City_Traffic_Simulation_Application.Properties.Resources.resources
+D:\FProCp\procp\City Traffic Simulation Application\City Traffic Simulation Application\obj\Debug\City_Traffic_Simulation_Application.Statistics_Form.resources
+D:\FProCp\procp\City Traffic Simulation Application\City Traffic Simulation Application\obj\Debug\City_Traffic_Simulation_Application.Traffic_simulaator.resources
+D:\FProCp\procp\City Traffic Simulation Application\City Traffic Simulation Application\obj\Debug\City Traffic Simulation Application.csproj.GenerateResource.cache
+D:\FProCp\procp\City Traffic Simulation Application\City Traffic Simulation Application\obj\Debug\City Traffic Simulation Application.csproj.CoreCompileInputs.cache
+D:\FProCp\procp\City Traffic Simulation Application\City Traffic Simulation Application\obj\Debug\City Traffic Simulation Application.csproj.CopyComplete
+D:\FProCp\procp\City Traffic Simulation Application\City Traffic Simulation Application\obj\Debug\City Traffic Simulation Application.exe
+D:\FProCp\procp\City Traffic Simulation Application\City Traffic Simulation Application\obj\Debug\City Traffic Simulation Application.pdb
