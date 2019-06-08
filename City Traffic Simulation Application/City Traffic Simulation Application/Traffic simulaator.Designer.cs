@@ -59,6 +59,7 @@
             this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.buttonHide = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbcrossing2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbcrossing1)).BeginInit();
@@ -195,7 +196,7 @@
             0,
             65536});
             this.numericUpDown1.Location = new System.Drawing.Point(92, 62);
-            this.numericUpDown1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.numericUpDown1.Margin = new System.Windows.Forms.Padding(4);
             this.numericUpDown1.Maximum = new decimal(new int[] {
             10,
             0,
@@ -302,6 +303,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.buttonHide);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.numericUpDown3);
@@ -315,7 +317,7 @@
             this.panel1.Controls.Add(this.radioButton1);
             this.panel1.Controls.Add(this.numericUpDown1);
             this.panel1.Location = new System.Drawing.Point(140, 7);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1340, 740);
             this.panel1.TabIndex = 1;
@@ -346,7 +348,7 @@
             // numericUpDown3
             // 
             this.numericUpDown3.Location = new System.Drawing.Point(96, 315);
-            this.numericUpDown3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.numericUpDown3.Margin = new System.Windows.Forms.Padding(4);
             this.numericUpDown3.Maximum = new decimal(new int[] {
             20,
             0,
@@ -380,7 +382,7 @@
             // 
             this.numericUpDown2.DecimalPlaces = 1;
             this.numericUpDown2.Location = new System.Drawing.Point(96, 182);
-            this.numericUpDown2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.numericUpDown2.Margin = new System.Windows.Forms.Padding(4);
             this.numericUpDown2.Maximum = new decimal(new int[] {
             5,
             0,
@@ -429,7 +431,7 @@
             // 
             this.radioButton3.AutoSize = true;
             this.radioButton3.Location = new System.Drawing.Point(417, 186);
-            this.radioButton3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.radioButton3.Margin = new System.Windows.Forms.Padding(4);
             this.radioButton3.Name = "radioButton3";
             this.radioButton3.Size = new System.Drawing.Size(110, 21);
             this.radioButton3.TabIndex = 8;
@@ -441,7 +443,7 @@
             // 
             this.radioButton2.AutoSize = true;
             this.radioButton2.Location = new System.Drawing.Point(417, 123);
-            this.radioButton2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.radioButton2.Margin = new System.Windows.Forms.Padding(4);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(198, 21);
             this.radioButton2.TabIndex = 7;
@@ -453,13 +455,23 @@
             // 
             this.radioButton1.AutoSize = true;
             this.radioButton1.Location = new System.Drawing.Point(417, 63);
-            this.radioButton1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.radioButton1.Margin = new System.Windows.Forms.Padding(4);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(208, 21);
             this.radioButton1.TabIndex = 6;
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "Fixed Time per lane strategy";
             this.radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // buttonHide
+            // 
+            this.buttonHide.Location = new System.Drawing.Point(95, 374);
+            this.buttonHide.Name = "buttonHide";
+            this.buttonHide.Size = new System.Drawing.Size(75, 23);
+            this.buttonHide.TabIndex = 17;
+            this.buttonHide.Text = "Hide";
+            this.buttonHide.UseVisualStyleBackColor = true;
+            this.buttonHide.Click += new System.EventHandler(this.buttonHide_Click);
             // 
             // Traffic_simulaator
             // 
@@ -523,5 +535,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button buttonHide;
     }
 }

@@ -234,6 +234,11 @@ namespace City_Traffic_Simulation_Application
         {
             panel1.Hide();
         }
+
+        private void buttonHide_Click(object sender, EventArgs e)
+        {
+            panel1.Hide();
+        }
     }
     
 }
