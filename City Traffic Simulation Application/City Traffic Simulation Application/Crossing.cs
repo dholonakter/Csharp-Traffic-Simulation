@@ -42,6 +42,7 @@ namespace City_Traffic_Simulation_Application
             i = r.Next(0, 3);
         }
 
+
         public void MoveCars()
         {
             //List<object> carCoordinates= new List<object> { };

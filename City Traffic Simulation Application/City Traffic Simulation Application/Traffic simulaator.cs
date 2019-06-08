@@ -22,6 +22,8 @@ namespace City_Traffic_Simulation_Application
         Random r = new Random();
 
         Crossing[,] crossings =  new Crossing [2,2];
+
+        Statistics_Form statistic_Form;
         public Traffic_simulaator()
         {
             InitializeComponent();
@@ -123,7 +125,32 @@ namespace City_Traffic_Simulation_Application
         {
             TrafficSwitch -= timer2.Interval;  //TODO
             CarDelay -= timer2.Interval;
-          
+            // Debug.WriteLine(this.crossings[0, 0].cars.Count, "Cars in the crossing 1");
+            if (statistic_Form != null)
+            {
+                //first crossing
+                Crossing first = this.crossings[0, 0];
+                Crossing second = this.crossings[0, 1];
+                Crossing third = this.crossings[1, 0];
+                Crossing fourth = this.crossings[1, 1];
+                if (first != null)
+                {
+                    statistic_Form.SetTotalCars(1, first.cars.Count);
+                }
+                if (second != null)
+                {
+                    statistic_Form.SetTotalCars(2, second.cars.Count);
+                }
+                if (third != null)
+                {
+                    statistic_Form.SetTotalCars(3, third.cars.Count);
+                }
+                if (fourth != null)
+                {
+                    statistic_Form.SetTotalCars(4, fourth.cars.Count);
+                }
+            }
+            //Debug.WriteLine(this.crossings[0, 0].EastProp.waitingcars, "Waiting Cars in east in the crossing 1");
             foreach (Crossing c in crossings)
             {
 
@@ -246,13 +273,19 @@ namespace City_Traffic_Simulation_Application
 
         private void button6_Click(object sender, EventArgs e)
         {
-            Statistics_Form statistic_Form = new Statistics_Form();
+           statistic_Form  = new Statistics_Form();
+            
             statistic_Form.Show();
         }
 
         private void Traffic_simulaator_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            
         }
     }
     

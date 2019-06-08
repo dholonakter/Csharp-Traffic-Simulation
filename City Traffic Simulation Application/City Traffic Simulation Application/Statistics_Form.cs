@@ -17,14 +17,42 @@ namespace City_Traffic_Simulation_Application
             InitializeComponent();
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
+        public void SetTotalCars(int crossingNumber, int numberOfCars)
+        {   
+            switch (crossingNumber)
+            {
+                case 1:
+                    lblTotalCarsInCrossing1.Text = numberOfCars.ToString();
+                    break;
+                case 2:
+                    lblTotalCarsInCrossing2.Text = numberOfCars.ToString();
+                    break;
+                case 3:
+                    lblTotalCarsInCrossing3.Text = numberOfCars.ToString();
+                    break;
+                case 4:
+                    lblTotalCarsInCrossing4.Text = numberOfCars.ToString();
+                    break;
+            }
         }
 
-        private void label8_Click(object sender, EventArgs e)
+        public void SetTotalWaitingCars(int crossingNumber, int waitingCarsNumber)
         {
-
+            switch (crossingNumber)
+            {
+                case 1:
+                    lblTotalCarsInCrossing1.Text = waitingCarsNumber.ToString();
+                    break;
+                case 2:
+                    lblTotalCarsInCrossing2.Text = waitingCarsNumber.ToString();
+                    break;
+                case 3:
+                    lblTotalCarsInCrossing3.Text = waitingCarsNumber.ToString();
+                    break;
+                case 4:
+                    lblTotalCarsInCrossing4.Text = waitingCarsNumber.ToString();
+                    break;
+            }
         }
     }
 }
