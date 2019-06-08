@@ -118,7 +118,7 @@ namespace City_Traffic_Simulation_Application
         private void button2_Click(object sender, EventArgs e)
         {
             timer2.Stop();
-
+           
         }
                
         private void timer2_Tick(object sender, EventArgs e)
@@ -217,7 +217,7 @@ namespace City_Traffic_Simulation_Application
             }
 
             if (TrafficSwitch < 0) //TODO same as above
-                TrafficSwitch = 10000;
+                TrafficSwitch = 8000;
 
             if (CarDelay < 0)
             {
@@ -251,6 +251,7 @@ namespace City_Traffic_Simulation_Application
             crossings = newCrossings;
             tableLayoutPanel1.Refresh();
             timer2.Stop();
+            timer2.Start();//As the button says restart, it should start again after stopping all activities.
         }
 
         // the saved method 
@@ -263,6 +264,7 @@ namespace City_Traffic_Simulation_Application
        
         public void Saveas()
         {
+            
             SaveFileDialog saveas = new SaveFileDialog();
             saveas.FileName = "simulation data";
           //  saveas.Filter = "Simulation file|*.sim";
@@ -334,6 +336,11 @@ namespace City_Traffic_Simulation_Application
         private void button7_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private void radioButton3_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
     
