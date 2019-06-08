@@ -17,7 +17,7 @@ namespace City_Traffic_Simulation_Application
         private Waypoint East;     //may be changed to an array of connected roads instead
         private Waypoint West;
         private Waypoint[] points;
-        private Waypoint[] redlights;
+        public Waypoint[] redlights;
         public List<Car> cars;
         public PictureBox box;
         [NonSerialized]
