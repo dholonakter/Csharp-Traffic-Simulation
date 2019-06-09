@@ -49,8 +49,9 @@
             this.p1 = new System.Windows.Forms.PictureBox();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
+            this.buttonApply = new System.Windows.Forms.Button();
             this.buttonHide = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
+            this.labelAvgTime = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
             this.label4 = new System.Windows.Forms.Label();
@@ -61,7 +62,6 @@
             this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.buttonApply = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbcrossing2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbcrossing1)).BeginInit();
@@ -318,7 +318,7 @@
             // 
             this.panel1.Controls.Add(this.buttonApply);
             this.panel1.Controls.Add(this.buttonHide);
-            this.panel1.Controls.Add(this.label6);
+            this.panel1.Controls.Add(this.labelAvgTime);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.numericUpDown3);
             this.panel1.Controls.Add(this.label4);
@@ -337,6 +337,16 @@
             this.panel1.TabIndex = 1;
             this.panel1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDoubleClick);
             // 
+            // buttonApply
+            // 
+            this.buttonApply.Location = new System.Drawing.Point(95, 456);
+            this.buttonApply.Name = "buttonApply";
+            this.buttonApply.Size = new System.Drawing.Size(81, 40);
+            this.buttonApply.TabIndex = 18;
+            this.buttonApply.Text = "Apply";
+            this.buttonApply.UseVisualStyleBackColor = true;
+            this.buttonApply.Click += new System.EventHandler(this.buttonApply_Click);
+            // 
             // buttonHide
             // 
             this.buttonHide.Location = new System.Drawing.Point(96, 389);
@@ -347,16 +357,16 @@
             this.buttonHide.UseVisualStyleBackColor = true;
             this.buttonHide.Click += new System.EventHandler(this.buttonHide_Click);
             // 
-            // label6
+            // labelAvgTime
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(545, 350);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(135, 58);
-            this.label6.TabIndex = 16;
-            this.label6.Text = "X.x s";
+            this.labelAvgTime.AutoSize = true;
+            this.labelAvgTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelAvgTime.Location = new System.Drawing.Point(545, 350);
+            this.labelAvgTime.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelAvgTime.Name = "labelAvgTime";
+            this.labelAvgTime.Size = new System.Drawing.Size(135, 58);
+            this.labelAvgTime.TabIndex = 16;
+            this.labelAvgTime.Text = "X.x s";
             // 
             // label5
             // 
@@ -488,15 +498,6 @@
             this.radioButton1.Text = "Fixed Time per lane strategy";
             this.radioButton1.UseVisualStyleBackColor = true;
             // 
-            // buttonApply
-            // 
-            this.buttonApply.Location = new System.Drawing.Point(95, 456);
-            this.buttonApply.Name = "buttonApply";
-            this.buttonApply.Size = new System.Drawing.Size(81, 40);
-            this.buttonApply.TabIndex = 18;
-            this.buttonApply.Text = "Apply";
-            this.buttonApply.UseVisualStyleBackColor = true;
-            // 
             // Traffic_simulaator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -559,7 +560,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label labelAvgTime;
         private System.Windows.Forms.Button buttonHide;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button buttonApply;

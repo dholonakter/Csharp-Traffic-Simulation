@@ -126,6 +126,10 @@ namespace City_Traffic_Simulation_Application
             TrafficSwitch -= timer2.Interval;  //TODO
             CarDelay -= timer2.Interval;
             // Debug.WriteLine(this.crossings[0, 0].cars.Count, "Cars in the crossing 1");
+            double time = 0;
+            double avgTime = 0;
+
+
             if (statistic_Form != null)
             {
                 //first crossing
@@ -136,18 +140,31 @@ namespace City_Traffic_Simulation_Application
                 if (first != null)
                 {
                     statistic_Form.SetTotalCars(1, first.cars.Count);
-
                     int waitingCarsInWest = first.redlights[0].waitingcars + first.redlights[1].waitingcars;
                     int waitingCarsInEast = first.redlights[3].waitingcars + first.redlights[4].waitingcars;
                     int waitingCarsInSouth = first.redlights[2].waitingcars;
-                    int waitingCarsInNorth= first.redlights[5].waitingcars; ;
+                    int waitingCarsInNorth= first.redlights[5].waitingcars;
                     int totalWaitingCars = waitingCarsInWest + waitingCarsInEast + waitingCarsInSouth + waitingCarsInNorth;
                     statistic_Form.SetTotalWaitingCars(1, totalWaitingCars);
-
+                    bool redLightWest = first.redlights[0].RedLight && first.redlights[1].RedLight;
+                    bool redLightEast = first.redlights[3].RedLight && first.redlights[4].RedLight;
+                    bool redLightSouth = first.redlights[2].RedLight;
+                    bool redLightNorth = first.redlights[5].RedLight;
                     statistic_Form.SetTotalWaitingCarsInEast(1, waitingCarsInEast);
                     statistic_Form.SetTotalWaitingCarsInWest(1, waitingCarsInWest);
                     statistic_Form.SetTotalWaitingCarsInNorth(1, waitingCarsInNorth);
                     statistic_Form.SetTotalWaitingCarsInSouth(1, waitingCarsInSouth);
+                    //idea
+                    //if ((redLightWest && redLightEast && redLightSouth && redLightNorth) == true)
+                    //{
+                        if (totalWaitingCars != 0)
+                        {
+                            time += timer2.Interval;
+                            avgTime = (time / totalWaitingCars);
+                            avgTime = Math.Round(avgTime, 2);
+                            labelAvgTime.Text = avgTime.ToString() + " seconds.";
+                        }
+                    //}
                 }
                 if (second != null)
                 {
@@ -164,6 +181,13 @@ namespace City_Traffic_Simulation_Application
                     statistic_Form.SetTotalWaitingCarsInWest(2, waitingCarsInWest);
                     statistic_Form.SetTotalWaitingCarsInNorth(2, waitingCarsInNorth);
                     statistic_Form.SetTotalWaitingCarsInSouth(2, waitingCarsInSouth);
+                    if (totalWaitingCars != 0)
+                        {
+                            time += timer2.Interval;
+                            avgTime = (time / totalWaitingCars);
+                            avgTime = Math.Round(avgTime, 2);
+                            labelAvgTime.Text = avgTime.ToString() + " seconds.";
+                        }
                 }
                 if (third != null)
                 {
@@ -180,6 +204,12 @@ namespace City_Traffic_Simulation_Application
                     statistic_Form.SetTotalWaitingCarsInWest(3, waitingCarsInWest);
                     statistic_Form.SetTotalWaitingCarsInNorth(3, waitingCarsInNorth);
                     statistic_Form.SetTotalWaitingCarsInSouth(3, waitingCarsInSouth);
+                    if (totalWaitingCars != 0)
+                    {
+                        avgTime = (time / totalWaitingCars);
+                        avgTime = Math.Round(avgTime, 2);
+                        labelAvgTime.Text = avgTime.ToString() + " seconds.";
+                    }
                 }
                 if (fourth != null)
                 {
@@ -196,6 +226,12 @@ namespace City_Traffic_Simulation_Application
                     statistic_Form.SetTotalWaitingCarsInWest(4, waitingCarsInWest);
                     statistic_Form.SetTotalWaitingCarsInNorth(4, waitingCarsInNorth);
                     statistic_Form.SetTotalWaitingCarsInSouth(4, waitingCarsInSouth);
+                    if (totalWaitingCars != 0)
+                    {
+                        avgTime = (time / totalWaitingCars);
+                        avgTime = Math.Round(avgTime, 2);
+                        labelAvgTime.Text = avgTime.ToString() + " seconds.";
+                    }
                 }
             }
             //Debug.WriteLine(this.crossings[0, 0].EastProp.waitingcars, "Waiting Cars in east in the crossing 1");
@@ -339,6 +375,11 @@ namespace City_Traffic_Simulation_Application
         }
 
         private void radioButton3_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonApply_Click(object sender, EventArgs e)
         {
 
         }
