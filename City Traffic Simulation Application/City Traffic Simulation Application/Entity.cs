@@ -12,7 +12,7 @@ namespace City_Traffic_Simulation_Application
     public class Entity
     {
         protected int ticktime;
-        private int waitingtime;
+        public int waitingtime;
         public Waypoint nextWayPoint { get; set; }
 
         public static int lastEntityId { get; set; } = 0;

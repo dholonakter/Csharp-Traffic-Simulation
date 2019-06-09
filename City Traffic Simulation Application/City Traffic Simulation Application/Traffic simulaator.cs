@@ -126,7 +126,9 @@ namespace City_Traffic_Simulation_Application
             TrafficSwitch -= timer2.Interval;  //TODO
             CarDelay -= timer2.Interval;
             // Debug.WriteLine(this.crossings[0, 0].cars.Count, "Cars in the crossing 1");
-            double time = 0;
+            double timeWaiting = 0;
+            //double timeStarted = 0;
+            //timeStarted += timer2.Interval;
             double avgTime = 0;
 
 
@@ -155,16 +157,13 @@ namespace City_Traffic_Simulation_Application
                     statistic_Form.SetTotalWaitingCarsInNorth(1, waitingCarsInNorth);
                     statistic_Form.SetTotalWaitingCarsInSouth(1, waitingCarsInSouth);
                     //idea
-                    //if ((redLightWest && redLightEast && redLightSouth && redLightNorth) == true)
-                    //{
-                        if (totalWaitingCars != 0)
+                    if (totalWaitingCars != 0)
                         {
-                            time += timer2.Interval;
-                            avgTime = (time / totalWaitingCars);
+                            timeWaiting += timer2.Interval;
+                            avgTime = (timeWaiting) / totalWaitingCars;
                             avgTime = Math.Round(avgTime, 2);
                             labelAvgTime.Text = avgTime.ToString() + " seconds.";
                         }
-                    //}
                 }
                 if (second != null)
                 {
@@ -183,8 +182,8 @@ namespace City_Traffic_Simulation_Application
                     statistic_Form.SetTotalWaitingCarsInSouth(2, waitingCarsInSouth);
                     if (totalWaitingCars != 0)
                         {
-                            time += timer2.Interval;
-                            avgTime = (time / totalWaitingCars);
+                            timeWaiting += timer2.Interval;
+                            avgTime = (timeWaiting / totalWaitingCars);
                             avgTime = Math.Round(avgTime, 2);
                             labelAvgTime.Text = avgTime.ToString() + " seconds.";
                         }
@@ -206,7 +205,7 @@ namespace City_Traffic_Simulation_Application
                     statistic_Form.SetTotalWaitingCarsInSouth(3, waitingCarsInSouth);
                     if (totalWaitingCars != 0)
                     {
-                        avgTime = (time / totalWaitingCars);
+                        avgTime = (timeWaiting / totalWaitingCars);
                         avgTime = Math.Round(avgTime, 2);
                         labelAvgTime.Text = avgTime.ToString() + " seconds.";
                     }
@@ -228,7 +227,7 @@ namespace City_Traffic_Simulation_Application
                     statistic_Form.SetTotalWaitingCarsInSouth(4, waitingCarsInSouth);
                     if (totalWaitingCars != 0)
                     {
-                        avgTime = (time / totalWaitingCars);
+                        avgTime = (timeWaiting / totalWaitingCars);
                         avgTime = Math.Round(avgTime, 2);
                         labelAvgTime.Text = avgTime.ToString() + " seconds.";
                     }
