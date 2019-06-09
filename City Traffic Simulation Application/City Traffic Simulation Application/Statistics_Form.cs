@@ -12,6 +12,8 @@ namespace City_Traffic_Simulation_Application
 {
     public partial class Statistics_Form : Form
     {
+        int x, y, z,p;
+            
         public Statistics_Form()
         {
             InitializeComponent();
@@ -23,15 +25,19 @@ namespace City_Traffic_Simulation_Application
             {
                 case 1:
                     lblTotalCarsInCrossing1.Text = numberOfCars.ToString();
+                    x = Convert.ToInt32(lblTotalCarsInCrossing1.Text);
                     break;
                 case 2:
                     lblTotalCarsInCrossing2.Text = numberOfCars.ToString();
+                    y = Convert.ToInt32(lblTotalCarsInCrossing2.Text);
                     break;
                 case 3:
                     lblTotalCarsInCrossing3.Text = numberOfCars.ToString();
+                    z= Convert.ToInt32(lblTotalCarsInCrossing3.Text);
                     break;
                 case 4:
                     lblTotalCarsInCrossing4.Text = numberOfCars.ToString();
+                    p= Convert.ToInt32(lblTotalCarsInCrossing4.Text);
                     break;
             }
         }
@@ -146,6 +152,22 @@ namespace City_Traffic_Simulation_Application
         private void lblTotalWaitingCarsInEastCrossing3_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void chart1_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+            //this.chart1.Series.Clear();
+            
+            this.chart1.Series["Crossings"].Points.AddXY("crossing 1", x);
+            this.chart1.Series["Crossings"].Points.AddXY("crossing 2", y);
+            this.chart1.Series["Crossings"].Points.AddXY("crossing 3", z);
+            this.chart1.Series["Crossings"].Points.AddXY("crossing 4", p);
         }
     }
 }

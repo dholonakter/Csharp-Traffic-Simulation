@@ -37,6 +37,7 @@
     <Reference Include="Microsoft.VisualBasic.PowerPacks, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -84,6 +85,19 @@
     <EmbeddedResource Include="Traffic simulaator.resx">
       <DependentUpon>Traffic simulaator.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Properties\DataSources\Car.datasource" />
+    <None Include="Properties\DataSources\City_Traffic_Simulation_Application.Properties.Resources.datasource" />
+    <None Include="Properties\DataSources\City_Traffic_Simulation_Application.Properties.Settings.datasource" />
+    <None Include="Properties\DataSources\Crossing.datasource" />
+    <None Include="Properties\DataSources\Entity.datasource" />
+    <None Include="Properties\DataSources\Program.datasource" />
+    <None Include="Properties\DataSources\SerializeData.datasource" />
+    <None Include="Properties\DataSources\Statistics_Form.datasource" />
+    <None Include="Properties\DataSources\TrafficLight.datasource" />
+    <None Include="Properties\DataSources\TrafficLight.Directions.datasource" />
+    <None Include="Properties\DataSources\Traffic_simulaator.datasource" />
+    <None Include="Properties\DataSources\Waypoint.datasource" />
+    <None Include="Properties\DataSources\Waypoint.GreenLightHandler.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

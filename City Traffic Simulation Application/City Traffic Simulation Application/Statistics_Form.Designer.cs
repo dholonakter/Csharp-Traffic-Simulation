@@ -28,6 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -36,6 +39,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
             this.lblTotalWaitingCarsInSouthCrossing4 = new System.Windows.Forms.Label();
             this.lblTotalWaitingCarsInNorthCrossing4 = new System.Windows.Forms.Label();
             this.lblTotalWaitingCarsInEastCrossing4 = new System.Windows.Forms.Label();
@@ -45,6 +52,10 @@
             this.label44 = new System.Windows.Forms.Label();
             this.label45 = new System.Windows.Forms.Label();
             this.Crossing3 = new System.Windows.Forms.GroupBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
             this.lblTotalWaitingCarsInSouthCrossing3 = new System.Windows.Forms.Label();
             this.lblTotalWaitingCarsInNorthCrossing3 = new System.Windows.Forms.Label();
             this.lblTotalWaitingCarsInWestCrossing3 = new System.Windows.Forms.Label();
@@ -54,6 +65,10 @@
             this.lblTotalCarsInCrossing3 = new System.Windows.Forms.Label();
             this.label37 = new System.Windows.Forms.Label();
             this.Crossing2 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
             this.lblTotalWaitingCarsInSouthCrossing2 = new System.Windows.Forms.Label();
             this.lblTotalWaitingCarsInNorthCrossing2 = new System.Windows.Forms.Label();
             this.lblTotalWaitingCarsInWestCrossing2 = new System.Windows.Forms.Label();
@@ -74,23 +89,14 @@
             this.lblTotalCarsInCrossing1 = new System.Windows.Forms.Label();
             this.lblWaitingCarsCrossing1 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
+            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.Crossing3.SuspendLayout();
             this.Crossing2.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.SuspendLayout();
             // 
             // label7
@@ -150,13 +156,14 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel1.Controls.Add(this.chart1);
             this.panel1.Controls.Add(this.groupBox2);
             this.panel1.Controls.Add(this.Crossing3);
             this.panel1.Controls.Add(this.Crossing2);
             this.panel1.Controls.Add(this.groupBox1);
             this.panel1.Location = new System.Drawing.Point(29, 55);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1352, 424);
+            this.panel1.Size = new System.Drawing.Size(1352, 579);
             this.panel1.TabIndex = 4;
             // 
             // groupBox2
@@ -180,6 +187,42 @@
             this.groupBox2.TabIndex = 32;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Crossing 4";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(7, 95);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(137, 17);
+            this.label21.TabIndex = 45;
+            this.label21.Text = "Waiting cars in East:";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(6, 133);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(141, 17);
+            this.label22.TabIndex = 44;
+            this.label22.Text = "Waiting cars in West:";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(4, 167);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(144, 17);
+            this.label23.TabIndex = 46;
+            this.label23.Text = "Waiting cars in North:";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(5, 206);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(146, 17);
+            this.label24.TabIndex = 47;
+            this.label24.Text = "Waiting cars in South:";
             // 
             // lblTotalWaitingCarsInSouthCrossing4
             // 
@@ -274,6 +317,42 @@
             this.Crossing3.TabIndex = 31;
             this.Crossing3.TabStop = false;
             this.Crossing3.Text = "Crossing3";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(19, 104);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(137, 17);
+            this.label17.TabIndex = 45;
+            this.label17.Text = "Waiting cars in East:";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(18, 142);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(141, 17);
+            this.label18.TabIndex = 44;
+            this.label18.Text = "Waiting cars in West:";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(16, 176);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(144, 17);
+            this.label19.TabIndex = 46;
+            this.label19.Text = "Waiting cars in North:";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(17, 215);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(146, 17);
+            this.label20.TabIndex = 47;
+            this.label20.Text = "Waiting cars in South:";
             // 
             // lblTotalWaitingCarsInSouthCrossing3
             // 
@@ -376,6 +455,42 @@
             this.Crossing2.TabIndex = 30;
             this.Crossing2.TabStop = false;
             this.Crossing2.Text = "Crossing2";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(15, 113);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(137, 17);
+            this.label1.TabIndex = 45;
+            this.label1.Text = "Waiting cars in East:";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(14, 151);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(141, 17);
+            this.label9.TabIndex = 44;
+            this.label9.Text = "Waiting cars in West:";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(12, 185);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(144, 17);
+            this.label10.TabIndex = 46;
+            this.label10.Text = "Waiting cars in North:";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(13, 211);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(146, 17);
+            this.label12.TabIndex = 47;
+            this.label12.Text = "Waiting cars in South:";
             // 
             // lblTotalWaitingCarsInSouthCrossing2
             // 
@@ -570,120 +685,41 @@
             this.label26.TabIndex = 3;
             this.label26.Text = "Statitistics of City Traffic Simulation";
             // 
-            // label1
+            // chart1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(15, 113);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(137, 17);
-            this.label1.TabIndex = 45;
-            this.label1.Text = "Waiting cars in East:";
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
+            this.chart1.Location = new System.Drawing.Point(33, 280);
+            this.chart1.Name = "chart1";
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Crossings";
+            series1.YValuesPerPoint = 2;
+            this.chart1.Series.Add(series1);
+            this.chart1.Size = new System.Drawing.Size(1303, 287);
+            this.chart1.TabIndex = 5;
+            this.chart1.Text = "visualisation";
+            this.chart1.Click += new System.EventHandler(this.chart1_Click);
             // 
-            // label9
+            // button1
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(14, 151);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(141, 17);
-            this.label9.TabIndex = 44;
-            this.label9.Text = "Waiting cars in West:";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(12, 185);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(144, 17);
-            this.label10.TabIndex = 46;
-            this.label10.Text = "Waiting cars in North:";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(13, 211);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(146, 17);
-            this.label12.TabIndex = 47;
-            this.label12.Text = "Waiting cars in South:";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(19, 104);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(137, 17);
-            this.label17.TabIndex = 45;
-            this.label17.Text = "Waiting cars in East:";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(18, 142);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(141, 17);
-            this.label18.TabIndex = 44;
-            this.label18.Text = "Waiting cars in West:";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(16, 176);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(144, 17);
-            this.label19.TabIndex = 46;
-            this.label19.Text = "Waiting cars in North:";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(17, 215);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(146, 17);
-            this.label20.TabIndex = 47;
-            this.label20.Text = "Waiting cars in South:";
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(7, 95);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(137, 17);
-            this.label21.TabIndex = 45;
-            this.label21.Text = "Waiting cars in East:";
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(6, 133);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(141, 17);
-            this.label22.TabIndex = 44;
-            this.label22.Text = "Waiting cars in West:";
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(4, 167);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(144, 17);
-            this.label23.TabIndex = 46;
-            this.label23.Text = "Waiting cars in North:";
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(5, 206);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(146, 17);
-            this.label24.TabIndex = 47;
-            this.label24.Text = "Waiting cars in South:";
+            this.button1.Location = new System.Drawing.Point(457, 646);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(379, 33);
+            this.button1.TabIndex = 33;
+            this.button1.Text = "visualise the data";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Statistics_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Green;
-            this.ClientSize = new System.Drawing.Size(1393, 553);
+            this.ClientSize = new System.Drawing.Size(1393, 681);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label26);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -698,6 +734,7 @@
             this.Crossing2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -762,5 +799,7 @@
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.Button button1;
     }
 }
