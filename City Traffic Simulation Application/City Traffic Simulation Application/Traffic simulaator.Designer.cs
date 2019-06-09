@@ -61,6 +61,7 @@
             this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.buttonApply = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbcrossing2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbcrossing1)).BeginInit();
@@ -315,6 +316,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.buttonApply);
             this.panel1.Controls.Add(this.buttonHide);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label5);
@@ -337,9 +339,9 @@
             // 
             // buttonHide
             // 
-            this.buttonHide.Location = new System.Drawing.Point(95, 374);
+            this.buttonHide.Location = new System.Drawing.Point(96, 389);
             this.buttonHide.Name = "buttonHide";
-            this.buttonHide.Size = new System.Drawing.Size(75, 23);
+            this.buttonHide.Size = new System.Drawing.Size(80, 40);
             this.buttonHide.TabIndex = 17;
             this.buttonHide.Text = "Hide";
             this.buttonHide.UseVisualStyleBackColor = true;
@@ -369,7 +371,7 @@
             // 
             // numericUpDown3
             // 
-            this.numericUpDown3.Location = new System.Drawing.Point(96, 315);
+            this.numericUpDown3.Location = new System.Drawing.Point(96, 299);
             this.numericUpDown3.Margin = new System.Windows.Forms.Padding(4);
             this.numericUpDown3.Maximum = new decimal(new int[] {
             20,
@@ -455,11 +457,12 @@
             this.radioButton3.Location = new System.Drawing.Point(417, 186);
             this.radioButton3.Margin = new System.Windows.Forms.Padding(4);
             this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(110, 21);
+            this.radioButton3.Size = new System.Drawing.Size(74, 21);
             this.radioButton3.TabIndex = 8;
             this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "radioButton3";
+            this.radioButton3.Text = "Default";
             this.radioButton3.UseVisualStyleBackColor = true;
+            this.radioButton3.CheckedChanged += new System.EventHandler(this.radioButton3_CheckedChanged);
             // 
             // radioButton2
             // 
@@ -484,6 +487,15 @@
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "Fixed Time per lane strategy";
             this.radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // buttonApply
+            // 
+            this.buttonApply.Location = new System.Drawing.Point(95, 456);
+            this.buttonApply.Name = "buttonApply";
+            this.buttonApply.Size = new System.Drawing.Size(81, 40);
+            this.buttonApply.TabIndex = 18;
+            this.buttonApply.Text = "Apply";
+            this.buttonApply.UseVisualStyleBackColor = true;
             // 
             // Traffic_simulaator
             // 
@@ -550,5 +562,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button buttonHide;
         private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button buttonApply;
     }
 }
