@@ -27,10 +27,12 @@ namespace City_Traffic_Simulation_Application
         public int y;
         Crossing[,] crossings;
         Random r = new Random();
+        int RedDelay;
+        int GreenPhase;
+        List<int> waiting;
 
 
-
-        public Crossing(Graphics gr, PictureBox box, int x, int y, ref Crossing[,] crossings) //TODO it might be smart of instead of passing a reference to 
+        public Crossing(Graphics gr, PictureBox box, int x, int y, ref Crossing[,] crossings, int RedDelay, int GreenPhase, List<int> waiting) //TODO it might be smart of instead of passing a reference to 
             //the crossings array, to just pass a reference to the entire form. this way you can easily access the properties you make in the form class
         {
             cars = new List<Car>();
@@ -39,7 +41,10 @@ namespace City_Traffic_Simulation_Application
             this.x = x;
             this.y = y;
             this.crossings = crossings;
-            i = r.Next(0, 3);
+            i = r.Next(4);
+            this.RedDelay = 0;
+            this.GreenPhase = GreenPhase;
+            this.waiting = waiting;
         }
 
 
@@ -51,7 +56,15 @@ namespace City_Traffic_Simulation_Application
                 c.Move();
                 if (c.leaving != null)
                 {
-                   
+                    //TODO Here, collect the value of c.waitingtime, SET IT TO 0 BEFORE THE CAR GOES TO THE NEXT CROSSING, then send it back to the main form 
+                    //maybe by making a list or array on the main form and passing a reference to it here via the crossing constructor
+                    //this will also make it easy to calculate the average waitingtime by collecting the waitingtime in a list
+                    //if you're doing this there should probably be a maximum size to the list. average over like 300 samples. You could also let the user adjust the samples averaging over from the options panel if you want.
+                    waiting.Add(c.waitingtime);
+                    if (waiting.Count > 500)
+                        waiting.RemoveAt(0);
+                    c.waitingtime = 0;
+                    //
                     c.RandomDirection();
                     try
                     {
@@ -110,40 +123,136 @@ namespace City_Traffic_Simulation_Application
             //return carCoordinates;
         }
 
-        public void TrafficTick()
+        public void TrafficTick(int tick, int RedTime, int Greentime, int strategy)
         {
-           
+            //TODO here we need a generic pattern for how the traffic lights operate
+            
+            //first, the redlights should all be red for a certain time period (red light delay on the options panel). Time is measured in seconds so x1000 for ms.
+            //then call nextpattern to change some lights to green according to the strategy selected with the radiobuttons.
+            //these lights should be green for the phase time specified on the panel. See: TrafficSwitch in our form class.
+            //then turn all lights red and start from the top.
+
+            if (GreenPhase >= 0 && RedDelay <=0)
+            {
+                GreenPhase -= tick;
+                return;
+            }
+            else if (RedDelay <=0)
+            {
+                foreach (Waypoint w in redlights)
+                    w.RedLight = true;
+                RedDelay = RedTime;
+                GreenPhase = Greentime;
+            }
+            RedDelay -= tick;
+            if (RedDelay <=0)
+            {
+                try
+                {
+                    nextPattern(strategy);
+                }
+                catch (Exception exception)
+                {
+                    throw exception;
+                }
+
+                
+            }
+            
         }
 
 
-        public void nextPattern()
+        public void nextPattern(int strategy)
         {
+            //TODO here we need to implement the strategy pattern from DPR. 
+            //Our second strategy will just be going through the trafficlights in order and giving every light equal time.
+            //Which of these strategies is used should depend on the radiobuttons on the options panel.
+            
+            //If time is left over you may add this third strategy. Do this last, it has lowest priority. If you don't know how to do it it's fine.
+            //Our third strategy will be a queue model. If a car starts waiting at a light that light should be added to a queue.
+            //when the queue is popped by calling nextPattern() the first light in the queue goes green and is removed from the queue.
 
-            foreach (Waypoint w in redlights)// our first strategy, changing the state of traffic lights by how many cars are waiting. 
-                w.RedLight = true;
-            int[] s = new int[4] { redlights[0].waitingcars + redlights[3].waitingcars,
+            
+
+
+            if (strategy == 0)
+            {
+                if (i == 0)
+                {
+                    redlights[0].RedLight = false;
+                    redlights[3].RedLight = false;
+                }
+                else if (i == 1)
+                {
+                    redlights[1].RedLight = false;
+                    redlights[4].RedLight = false;
+                }
+                else if (i == 2)
+                {
+                    redlights[2].RedLight = false;
+                }
+                else if (i == 3)
+                {
+                    redlights[5].RedLight = false;
+                }
+                i++;
+                if (i == 4)
+                    i = 0;
+            }
+            else if (strategy == 1)
+            {
+                foreach (Waypoint w in redlights)// our first strategy, changing the state of traffic lights by how many cars are waiting. 
+                    w.RedLight = true;
+                int[] s = new int[4] { redlights[0].waitingcars + redlights[3].waitingcars,
                 redlights[1].waitingcars+redlights[4].waitingcars, redlights[2].waitingcars, redlights[5].waitingcars };// lights 0 and 3 are a pair, and lights 1 and 4 are a pair
-            int maxValue = s.Max();
-            int maxIndex = s.ToList().IndexOf(maxValue);
-            if(maxIndex==0)
-            {
-                redlights[0].RedLight = false;
-                redlights[3].RedLight = false;
+                int maxValue = s.Max();
+                int maxIndex = s.ToList().IndexOf(maxValue);
+                if (maxIndex == 0)
+                {
+                    redlights[0].RedLight = false;
+                    redlights[3].RedLight = false;
+                }
+                else if (maxIndex == 1)
+                {
+                    redlights[1].RedLight = false;
+                    redlights[4].RedLight = false;
+                }
+                else if (maxIndex == 2)
+                {
+                    redlights[2].RedLight = false;
+                }
+                else if (maxIndex == 3)
+                {
+                    redlights[5].RedLight = false;
+                }
             }
-            else if (maxIndex==1)
+            else if (strategy == 2)
             {
-                redlights[1].RedLight = false;
-                redlights[4].RedLight = false;
+                int x = r.Next( 4);
+                if (x == 0)
+                {
+                    redlights[0].RedLight = false;
+                    redlights[3].RedLight = false;
+                }
+                else if (x == 1)
+                {
+                    redlights[1].RedLight = false;
+                    redlights[4].RedLight = false;
+                }
+                else if (x == 2)
+                {
+                    redlights[2].RedLight = false;
+                }
+                else if (x == 3)
+                {
+                    redlights[5].RedLight = false;
+                }
             }
-            else if (maxIndex==2)
+            else
             {
-                redlights[2].RedLight = false;
+                throw new Exception("No Strategy Selected.");
             }
-            else if (maxIndex==3)
-            {
-                redlights[5].RedLight = false;
-            }
-
+            
         }
 
 

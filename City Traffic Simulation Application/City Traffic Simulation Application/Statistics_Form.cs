@@ -13,6 +13,8 @@ namespace City_Traffic_Simulation_Application
     public partial class Statistics_Form : Form
     {
         int x, y, z,p;
+
+        public double waittime;
             
         public Statistics_Form()
         {
@@ -149,6 +151,13 @@ namespace City_Traffic_Simulation_Application
 
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            chart1.Hide();
+            chart2.Show();
+            chart2.Series[0].Points.AddY(waittime/1000);
+        }
+
         private void lblTotalWaitingCarsInEastCrossing3_Click(object sender, EventArgs e)
         {
 
@@ -161,13 +170,18 @@ namespace City_Traffic_Simulation_Application
 
         private void button1_Click(object sender, EventArgs e)
         {
+            chart2.Hide();
+            chart1.Show();
+            foreach (var series in chart1.Series)
+            {
+                series.Points.Clear();
+            }
 
-            //this.chart1.Series.Clear();
-            
             this.chart1.Series["Crossings"].Points.AddXY("crossing 1", x);
             this.chart1.Series["Crossings"].Points.AddXY("crossing 2", y);
             this.chart1.Series["Crossings"].Points.AddXY("crossing 3", z);
             this.chart1.Series["Crossings"].Points.AddXY("crossing 4", p);
         }
+
     }
 }

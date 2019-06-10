@@ -83,6 +83,7 @@ namespace City_Traffic_Simulation_Application
             }
             else if (reacting)
             {
+                waitingtime += ticktime;
                 reactiontime -= ticktime;
                 if (reactiontime < 0)
                 {
@@ -95,7 +96,7 @@ namespace City_Traffic_Simulation_Application
             }
             else if (!driving)
             {
-
+                waitingtime += ticktime;
                 return;// new int[3] { (int)x, (int)y, id }; 
             }
 
