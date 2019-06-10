@@ -51,12 +51,7 @@ namespace City_Traffic_Simulation_Application
                 c.Move();
                 if (c.leaving != null)
                 {
-                    //TODO Here, collect the value of c.waitingtime, SET IT TO 0 BEFORE THE CAR GOES TO THE NEXT CROSSING, then send it back to the main form 
-                    //maybe by making a list or array on the main form and passing a reference to it here via the crossing constructor
-                    //this will also make it easy to calculate the average waitingtime by collecting the waitingtime in a list
-                    //if you're doing this there should probably be a maximum size to the list. average over like 300 samples. You could also let the user adjust the samples averaging over from the options panel if you want.
-
-                    //
+                   
                     c.RandomDirection();
                     try
                     {
@@ -117,24 +112,12 @@ namespace City_Traffic_Simulation_Application
 
         public void TrafficTick()
         {
-            //TODO here we need a generic pattern for how the traffic lights operate
-            
-            //first, the redlights should all be red for a certain time period (red light delay on the options panel). Time is measured in seconds so x1000 for ms.
-            //then call nextpattern to change some lights to green according to the strategy selected with the radiobuttons.
-            //these lights should be green for the phase time specified on the panel. See: TrafficSwitch in our form class.
-            //then turn all lights red and start from the top.
+           
         }
 
 
         public void nextPattern()
         {
-            //TODO here we need to implement the strategy pattern from DPR. 
-            //Our second strategy will just be going through the trafficlights in order and giving every light equal time.
-            //Which of these strategies is used should depend on the radiobuttons on the options panel.
-            
-            //If time is left over you may add this third strategy. Do this last, it has lowest priority. If you don't know how to do it it's fine.
-            //Our third strategy will be a queue model. If a car starts waiting at a light that light should be added to a queue.
-            //when the queue is popped by calling nextPattern() the first light in the queue goes green and is removed from the queue.
 
             foreach (Waypoint w in redlights)// our first strategy, changing the state of traffic lights by how many cars are waiting. 
                 w.RedLight = true;

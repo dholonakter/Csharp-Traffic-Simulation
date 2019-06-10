@@ -35,9 +35,7 @@ namespace City_Traffic_Simulation_Application
             panel1.Hide();
 
             timer2.Interval = 10;
-            //TODO maybe make this adjustable? you can make it editable by adding an extra control to the options panel but
-            //make sure that if you do that you can no longer edit the value after you press start by deactivating it when you press start;
-            //todo synch with framerate?
+           
             entity = new Entity();
 
            
@@ -242,8 +240,7 @@ namespace City_Traffic_Simulation_Application
                     c.MoveCars();
                     c.Draw(false);//flip this bool to draw all waypoints instead of just traffic lights
                     if (TrafficSwitch < 0)
-                    {//TODO instead of having the logic for TrafficSwitch here, put it in Crossing.TrafficTick() . 
-                     //that way you can just call c.move, c.draw, c.traffictick
+                    {
                         c.nextPattern();
 
                     }
@@ -251,7 +248,7 @@ namespace City_Traffic_Simulation_Application
                 }
             }
 
-            if (TrafficSwitch < 0) //TODO same as above
+            if (TrafficSwitch < 0) 
                 TrafficSwitch = 8000;
 
             if (CarDelay < 0)
@@ -264,9 +261,7 @@ namespace City_Traffic_Simulation_Application
 
 
 
-            //TODO every few seconds you should calculate the average waiting time and update the label where it should be displayed on the panel.
-            //this way people can see we're actively calculating the numbers. The simulation will still run if it's not visible.
-            //in fact if all the drawn stuff is visible when the options panel is open you can just Hide() the pictureboxes and it should all still work fine.
+           
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -333,17 +328,15 @@ namespace City_Traffic_Simulation_Application
         // loading file from an a chosen directory 
         private void button4_Click(object sender, EventArgs e)
         {
-            //TODO click to hide/unhide panel 1
+          
             panel1.Show();
-            //i don't know whether hiding or unhiding the panel resets the values of the components, so you may need to store them 
-            //by making new properties here. This way if the panel is opened again you can make sure they're still the same.
-            //this.loadFile("ferdi");
+           
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
 
-            //also make the average waiting time the latest calculated one.
+           
         }
 
         private void panel1_MouseDoubleClick(object sender, MouseEventArgs e)
