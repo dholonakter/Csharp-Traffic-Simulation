@@ -1,0 +1,39 @@
+Reflection:
+
+Overall I found our process to be quite haphazard. Part of this is my fault. During the first weeks I took the role of project lead. 
+One of my personal faults is that I don't do well in the department of taking notes and keeping things organized, and I'm afraid some of this attitude carried over to the team.
+I started the project with a pretty clear vision and the first iteration was spent dealing with conflicting ideas and opinions on what our app should look like.
+This is fairly normal considering it's a group project and opinions should be voiced, especially during ideation. The problems with this project started at the end of iteration one..
+
+At the end of iteration one we had to present a prototype version of our application. We had some solid ideas of what we wanted some features to look like.
+For the prototype however, the team wanted to present with code that was obviously not sustainable for future use in the application (no more than a few dozen lines).
+At this point, we could have gone back to the drawing board, developed a clearer idea of what our classes should look like and make clear decisions from there.
+However, I prioritised creating some form of functionality that would be useful throughout the entirity of the project, so I created what was in essence the backbone of our entire application.
+Some parts of my original vision got cut in the end, but the downfall of the project really was starting the build without everyone on the team having a clear understanding of what our project was going to look like and wrtitng it down.
+Overall the stuff I created wasn't all that complicated, it was mostly high school geometry, and it was functional (as proved by its presence in the final app), however the idea proved intimidating for the rest of the team.
+
+During iteration one after planning, Fahim mostly researched how the traffic lights should work, which yielded no results. Dola did documentation, Fer created the presentation and Sandro was dealing with personal issues.
+
+At the start of iteration two, some members felt so uncertain with the direction of the project (about whether we could pull it off) that they decided that we should change course.
+Changing course here meant, looking at very similar applications and directly copying the structure of those applications 
+Unfortunately, instead of discussing this in a general meeting, they decided to talk to all other project group members first before relaying this to me. Under peer pressure I was forced to bow out.
+I wouldn't have had a problem with this if my vision was replaced by an equally strong one, however, when I took a step back progress slowed down severely. There was still no unifying plan to make the application work.
+
+After a few weeks of this and lifting my own spirits I decided to take back the reins, this time having learnt a bit from the earlier weeks and bringing with me a rather detailed plan of how to get our application up to snuff.
+Unfortunately I was met with not so much resistance as a general unwillingness to attempt touching the code we had for lack of confidence in several teammembers' own ability.
+
+This meant I would have to do the large majority of adapting the working movement system for crossings we had into an application. On the plus side, the rest of the team finally had some time to get documentation in order.
+
+The final two weeks saw the team being told to upgrade the usability value of the app, for which I also brought a plan. Unfortunately the team wasn't familiar enough with the application code to implement the exact features I was looking for, 
+however, there were some meaningful contributions from a few people who wanted to leave their mark on the application. It feels good to know that at least some of the application originated from teammembers other than me.
+
+Improvement points for myself: I think I went a bit too far with the Agile spirit that was pitched at the start of the project. Agile doesn't mean "Try things and see what sticks", you need to be smart and organised about it.
+In this project I as team leader felt lacking in organisation, and should focus on this to improve myself.
+
+Comments for others: 
+Sandro: Be a bit more open with your team. When you were gone for a while we were sitting pretty in the dark. Communication is important and don't be afraid to speak up. This goes for group meetings too.
+Dola: It's easy to get lost and not know what to do at times, but if you have no direction sometimes you just need to take initiative like you did Saturday 9. Things like that are very much appreciated. Keep doing stuff like that.
+Fer: I know you like to take the lead in conversations a lot, but sometimes you need to be able to switch roles. When we've identified a roadblock for your group in the coming weeks or things that need to be delivered,
+sometimes it's good to be the person who makes a suggestion towards solving the problem rather than just continually identifying. Also, I realise you're a very visual person, but just because something isn't visible on your screen right away doesn't mean nothing is happening.
+Fahim. When you don't understand things, it's often a good idea to just ask others. I myself have trouble asking for help when I need it so I know the problem. 
+Don't feel bad if you need something explained, or when you want a second pair of eyes to give an opinion to help you make progress towards goals.
